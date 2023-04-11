@@ -1,0 +1,138 @@
+$main-blue: #4d95be;
+$white: #fff;
+$black: #000;
+
+
+$breakpoints: (    
+    vs: 376px,
+    xs: 423px,
+    sm: 767px,
+    md: 1023px,
+    lg: 1439px
+);
+
+
+
+@mixin blockPadding {
+    padding: 100px;
+    @media (max-width: map-get($breakpoints, lg)) {
+        padding: 65px;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        padding: 45px;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        padding: 25px;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        padding: 20px;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        padding: 15px;
+    }    
+}
+
+@mixin space-btw($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-between;
+}
+
+@function footer-img-margin($img-width) {
+    @return calc($img-width / 4);
+}
+
+@mixin footer-img-params($img-width) {
+    height: $img-width;
+    width: $img-width;
+    margin-left: footer-img-margin($img-width);
+}
+
+@function font-size-calc($base-size, $ratio) {
+    @return calc($base-size * $ratio);
+}
+
+@mixin font-size-adaptive($base-size) {
+    font-size: $base-size;
+    @media (max-width: map-get($breakpoints, lg)) {
+        font-size: calc($base-size / 1.1) ;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        font-size: calc($base-size / 1.2) ;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        font-size: calc($base-size / 1.4) ;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        font-size: calc($base-size / 1.6) ;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        font-size: calc($base-size / 1.7) ;
+    }   
+}
+
+
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 24px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h1 {
+    font-size: 75px;
+    font-weight: 400;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+}
+
+h2 {
+    font-size: 58px;
+    margin-block-end: 0.2em;
+}
+
+h3 {
+    font-size: 35px;
+    font-weight: 400;
+    margin-block-end: 1em;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
