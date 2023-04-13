@@ -1,0 +1,249 @@
+@import '../../../const';
+
+
+.cover {
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+
+    & .cover__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+
+        & div {
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+
+        & .vid {
+            width: 100%;
+            height: 100%;
+
+            & video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+            
+    }
+
+    &__logo {
+        position: absolute;
+        top: 35%;
+        left: calc(50% - 125px);
+        width: 250px;
+        height: 250px;
+        @media (max-width: map-get($breakpoints, lg)) {
+            top: 35%;
+            width: 220px;
+            height: 220px;
+            left: calc(50% - 110px);
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            top: 30%;
+            width: 200px;
+            height: 200px;
+            left: calc(50% - 100px);
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            top: 30%;
+            width: 180px;
+            height: 180px;
+            left: calc(50% - 90px);
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            top: 25%;
+            width: 180px;
+            height: 180px;
+            left: calc(50% - 90px);
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            top: 25%;
+            width: 150px;
+            height: 150px;
+            left: calc(50% - 75px);
+        } 
+    }
+}
+
+
+
+.text-word {
+    width: 100%;
+    position: relative;
+    @include blockPadding;
+
+    &__text {
+        width: 70%;
+        margin: 0 auto;
+
+        & p {
+            text-align: center;
+        }
+    }
+
+    &__word {
+        position: absolute;
+        right: 19%;
+        bottom: 23%;
+        z-index: -2;
+        
+        & span {
+            @include font-big-size-adaptive(150px, 1.53);
+            color: #cecece;
+        }
+    }
+}
+
+
+.cards-block {
+    height: 100%;
+    @include space-btw(column);
+    z-index: 0;
+    @include blockPadding;
+
+    &__title {
+        width: 100%;
+        align-self: flex-start;
+        @include space-btw(column);
+        z-index: 1;
+
+        & h1 {
+            & span {
+                font-weight: 750;
+            }
+        }
+    }
+
+    &__card-container {
+        width: 100%;
+        height: 800px;
+        margin-top: 75px;        
+        z-index: 1;
+    }
+
+    &__link {
+        width: 100%;
+        padding-top: 40px;
+        text-align: center;
+        
+        a {
+            font-size: 24px;
+            color: #929292;
+            text-decoration: none;
+        }
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+    &__card {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+
+          .card-container__text-container {
+                background-color: rgba(100, 100, 100, 0);
+                box-shadow: #949494 4px 4px 4px;
+                text-shadow: #000000 1px 1px 1px;
+            }
+            
+            .card-container__bg {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    // &__bg {
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-size: cover;
+    //     z-index: -1;
+    //     transform: scale(1); 
+    //     transition: transform 0.4s ease-out 0.1s;
+    // }
+
+    &__text-container {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(100, 100, 100, 0.3);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        justify-content: space-between;
+        color: #fff;
+        transition: all 0.3s ease;
+        /* transition: box-shadow 0.4s ease; */
+        box-shadow: #ffffff 4px 4px 4px;
+    }
+
+    &__top-text {
+        align-self: flex-start;
+    }
+    &__season {
+        text-transform: uppercase;
+        font-size: 20px;
+        letter-spacing: 0.2em;
+    }
+    &__title {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    &__bottom-text {
+        align-self: flex-end;
+    }
+    &__days {
+        font-size: 20px;
+        letter-spacing: 0.05em;
+    }
+    &__price {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+
+
+.card-container__card {
+}
+.card-container__bg {
+}
+.card-container__text-container {
+}
+.card-container__top-text {
+}
+.card-container__season {
+}
+.card-container__title {
+}
+.card-container__bottom-text {
+}
+.card-container__days {
+}
+.card-container__price {
+}
+.cards-block__link {
+}

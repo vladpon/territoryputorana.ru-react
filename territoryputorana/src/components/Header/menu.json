@@ -1,0 +1,114 @@
+[
+    {
+        "id": "tours",
+        "href": "./tours",
+        "title": "туры",
+        "items": [
+            {
+                "id": "lostput",
+                "href": "./lostput",
+                "title": "Затерянный мир Плато Путорана"
+            },
+            {
+                "id": "weekend",
+                "href": "./weekend",
+                "title": "Тур выходного дня"
+            },
+            {
+                "id": "camping",
+                "href": "./camping",
+                "title": "Палаточный кемпинг"
+            },
+            {
+                "id": "skitour",
+                "href": "./skitour",
+                "title": "Ски-тур"
+            },
+            {
+                "id": "trailrunning",
+                "href": "./trailrunning",
+                "title": "Тейлраннинг кемп"
+            },
+            {
+                "id": "helicopter",
+                "href": "./helicopter",
+                "title": "Вертолетные экскурсии"
+            },
+            {
+                "id": "jar",
+                "href": "./jar",
+                "title": "Усадьба Жар. Птица"
+            }
+        ]
+    },
+    
+    {
+        "id": "about",
+        "href": "./about",
+        "title": "о нас"
+    },
+
+    {
+        "id": "projects",
+        "href": "./projects",
+        "title": "проекты",
+        "items": [
+            {
+                "id": "sr",
+                "href": "./sr",
+                "title": "SNOW RIDE Putoranа"
+            },
+            {
+                "id": "lamaproj",
+                "href": "./lamaproj",
+                "title": "Чисто Лама"
+            },
+            {
+                "id": "arctic",
+                "href": "./arctic",
+                "title": "Экспедиции Арктики"
+            }
+        ]
+    },
+
+    {
+        "id": "partners",
+        "href": "./partners",
+        "title": "партнеры"
+    },
+
+    {
+        "id": "photo",
+        "href": "./photo",
+        "title": "фотогалерея"
+    },
+
+    {
+        "id": "fb",
+        "href": "./fb",
+        "title": "отзывы"
+    },
+
+    {
+        "id": "3dtours",
+        "href": "#",
+        "title": "3d tour",
+        "items": [
+            {
+                "id": "lama",
+                "href": "./Lama3d",
+                "title": "Усадьба Жар. Птица"
+            },
+            {
+                "id": "island",
+                "href": "./island.html",
+                "title": "Палаточный кемпинг"
+            },
+            {
+                "id": "locations",
+                "href": "./locations.html",
+                "title": "Наши локации"
+            }
+        ]
+    }   
+]

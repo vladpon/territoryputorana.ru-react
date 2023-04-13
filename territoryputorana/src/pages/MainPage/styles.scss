@@ -1,0 +1,22 @@
+@import '../../const';
+
+
+.main-page {
+    height: 100vh;
+    padding-top: map-get($header-height, vl);
+        @media (max-width: map-get($breakpoints, lg)) {
+            padding-top: map-get($header-height, lg);
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            padding-top: map-get($header-height, md);
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            padding-top: map-get($header-height, sm);
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            padding-top: map-get($header-height, xs);
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            padding-top: map-get($header-height, vs);
+        } 
+}

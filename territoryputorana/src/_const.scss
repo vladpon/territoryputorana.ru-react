@@ -3,6 +3,7 @@ $white: #fff;
 $black: #000;
 
 
+
 $breakpoints: (    
     vs: 376px,
     xs: 423px,
@@ -11,6 +12,14 @@ $breakpoints: (
     lg: 1439px
 );
 
+$header-height: (
+    vs: 60px,
+    xs: 70px,
+    sm: 80px,
+    md: 100px,
+    lg: 120px,
+    vl: 120px
+);
 
 
 @mixin blockPadding {
@@ -71,8 +80,41 @@ $breakpoints: (
     }   
 }
 
+@mixin font-big-size-adaptive($base-size, $ratio) {
+    font-size: $base-size;
+    @media (max-width: map-get($breakpoints, lg)) {
+        font-size: calc($base-size / 1.1 / $ratio) ;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        font-size: calc($base-size / 1.2 / $ratio) ;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        font-size: calc($base-size / 1.4 / $ratio) ;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        font-size: calc($base-size / 1.6 / $ratio) ;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        font-size: calc($base-size / 1.7 / $ratio) ;
+    }   
+}
 
 
+html, body, #app, #root {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body.lock {
+    overflow: hidden;
+}
 
 
 * {
@@ -80,6 +122,7 @@ $breakpoints: (
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
+    transition: all 0.3s ease 0s;
 }
 
 a {
@@ -94,7 +137,7 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font-size: 24px;
+    @include font-size-adaptive(24px)
 }
 
 h1, h2, h3 {
@@ -131,6 +174,7 @@ h4 {
 ul, li {
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 
