@@ -5,6 +5,7 @@ import './styles.scss'
 import Cover from './components/Cover'
 import TextWord from './components/TextWord'
 import CardsBlock from './components/CardsBlock'
+import TextOneImage from './components/TextOneImage'
 
 const textWord = {
   text: 'Плато Путорана — одно из самых удивительных мест России и объект Всемирного наследия ЮНЕСКО. Край бездонных каньонов, уникальных гор без вершин и тысячи озер. Здесь бурные реки, срываясь со скал, образуют высочайшие в России водопады. Здесь нет дорог, и не ходят поезда. Побывать в этих труднодоступных местах посчастливилось совсем небольшому числу людей. Но чем сложнее добраться, тем сильнее восторг от покорения!',
@@ -87,6 +88,7 @@ const Main = () => {
       <Cover />
       <TextWord text = {textWord.text} word = {textWord.word} />
       <CardsBlock tours = {tours}/>
+      <TextOneImage />
       <Footer />
     </div>
   )
