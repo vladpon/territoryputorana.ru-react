@@ -1,9 +1,28 @@
 @import '../../const';
 
 
+@mixin footerPadding {
+    padding: 50px 100px;
+    @media (max-width: map-get($breakpoints, lg)) {
+        padding: 50px 75px;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        padding: 40px 35px;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        padding: 30px 25px;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        padding: 20px;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        padding: 15px;
+    }    
+}
+
 .footer {
     width: 100%;
-    @include blockPadding;
+    @include footerPadding;
     background-color: $main-blue;
     @include space-btw(row);
 
@@ -12,24 +31,39 @@
         align-items: center;
 
         & img {
-            height: 120px;
-            width: 120px;
+            height: 100px;
+            width: 100px;
             margin-left: 30px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
             @media (max-width: map-get($breakpoints, lg)) {
-                @include footer-img-params(110px)
+                @include footer-img-params(90px)
             }
             @media (max-width: map-get($breakpoints, md)) {
-                @include footer-img-params(80px)
+                @include footer-img-params(75px);
+                padding: 8px;
             }
             @media (max-width: map-get($breakpoints, sm)) {
-                @include footer-img-params(50px)
+                @include footer-img-params(50px);
+                padding: 5px;
             }
             @media (max-width: map-get($breakpoints, xs)) {
-                @include footer-img-params(40px)
+                @include footer-img-params(35px)
             }
             @media (max-width: map-get($breakpoints, vs)) {
                 @include footer-img-params(35px)
-            }    
+            }                          
+        }
+
+        & .footer__logo:first-child img:hover {
+            background-color: rgb(240, 125, 25);
+        }
+        & .footer__logo:nth-child(2) img:hover {
+            background-color: rgb(30, 80, 150);
+        }
+        & .footer__logo:nth-child(3) img:hover {
+            background-color: rgb(0, 150, 220);
         }
     }
 
