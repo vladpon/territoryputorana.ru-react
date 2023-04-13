@@ -2,6 +2,9 @@ $main-blue: #4d95be;
 $white: #fff;
 $black: #000;
 
+$primary-background-color: #fefefe;
+$secondary-background-color: #eee;
+
 
 
 $breakpoints: (    
@@ -22,22 +25,91 @@ $header-height: (
 );
 
 
-@mixin blockPadding {
-    padding: 100px;
+@mixin blockVPadding {
+    padding-top: 100px;
+    padding-bottom: 100px;
     @media (max-width: map-get($breakpoints, lg)) {
-        padding: 65px;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
     @media (max-width: map-get($breakpoints, md)) {
-        padding: 45px;
+        padding-top: 65px;
+        padding-bottom: 65px;
     }
     @media (max-width: map-get($breakpoints, sm)) {
-        padding: 25px;
+        padding-top: 47px;
+        padding-bottom: 47px;
     }
     @media (max-width: map-get($breakpoints, xs)) {
-        padding: 20px;
+        padding-top: 35px;
+        padding-bottom: 35px;
     }
     @media (max-width: map-get($breakpoints, vs)) {
-        padding: 15px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }    
+}
+
+@mixin blockHPadding {
+    padding-left: 270px;
+    padding-right: 270px;
+    @media (max-width: map-get($breakpoints, lg)) {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        padding-left: 18px;
+        padding-right: 18px;
+    }    
+}
+
+@mixin blockMaxWidth {
+    max-width: 1280px;
+    @media (max-width: map-get($breakpoints, lg)) {
+        max-width: 920px;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        max-width: 700px;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        max-width: 400px;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        max-width: 350px;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        max-width: 315px;
+    }    
+}
+
+@mixin blockInternalMarginTop {
+    margin-top: 75px;
+    @media (max-width: map-get($breakpoints, lg)) {
+        margin-top: 60px;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        margin-top: 50px;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        margin-top: 35px;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        margin-top: 25px;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        margin-top: 15px;
     }    
 }
 
@@ -149,9 +221,9 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 75px;
+    @include font-big-size-adaptive(75px, 1.18);
     font-weight: 400;
-    margin-block-start: 0.3em;
+    margin-block-start: 0;
     margin-block-end: 0.3em;
 }
 

@@ -3,9 +3,7 @@
 
 .cover {
     width: 100%;
-    height: 100%;
-    top: 0;
-
+    height: 100vh;
 
     & .cover__bg {
         position: absolute;
@@ -19,8 +17,6 @@
             height: 100%;
 
         }
-
-
 
         & .vid {
             width: 100%;
@@ -84,8 +80,10 @@
 
 .text-word {
     width: 100%;
-    position: relative;
-    @include blockPadding;
+    position: relative; 
+    @include blockVPadding;
+    @include blockHPadding;
+    background-color: $secondary-background-color;
 
     &__text {
         width: 70%;
@@ -93,6 +91,8 @@
 
         & p {
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
     }
 
@@ -100,21 +100,33 @@
         position: absolute;
         right: 19%;
         bottom: 23%;
-        z-index: -2;
+        z-index: 1;
         
         & span {
             @include font-big-size-adaptive(150px, 1.53);
-            color: #cecece;
+            color: rgb(207, 207, 207, 0);
+            transition: color 1s ease;
+            @media (max-width: map-get($breakpoints, sm)) {
+                color: rgb(207, 207, 207, 1);
+            }
+        }
+    }
+    &:hover {
+        .text-word__word span {
+            color: rgb(207, 207, 207, 1);
         }
     }
 }
 
 
+
 .cards-block {
-    height: 100%;
-    @include space-btw(column);
+    background-color: $primary-background-color;
+    @include space-btw(column); 
+    @include blockVPadding;
+    @include blockMaxWidth;
+    margin: 0 auto;
     z-index: 0;
-    @include blockPadding;
 
     &__title {
         width: 100%;
@@ -126,23 +138,28 @@
             & span {
                 font-weight: 750;
             }
+            margin-bottom: 0.2em;
+        }
+
+        & p {
+            margin-bottom: 0;
         }
     }
 
-    &__card-container {
-        width: 100%;
-        height: 800px;
-        margin-top: 75px;        
+    &__card-container {        
+        @include blockInternalMarginTop;       
         z-index: 1;
     }
 
     &__link {
         width: 100%;
-        padding-top: 40px;
+        height: 100%;
         text-align: center;
 
         a {
-            font-size: 24px;
+            display: block;
+            @include font-size-adaptive(24px);
+            padding: 2em;
             color: #929292;
             text-decoration: none;
         }
@@ -153,11 +170,37 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    width: 100%;  
+    
+    @media (max-width: map-get($breakpoints, sm)) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        display: flex;
+        flex-direction: column;        
+    }   
 
     &__card {
         position: relative;
         cursor: pointer;
         overflow: hidden;
+        height: 400px;
+
+        @media (max-width: map-get($breakpoints, lg)) {
+            height: 350px;
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            height: 250px;
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            height: 200px;
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            height: 180px;
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            height: 150px;;
+        }   
 
         &:hover {
 
@@ -187,7 +230,7 @@
         img {
             width: 100%;
             height: 100%;
-            background-size: cover;
+            object-fit: cover;
         }
     }
 
@@ -197,14 +240,26 @@
         background-color: rgba(100, 100, 100, 0.3);
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-        justify-content: space-between;
+        @include space-btw(column);        
         color: #fff;
         transition: all 0.3s ease;
-        /* transition: box-shadow 0.4s ease; */
         box-shadow: #ffffff 4px 4px 4px;
+        padding: 40px;
+        @media (max-width: map-get($breakpoints, lg)) {
+            padding: 30px;
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            padding: 20px;
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            padding: 10px;
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            padding: 5px;
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            padding: 15px;
+        }  
     }
 
     &__top-text {
@@ -212,44 +267,22 @@
     }
     &__season {
         text-transform: uppercase;
-        font-size: 20px;
+        @include font-size-adaptive(20px);
         letter-spacing: 0.2em;
     }
     &__title {
-        font-size: 30px;
+        @include font-size-adaptive(30px);
         font-weight: 600;
     }
     &__bottom-text {
         align-self: flex-end;
     }
     &__days {
-        font-size: 20px;
+        @include font-size-adaptive(20px);
         letter-spacing: 0.05em;
     }
     &__price {
-        font-size: 20px;
+        @include font-size-adaptive(20px);
         font-weight: 600;
     }
-}
-
-
-.card-container__card {
-}
-.card-container__bg {
-}
-.card-container__text-container {
-}
-.card-container__top-text {
-}
-.card-container__season {
-}
-.card-container__title {
-}
-.card-container__bottom-text {
-}
-.card-container__days {
-}
-.card-container__price {
-}
-.cards-block__link {
 }
