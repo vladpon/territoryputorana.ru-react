@@ -1,28 +1,27 @@
 import React from 'react'
 
-const TextOneImage = () => {
-  return (
-    <div className='bg-container'>
-        <div className="txt-oimg">
-            <div className="txt-oimg__text-block">
-                <div className="txt-oimg__title">
-                    <h2>Территория Путорана</h2>
-                    <h3>Покори Север с нами!</h3>
+
+
+const TextOneImage = (props) => {
+    const { textOneImage } = props
+    return (
+        <div className='bg-container'>
+            <div className="txt-oimg">
+                <div className="txt-oimg__text-block">
+                    <div className="txt-oimg__title">
+                        <h2>{textOneImage.title_h2}</h2>
+                        <h3>{textOneImage.title_h3}</h3>
+                    </div>
+                    <div className="txt-oimg__text">
+                        {textOneImage.text.map( (p, index) => <p key = {index}>{p}</p>)}
+                    </div>
                 </div>
-                <div className="txt-oimg__text">
-                    <p>Более 10 лет мы занимаемся развитием туризма на плато Путорана. Это наше любимое дело, увлечение и постоянные открытия! Все члены нашей команды родились и выросли на Таймыре, и мы знаем, чем удивить самого искушенного путешественника. Мы покажем вам самые известные достопримечательности и места, где практически не ступала нога человека.</p>
-                    <p>Каждый сезон наша команда разрабатывает новые зимние и летние маршруты, уделяя особое внимание вопросам комфорта и безопасности туристов. Мы лично проходим намеченные маршруты, поэтому уверены в них, и с удовольствием рекомендуем своим гостям.</p>
-                    <p>Наше цель – создать для вас настоящее приключение, которое подарит самые яркие эмоции и запомнится надолго.</p>
-                    <p>Антон Лысов</p>
-                    <p>Основатель и руководитель компании «Территория Путорана»</p>
+                <div className="txt-oimg__img">
+                    <img src={textOneImage.img} />
                 </div>
-            </div>
-            <div className="txt-oimg__img">
-                <img src="./img/lysov.jpg" />
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default TextOneImage

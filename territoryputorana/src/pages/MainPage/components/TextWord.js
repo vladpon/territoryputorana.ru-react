@@ -7,9 +7,9 @@ const TextWord = (props) => {
 
 
   return (
-    <div class="text-word">
-            <div class="text-word__word"><span>{word}</span></div>
-            <div class="text-word__text"><p>{text}</p></div>
+    <div className="text-word">
+            <div className="text-word__word"><span>{word}</span></div>
+            <div className="text-word__text"><p>{text}</p></div>
     </div>
   )
 }

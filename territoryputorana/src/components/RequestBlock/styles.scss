@@ -1,0 +1,100 @@
+@import '../../const';
+
+
+.req-block {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    @include blockHPadding;
+    @include blockVPadding;
+    @include space-btw(row);
+
+    @media (max-width: map-get($breakpoints, sm)) {
+        flex-direction: column;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: blur(0px);
+        transition: all 0.8s ease;
+        background-position: center bottom;
+        background-size: cover;
+    }    
+
+    &:hover::before {
+        filter: blur(2px);
+    }
+
+    &__text {
+        width: 60%;
+        color: #fff;
+        text-shadow: #444 2px 2px;
+        text-align: center;
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            width: 100%;
+        }
+
+        & h2 {
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        & h3 {
+            margin-block-end: 2em;
+        }
+    }
+
+    & form {
+        width: 35%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            width: 100%;
+        }
+
+        input {
+            margin-bottom: 2em;
+            padding: 5px;
+        }
+
+        textarea {
+            padding: 0.4em;
+            margin-bottom: 3em;
+        }
+
+        button {
+            position: relative;
+            background-color: $main-blue;
+            padding: 0.8em;
+            border: 0;
+            color: #fff;
+            box-shadow: 2px 2px 2px #000000;
+            @include font-size-adaptive(18px);
+            font-weight: 700;
+            transition: all 0.4s ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(165, 190, 215);
+                color: rgb(40, 65, 110);
+            }
+
+            &:active {
+                box-shadow: none;
+                top: 2px;
+                left: 2px;
+            }
+        }
+    }
+}
+

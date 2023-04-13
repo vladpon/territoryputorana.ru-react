@@ -15,7 +15,7 @@ const CardsBlock = (props) => {
                 {tours ? (
                     tours.map( (tour, index) => {
                         if (index < 6) return (
-                        <div className="card-container__card">
+                        <div className="card-container__card" key = {tour.id}>
                             <div className="card-container__bg">
                                 <img src={tour.smallImg}></img>
                             </div>
