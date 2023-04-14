@@ -6,7 +6,7 @@ const RequestBlock = (props) => {
     const styleString = '.req-block::before{background-image: url(' + backgroundImage + ');}'
 
   return (    
-    <div className = "req-block" >
+    <div className = "req-block">
         <div className = "req-block__text">
             <h2>Есть вопросы?</h2>
             <h3>Оставьте заявку и мы обязательно свяжемся с вами!</h3>

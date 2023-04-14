@@ -25,6 +25,9 @@ const tours = [
     bigImg: '',
     smallImg: './img/mp_lostput.jpg',
     optImg: '',
+    description: [
+      'Динамичный недельный тур с трекинговыми маршрутами к каньонам и водопадам, восхождением на вершину плато, водными прогулками и рыбалкой. Дополнительно вы можете заказать вертолетную экскурсию и посетить самые недоступные места, от которых захватывает дух. В свободное время вы будете отдыхать и восстанавливать силы на уединенной благоустроенной усадьбе на берегу живописного озера Лама.'
+      ],
     tourPhoto: []
   },
   {
@@ -113,7 +116,7 @@ const textFewImages = {
 const Main = () => {
   return (
     <div className='main-page'>
-      <Header headerBackgroundColor = 'rgba(100, 100, 100, 0.5)'/>
+      {/* <Header headerBackgroundColor = 'rgba(100, 100, 100, 0.5)'/> */}
       <Cover />
       <TextWord text = {textWord.text} word = {textWord.word} />
       <CardsBlock tours = {tours}/>
@@ -121,7 +124,6 @@ const Main = () => {
       <TextFewImages textFewImages = {textFewImages} />
       <TextOneImage2 />
       <RequestBlock backgroundImage = {'./img/main_opt.jpg'}/>
-      <Footer />
     </div>
   )
 }
