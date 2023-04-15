@@ -46,11 +46,11 @@ const Header = (props) => {
   
   const renderBurgerMenu = (MENU) => {
     return (
-      <div className='burger-menu'>
+      <div className='burger-menu' >
         <ul>
-        {MENU.map( (menuItem) => <li key={menuItem.id}>
-                                      <Link to = { menuItem.href } >{ menuItem.title } </Link>
-                                      {menuItem.items && (<ul>{menuItem.items.map( (subMenuItem) => <li key = {subMenuItem.id}><Link to = {subMenuItem.href}>{subMenuItem.title}</Link></li>)}</ul>)}
+        {MENU.map( (menuItem) => <li key={menuItem.id} >
+                                      <Link to = { menuItem.href } onClick={() => setMenuActive(false)}>{ menuItem.title } </Link>
+                                      {menuItem.items && (<ul>{menuItem.items.map( (subMenuItem) => <li key = {subMenuItem.id}><Link to = {subMenuItem.href} onClick={() => setMenuActive(false)}>{subMenuItem.title}</Link></li>)}</ul>)}
                                     </li> 
                                 )}                
         </ul>
@@ -58,25 +58,54 @@ const Header = (props) => {
     )
   }
 
+  
+ 
+
   useEffect( () => 
   {    
+    console.log('constrtuctor')
     const burger = document.querySelector('.header__burger');
     const burgerMenu = document.querySelector('.burger-menu');
-    const body = document.body;
+    const main = document.querySelector('main');
+    const body = document.body;    
 
-    if(menuActive) {      
+    const destructor = () => {
+      console.log('destructor')  
+      main.removeEventListener('click', clickHandler)
+    }
+
+    const clickHandler = () => {
+      console.log('click on main')
+      setMenuActive(false)
+    }
+
+    if(menuActive) {
+      console.log('menuActive true')
       burgerMenu.classList.add('active');
       body.classList.add('lock');
       burger.classList.add('active');
+      setTimeout(() => main.addEventListener('click', clickHandler), 500);
     } else {
+      console.log('menuActive false')
       burgerMenu.classList.remove('active');
       body.classList.remove('lock');
       burger.classList.remove('active');
     }
+    return destructor
+    
   }, [menuActive])
 
   useEffect( () => {
-    (location.pathname === '/') ? setPageClass('main-page') : setPageClass('other-page')
+    switch(location.pathname) {
+      case '/':
+        setPageClass('main-page')
+        break
+      case '/Lama3d':
+        setPageClass('tour3d')
+        break;
+      default:
+        setPageClass('other-page')
+    }  
   }, [location])
 
 
@@ -85,7 +114,7 @@ const Header = (props) => {
       <div className='header__body'>
 
         
-        <div className='header__burger' onClick={ () => menuActive ? setMenuActive(false) : setMenuActive(true) }>
+        <div className = {`header__burger ${pageClass}`} onClick={ () => menuActive ? setMenuActive(false) : setMenuActive(true) }>
           <span></span>
         </div>
         { renderMainMenu(MENU) }
@@ -99,7 +128,7 @@ const Header = (props) => {
           </div>                  
         </div>  
         <div className = {`header__home ${pageClass}`}>
-          <Link to = '/'>
+          <Link to = '/' onClick={() => setMenuActive(false)}>
               <img src='./img/home.png'></img>
             </Link>
           </div>      

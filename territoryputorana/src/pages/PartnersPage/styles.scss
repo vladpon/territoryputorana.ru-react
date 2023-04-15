@@ -2,7 +2,7 @@
 
 
 
-.tours-page {
+.partners-page {
     position: relative;
     background-color: $secondary-background-color;
     padding-top: map-get($header-height, vl);
@@ -33,6 +33,7 @@
 
         &__title {
             position: relative;
+            overflow: hidden;
 
             h1 {
                 position: relative;
@@ -41,7 +42,7 @@
                 z-index: 1;
 
                 &::after {
-                    content: 'ТУРЫ';
+                    content: 'партнеры';
                     position: absolute;
                     left: 0.4em;
                     top: -0.4em;

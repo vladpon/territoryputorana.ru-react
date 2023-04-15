@@ -1,7 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import BigCards from './components/BigCards'
 
@@ -12,8 +9,7 @@ import tours from '../../data/tours.json'
 
 const ToursPage = () => {
   return (
-    <div className='tours-page'>
-        {/* <Header headerLinkColor = {'#000'}/> */}
+    <main className='tours-page'>
         <div className = 'tours-page__content'>
             <MainLogo />
             <div className="tours-page__title">
@@ -22,7 +18,7 @@ const ToursPage = () => {
             </div>
             <BigCards content = {tours}/>
         </div>
-    </div>
+    </main>
   )
 }
 

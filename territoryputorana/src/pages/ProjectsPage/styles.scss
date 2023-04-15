@@ -2,7 +2,7 @@
 
 
 
-.tours-page {
+.projects-page {
     position: relative;
     background-color: $secondary-background-color;
     padding-top: map-get($header-height, vl);
@@ -41,7 +41,7 @@
                 z-index: 1;
 
                 &::after {
-                    content: 'ТУРЫ';
+                    content: 'проекты';
                     position: absolute;
                     left: 0.4em;
                     top: -0.4em;

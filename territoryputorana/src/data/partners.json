@@ -1,0 +1,72 @@
+[
+    {
+        "id": "001",
+        "title": "ЛАМА ТУР",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/prtnrs_lamatour.jpg",
+        "optImg": "",
+        "description": [
+            "Активные туры «всё включено».",
+            "Заброски из Норильска на плато Путорана на морских катерах"
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "+79554404149",
+            "email": "lama@lamatour.ru",
+            "site": "lama-tour.ru"
+        },
+        "files": [
+            {
+                "name": "Программа тура Обзорная экскурсия",
+                "src": "./pdf/Obzornaya.pdf"
+            },
+            {
+                "name": "Программа тура Долина 12 водопрадов р. Аякли",
+                "src": "./pdf/Ayakli_combo.pdf"
+            }
+        ]
+    },
+    {
+        "id": "002",
+        "title": "Клуб исследователей Таймыра",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/prtnrs_kit.jpg",
+        "optImg": "",
+        "description": [
+            "Спортивно-туристические походы <br>Познавательные и краеведческие экспедиции<br> Научная и издательская деятельность"
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "+73919423238",
+            "email": "kit-kroo@rambler.ru",
+            "site": "kit-norilsk.ru"
+        },
+        "files" : []
+    },
+    {
+        "id": "003",
+        "title": "Offroad Putorana",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/prtnrs_or.jpg",
+        "optImg": "",
+        "description": [
+            "Джип-туры на плато Путорана, сплавы на пакрафтах, палаточный лагерь, заброска туристов"
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "+79039180759",
+            "email": "ice-vovka@rambler.ru",
+            "site": ""
+        },
+        "files" : []
+    }
+]

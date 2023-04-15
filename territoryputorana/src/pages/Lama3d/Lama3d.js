@@ -4,10 +4,9 @@ import './styles.scss'
 
 const Lama3d = () => {
   return (
-    <div className='lama3d-page'>
-        <Header />
+    <main className='lama3d-page'>
         <iframe src='../../lama.html'></iframe>
-    </div>
+    </main>
   )
 }
 

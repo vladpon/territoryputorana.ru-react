@@ -115,7 +115,7 @@ const textFewImages = {
 
 const Main = () => {
   return (
-    <div className='main-page'>
+    <main className='main-page'>
       {/* <Header headerBackgroundColor = 'rgba(100, 100, 100, 0.5)'/> */}
       <Cover />
       <TextWord text = {textWord.text} word = {textWord.word} />
@@ -124,7 +124,7 @@ const Main = () => {
       <TextFewImages textFewImages = {textFewImages} />
       <TextOneImage2 />
       <RequestBlock backgroundImage = {'./img/main_opt.jpg'}/>
-    </div>
+    </main>
   )
 }
 

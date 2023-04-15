@@ -17,6 +17,9 @@ const BigCards = (props) => {
                                 <div className = "big-cards__description">
                                     <h3>{item.title}</h3>
                                     {item.description.map( (p, index) => <p key = {index}>{p}</p>)}
+                                    
+                                    {item.contacts.tel && (<p>Контакты<br />т.<a href={`tel:${item.contacts.tel}`}>{item.contacts.tel}</a></p>)}
+
                                     <div className="big-cards__info">
                                         <div className="big-cards__cost">
                                             <span>{item.price}</span>

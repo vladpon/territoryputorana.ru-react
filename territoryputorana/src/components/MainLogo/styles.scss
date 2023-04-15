@@ -1,10 +1,11 @@
 @import '../../const';
 
 .main-logo {
+        z-index: 2;
         width: 200px;
         height: 200px;
         position: absolute;
-        top: 3%;
+        top: 100px;
         right: 10%;
         background-image: radial-gradient(farthest-side at 50% 50%, $main-blue, $main-blue, rgba(255, 255, 255, 0.3));
         border-radius: 100%;
@@ -13,7 +14,6 @@
         @media (max-width: map-get($breakpoints, lg)) {
             width: 180px;
             height: 180px;
-            top: 4%;
         }
         @media (max-width: map-get($breakpoints, md)) {
             width: 165px;
