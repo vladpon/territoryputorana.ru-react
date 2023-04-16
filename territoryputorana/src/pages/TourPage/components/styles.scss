@@ -80,56 +80,203 @@
 
 
 
+
 .tp-about {
-    background-color: $secondary-background-color;
+    &__container {
+        background-color: $primary-background-color;
+        width: 100%;
+    }
+    
     width: 100%;
     @include blockMaxWidth;
     margin: 0 auto;
     @include blockVPadding;
     @include space-btw(row);
-}
-.tp-about h2 {
-    color: var(--blue);
-    margin-bottom: 40px;
-}
-.tp-about__main {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-}
-.tp-about__main p {
-    font-size: 24px;
-}
-.tp-about__main ul>li {
-    font-size: 24px;
-    margin-left: 2em;
-}
-.tp-about__hit {
-    line-height: 1.5;
-    padding: 45px 45px 45px 45px;
-    background-color: #d6d6d6;
-    width: 40%;
-    text-align: left;
-    transition: all 0.3s ease;
-}
-.tp-about__hit:hover {
-    background-color: #e4e3e3;
-    box-shadow: 2px 2px 2px #d6d6d6;
-}
-.tp-about__hit h2 {
-    text-align: center;
-}
-.tp-about__hit p {
-    font-size: 24px;
-}
-.tp-about__hit span {
-    line-height: 1.8;
+    align-items: center;
+
+    
+
+    h2 {
+        color: $main-blue;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+    }
+
+    &__hit {
+
+        padding: 2em;
+        background-color: #d6d6d6;
+        width: 40%;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        & h3 {
+            text-align: center;
+            color: $main-blue;
+            font-weight: 700;
+        }
+
+        & p {
+            line-height: 1.35;
+            & span {
+                @include font-size-adaptive(20px);                             
+            }
+            & span:first-child {
+                font-weight: 700;
+            }
+            margin-block-end: 0em;
+            
+        }
+
+        &:hover {
+            background-color: #e4e3e3;
+            box-shadow: 2px 2px 2px #d6d6d6;
+        }
+       
+    }
+
+    &__price {
+        @include font-size-adaptive(35px);
+    }
+
+    &__note {
+        font-style: italic;
+    }
+
+
+    @media (max-width: map-get($breakpoints, sm)) {
+        flex-direction: column;
+        &__main {
+            width: 100%;
+
+            & h2 {
+                text-align: center;
+            }
+
+            & p {
+                text-align: justify;
+            }
+        }
+
+        &__hit {
+            width: 100%;
+        }
+    }
 }
 
-.tp-about__hit span:last-child {
-    font-size: 22px;
-    font-style: italic;
+// .tp-about__main ul>li {
+//     font-size: 24px;
+//     margin-left: 2em;
+// }
+
+
+
+.tp-aux {
+    &__container {
+        width: 100%;
+        background-color: $main-blue;
+        @include blockHPadding;
+        @include blockVPadding;
+    }
+
+    & h2 {
+        color: lighten($main-blue, 45%);
+        text-align: center;
+    }
+
+    & p {
+        text-align: justify;
+        color: lighten($main-blue, 45%);
+
+        & a {
+            text-decoration: underline;
+            color: lighten($main-blue, 45%);
+        }
+    }
 }
-.tp-about__price {
-    font-size: 48px;
+
+
+.tp-program {
+
+    &__container {
+        background-color: $primary-background-color;
+    }
+
+    @include blockMaxWidth;
+    @include blockVPadding;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & h4 {
+        margin-block-end: 3em;
+    }
+
+    & > p {
+        font-weight: 500;
+        width: 50%;
+        border-right: 5px solid $main-blue;
+        align-self: flex-end;
+        text-align: right;
+        padding-right: 1.7em;
+    }
+
+    &__day {
+        @include blockVPadding;
+        @include space-btw(row);
+        width: 100%;
+        height: max-content;
+
+        
+    }
+
+    &__text {
+        width: 54%;
+        height: 100%;
+
+        & p {
+            text-align: justify;
+        }
+
+        & h3 {
+            margin-block-end: 1.5em;
+        }
+    }
+
+    &__img {
+        width: 44%;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+
+    @media (max-width: map-get($breakpoints, md)) {
+        &__day {flex-direction: column-reverse;}
+        &__img {width: 100%;}
+        &__text {
+            width: 100%;
+            & h3 {
+                margin-block-start: 1.5em;
+            }
+        }
+    }
 }
+
+
+// .tp-program__text ul {
+//     margin: 35px 0px 35px 0px;
+// }
+// .tp-program__text ul li {
+//     font-size: 22px;
+//     margin-left: 2em;
+// }

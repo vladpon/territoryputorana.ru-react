@@ -84,15 +84,18 @@
     @include blockVPadding;
     @include blockHPadding;
     background-color: $secondary-background-color;
+    // background-color: $main-blue;
 
     &__text {
         width: 70%;
         margin: 0 auto;
 
         & p {
+            // color: #fff;
             text-align: center;
             position: relative;
             z-index: 2;
+            // font-weight: 500;
         }
     }
 
@@ -105,15 +108,20 @@
         & span {
             @include font-big-size-adaptive(150px, 1.53);
             color: rgb(207, 207, 207, 0);
+            // color: darken(#4d95be, 10%);
+            // opacity: 0;
             transition: color 1s ease;
             @media (max-width: map-get($breakpoints, sm)) {
                 color: rgb(207, 207, 207, 1);
+                // color: darken(#4d95be, 10%);
+                opacity: 1;
             }
         }
     }
     &:hover {
         .text-word__word span {
             color: rgb(207, 207, 207, 1);
+            // opacity: (1);
         }
         .text-word__text p {
             transform: scale(1.1);
@@ -216,7 +224,7 @@
                 box-shadow: #949494 4px 4px 4px;
                 text-shadow: #000000 1px 1px 1px;
             }
-            
+
             .card-container__bg {
                 transform: scale(1.05);
             }
@@ -297,6 +305,7 @@
 
 .bg-container {
     background-color: $secondary-background-color;
+    // background-color: $main-blue;
 }
 .txt-oimg {
     width: 100%;
@@ -313,14 +322,19 @@
     }
 
     &__title {
+        & h2 {
+            // color: #fff;
+        }
         text-align: center;
         & h3 {
+            // color: #fff;
             margin-block-end: 1.5em;
         }
     }
 
     &__text {
         p {
+            // color: #fff;
             text-align: justify;
             padding-right: 2em;
         }
@@ -436,8 +450,12 @@
     &__title {
         text-align: center;
         align-self: center; 
+        & h2 {
+            // color: #fff;
+        }
 
-        h3 {
+        & h3 {
+            // color: #fff;
             margin-block-end: 1.5em
         }
     }
@@ -451,6 +469,7 @@
         }
 
         p {
+            // color: #fff;
             font-weight: 400;
             text-align: justify;
             width: 45%;
