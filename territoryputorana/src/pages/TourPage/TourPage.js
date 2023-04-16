@@ -5,6 +5,7 @@ import TourPageCover from './components/TourPageCover'
 import TourPageAbout from './components/TourPageAbout'
 import TourPageAux from './components/TourPageAux'
 import TourPageProgram from './components/TourPageProgram'
+import TourPageAccmmdtn from './components/TourPageAccmmdtn'
 
 const TourPage = () => {
   return (
@@ -13,6 +14,7 @@ const TourPage = () => {
         <TourPageAbout />
         <TourPageAux />
         <TourPageProgram />
+        <TourPageAccmmdtn />
     </main>
   )
 }

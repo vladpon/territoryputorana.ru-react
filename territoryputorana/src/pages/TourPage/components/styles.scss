@@ -269,6 +269,13 @@
                 margin-block-start: 1.5em;
             }
         }
+        & h2 {text-align: center;}
+        & h4 {text-align: center;}
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        & > p {
+            width: 100%;
+        }
     }
 }
 
@@ -280,3 +287,25 @@
 //     font-size: 22px;
 //     margin-left: 2em;
 // }
+
+
+
+.tp-accmmdtn {
+    width: 100%;
+    background-color: $secondary-background-color;
+    @include blockHPadding;
+    @include blockVPadding;
+    line-height: 1.6;
+
+    &__title {
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    & > ul > li {
+        list-style-image: url('./check.svg');
+        @include font-size-adaptive(24px);
+    }
+    & > ul > li::marker{font-size: 1.6em;}
+}
