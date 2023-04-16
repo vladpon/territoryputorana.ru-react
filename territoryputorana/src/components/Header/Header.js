@@ -71,7 +71,7 @@ const Header = (props) => {
 
     const destructor = () => {
       console.log('destructor')  
-      main.removeEventListener('click', clickHandler)
+      main && main.removeEventListener('click', clickHandler)
     }
 
     const clickHandler = () => {
@@ -84,7 +84,7 @@ const Header = (props) => {
       burgerMenu.classList.add('active');
       body.classList.add('lock');
       burger.classList.add('active');
-      setTimeout(() => main.addEventListener('click', clickHandler), 500);
+      setTimeout(() => main && main.addEventListener('click', clickHandler), 500);
     } else {
       console.log('menuActive false')
       burgerMenu.classList.remove('active');
@@ -102,6 +102,9 @@ const Header = (props) => {
         break
       case '/Lama3d':
         setPageClass('tour3d')
+        break;
+      case '/tourpage':
+        setPageClass('tour-page-class')
         break;
       default:
         setPageClass('other-page')

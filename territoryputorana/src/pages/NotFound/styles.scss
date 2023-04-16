@@ -1,0 +1,32 @@
+@import '../../_const.scss';
+
+.notfound-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    & > h1 {
+        color: white;
+        text-align: center;
+        width: 80%;
+
+        & > i {
+            color: $main-blue;
+        }
+
+    }
+
+}

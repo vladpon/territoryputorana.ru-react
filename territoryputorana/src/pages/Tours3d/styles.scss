@@ -2,7 +2,7 @@
 
 
 
-.partners-page {
+.tours3d-page {
     position: relative;
     background-color: $secondary-background-color;
     padding-top: map-get($header-height, vl);
@@ -33,21 +33,18 @@
 
         &__title {
             position: relative;
-            overflow: hidden;
 
             h1 {
                 position: relative;
                 text-transform: uppercase;
                 font-weight: 500;
                 z-index: 1;
-                height: 1.5em;
-                display: flex;
-                align-items: flex-end;
 
                 &::after {
-                    content: 'партнеры';
+                    content: '3D туры';
                     position: absolute;
                     left: 0.4em;
+                    top: -0.4em;
                     @include font-size-adaptive(105px);
                     text-transform: uppercase;
                     font-weight: 700;

@@ -20,11 +20,10 @@
         border: 1px solid rgb(189, 189, 189);
         border-radius: 4px;
         border-left: none;
-        border-right: none;        
+        border-right: none;
         cursor: pointer;
         background-color: $primary-background-color;
         transition: background-color 0.7s ease;
-
 
         display: flex;
         flex-direction: row;
@@ -111,6 +110,13 @@
             height: 100%;
             width: 100%;
             vertical-align: middle;
+        }
+        
+        &_partners img {
+            object-fit: contain;
+        }
+
+        &_other  img {
             object-fit: cover;
         }
     }
@@ -128,6 +134,12 @@
             width: 100%;
             font-weight: 500;
             line-height: 1.4em; 
+        }
+
+        a {
+            &:hover {
+                color: $main-blue;
+            }
         }
     }
 

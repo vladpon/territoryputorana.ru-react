@@ -1,0 +1,135 @@
+@import '../../../const';
+
+
+
+
+.tp-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @include blockHPadding;
+    
+
+    &:hover {
+        .tp-cover__bg {
+            filter: brightness(0.65);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(0.4);
+        transition: filter 0.7s ease;
+    }
+
+    &__text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;        
+        align-items: center;
+
+        & h1 {
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-block-end: 2em;
+        }        
+    }
+
+    &__opt-block {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;        
+    }
+
+    &__opt-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @include font-size-adaptive(26px);
+        & span {
+            font-weight: 600;
+            color: #fff;            
+            text-transform: uppercase;
+        }
+
+        & img {
+            align-self: baseline;
+            filter: invert(1);
+            height: 2em;
+            width: 2em;
+            margin-right: 2em;
+        }
+    }
+    
+}
+
+
+
+
+.tp-about {
+    background-color: $secondary-background-color;
+    width: 100%;
+    @include blockMaxWidth;
+    margin: 0 auto;
+    @include blockVPadding;
+    @include space-btw(row);
+}
+.tp-about h2 {
+    color: var(--blue);
+    margin-bottom: 40px;
+}
+.tp-about__main {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.tp-about__main p {
+    font-size: 24px;
+}
+.tp-about__main ul>li {
+    font-size: 24px;
+    margin-left: 2em;
+}
+.tp-about__hit {
+    line-height: 1.5;
+    padding: 45px 45px 45px 45px;
+    background-color: #d6d6d6;
+    width: 40%;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+.tp-about__hit:hover {
+    background-color: #e4e3e3;
+    box-shadow: 2px 2px 2px #d6d6d6;
+}
+.tp-about__hit h2 {
+    text-align: center;
+}
+.tp-about__hit p {
+    font-size: 24px;
+}
+.tp-about__hit span {
+    line-height: 1.8;
+}
+
+.tp-about__hit span:last-child {
+    font-size: 22px;
+    font-style: italic;
+}
+.tp-about__price {
+    font-size: 48px;
+}

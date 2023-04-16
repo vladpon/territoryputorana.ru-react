@@ -16,18 +16,10 @@
         "contacts": {
             "tel": "+79554404149",
             "email": "lama@lamatour.ru",
-            "site": "lama-tour.ru"
+            "site": "https://lama-tour.ru"
         },
-        "files": [
-            {
-                "name": "Программа тура Обзорная экскурсия",
-                "src": "./pdf/Obzornaya.pdf"
-            },
-            {
-                "name": "Программа тура Долина 12 водопрадов р. Аякли",
-                "src": "./pdf/Ayakli_combo.pdf"
-            }
-        ]
+        "files": [],
+        "href" : ""
     },
     {
         "id": "002",
@@ -39,15 +31,16 @@
         "smallImg": "./img/prtnrs_kit.jpg",
         "optImg": "",
         "description": [
-            "Спортивно-туристические походы <br>Познавательные и краеведческие экспедиции<br> Научная и издательская деятельность"
+            "Спортивно-туристические походы. Познавательные и краеведческие экспедиции. Научная и издательская деятельность"
             ],
         "tourPhoto": [],
         "contacts": {
             "tel": "+73919423238",
             "email": "kit-kroo@rambler.ru",
-            "site": "kit-norilsk.ru"
+            "site": "https://kit-norilsk.ru"
         },
-        "files" : []
+        "files" : [],
+        "href": ""
     },
     {
         "id": "003",
@@ -67,6 +60,16 @@
             "email": "ice-vovka@rambler.ru",
             "site": ""
         },
-        "files" : []
+        "files" : [
+            {
+            "name": "Программа тура Обзорная экскурсия",
+            "src": "./img/Obzornaya.pdf"
+            },
+            {
+            "name": "Программа тура Долина 12 водопрадов р. Аякли",
+            "src": "./img/Ayakli_combo.pdf"
+            }
+        ],
+        "href": "" 
     }
 ]

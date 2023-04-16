@@ -5,6 +5,7 @@ $submenu-background-color: rgba(255, 255, 255, 0.85);
 $main-page-menu-link-color: #fff;
 $other-page-menu-link-color: #000;
 $main-page-header-background-color: rgba(100, 100, 100, 0.5);
+$tour-page-header-background-color: rgba(200, 200, 200, 0.1);
 
 .header {
     padding: 0 80px;
@@ -31,6 +32,10 @@ $main-page-header-background-color: rgba(100, 100, 100, 0.5);
 
     &.main-page {
         background-color: $main-page-header-background-color;
+    }
+
+    &.tour-page-class {
+        background-color: $tour-page-header-background-color
     }
 
     &__body {
@@ -264,6 +269,13 @@ $main-page-header-background-color: rgba(100, 100, 100, 0.5);
                 background-color: $other-page-menu-link-color;
             }
         }
+        
+        &.tour-page-class {
+            color: $main-page-menu-link-color;
+            &::after {
+                background-color: $main-page-menu-link-color;
+            }
+        }
 
         &:hover::after{
             width: 100%;
@@ -306,10 +318,13 @@ $main-page-header-background-color: rgba(100, 100, 100, 0.5);
         & a {
             color: #000000;
             font-weight: 450;
+            &:hover {
+                color: $main-blue;
+            }
         }
 
         &:hover {
-            background-color: lighten($color: $submenu-background-color, $amount: 30%);
+            background-color: lighten($color: $submenu-background-color, $amount: 30%);           
         }
     }
 

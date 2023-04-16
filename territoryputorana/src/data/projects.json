@@ -17,7 +17,8 @@
             "email": "",
             "site": ""
         },
-        "files" : []
+        "files" : [],
+        "href" : "/sr"
     },
     {
         "id": "002",
@@ -37,7 +38,8 @@
             "email": "",
             "site": ""
         },
-        "files" : []
+        "files" : [],
+        "href" : "/lamaproj"
     },
     {
         "id": "003",
@@ -58,6 +60,7 @@
             "email": "",
             "site": ""
         },
-        "files" : []
+        "files" : [],
+        "href" : "arctic"
     }
 ]
