@@ -1,6 +1,8 @@
 import React from 'react'
+import './styles.scss'
 
-const TourPageAccmmdtn = () => {
+const TourPageAccmmdtn = (props) => {
+  const {} = props.tour
   return (
     <div className = "tp-accmmdtn">
             <h2 className = "tp-accmmdtn__title">Проживание</h2>
@@ -12,7 +14,7 @@ const TourPageAccmmdtn = () => {
                 <li>Спутниковое телевидение, телефон и интернет</li>
                 <li>Снаряжение для сапбординга, пакрафтинга, рыбалки</li>
             </ul>
-        </div>
+      </div>
   )
 }
 

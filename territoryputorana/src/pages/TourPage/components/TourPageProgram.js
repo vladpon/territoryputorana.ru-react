@@ -15,7 +15,7 @@ const TourPageProgram = (props) => {
                                 {day.dayDesc && day.dayDesc.map( (p, index) => <p key = {index}>{p}</p>)}
                             </div>
                             <div className="tp-program__img">
-                                <img src="./img/lostput_001.jpg" />
+                                <img src={day.dayImg} />
                             </div>
                         </div>   
             })}             

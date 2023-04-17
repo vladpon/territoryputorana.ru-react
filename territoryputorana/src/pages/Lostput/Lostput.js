@@ -1,16 +1,17 @@
 import React from 'react'
 
-import './styles.scss'
-import TourPageCover from './components/TourPageCover'
-import TourPageAbout from './components/TourPageAbout'
-import TourPageAux from './components/TourPageAux'
-import TourPageProgram from './components/TourPageProgram'
-import TourPageAccmmdtn from './components/TourPageAccmmdtn'
-import PhotoBlock from './components/PhotoBlock'
+import '../TourPage/styles.scss'
+import TourPageCover from '../TourPage/components/TourPageCover'
+import TourPageAbout from '../TourPage/components/TourPageAbout'
+import TourPageAux from '../TourPage/components/TourPageAux'
+import TourPageProgram from '../TourPage/components/TourPageProgram'
+import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
+import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
 
 import tours from '../../data/tours.json'
+import MainLogo from '../../components/MainLogo/MainLogo'
 
 const tour = tours[0]
 
@@ -35,6 +36,7 @@ const txtTitle = {
 const TourPage = () => {
   return (
     <main className='tour-page'>
+        <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>
         <TourPageAux/>

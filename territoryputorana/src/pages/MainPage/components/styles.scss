@@ -501,6 +501,9 @@
     @include blockHPadding;
     @include blockVPadding;
     background-color: $secondary-background-color;
+    &.light-back {
+        background-color: $primary-background-color;
+    }
     display: flex;
     flex-direction: column;
     align-items: flex-end;

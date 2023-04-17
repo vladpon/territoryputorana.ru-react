@@ -106,6 +106,18 @@ const Header = (props) => {
       case '/tourpage':
         setPageClass('tour-page-class')
         break;
+      case '/about':
+        setPageClass('tour-page-class')
+        break;
+      case '/lostput':
+        setPageClass('tour-page-class')
+        break;
+      case '/weekend':
+        setPageClass('tour-page-class')
+        break;
+      case '/camping':
+        setPageClass('tour-page-class')
+        break;
       default:
         setPageClass('other-page')
     }  
