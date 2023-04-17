@@ -10,6 +10,9 @@ import PhotoBlock from './components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
 
+import tours from '../../data/tours.json'
+
+const tour = tours[0]
 
 const photos = [
   { src: "./img/tr_ph01.jpg"},
@@ -32,10 +35,10 @@ const txtTitle = {
 const TourPage = () => {
   return (
     <main className='tour-page'>
-        <TourPageCover />
-        <TourPageAbout />
-        <TourPageAux />
-        <TourPageProgram />
+        <TourPageCover tour = {tour}/>
+        <TourPageAbout tour = {tour}/>
+        <TourPageAux/>
+        <TourPageProgram tour = {tour}/>
         <TourPageAccmmdtn />
         <PhotoBlock photos = {photos}/>
         <TextTitle txtTitle = {txtTitle} />

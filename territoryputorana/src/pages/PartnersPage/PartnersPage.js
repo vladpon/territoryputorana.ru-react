@@ -11,7 +11,6 @@ const PartnersPage = () => {
   return (
     <main className='partners-page'>
         <div className = 'partners-page__content'>
-            <MainLogo />
             <div className="partners-page__title">
                 <h1>Партнеры</h1>
                 <h3>Территории Путорана</h3>

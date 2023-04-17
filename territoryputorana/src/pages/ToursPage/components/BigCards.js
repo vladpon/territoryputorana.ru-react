@@ -30,7 +30,7 @@ const BigCards = (props) => {
                                     {item.contacts.tel && (<>Контакты<br />т. <a href={`tel:${item.contacts.tel}`}>{item.contacts.tel}</a></>)}
                                     {item.contacts.email && (<><br />e-mail: <a href={`mailto:${item.contacts.email}`}>{item.contacts.email}</a></>)}
                                     {item.contacts.site && (<><br /><a href={`${item.contacts.site}`}>{item.contacts.site}</a></>)}
-                                    {item.files && item.files.map( (file, index) => (<a key = {index} href={`${file.src}`} style={{textDecoration: "underline"}} >{file.name}</a>))}
+                                    {item.files && item.files.map( (file, index) => (<a className = 'big-cards__filelink' key = {index} href={`${file.src}`} style={{textDecoration: "underline"}} >{file.name}</a>))}
                                     </p>                            
                                     <div className="big-cards__info">
                                         <div className="big-cards__cost">
