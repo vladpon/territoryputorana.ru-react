@@ -1,9 +1,13 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const CardsBlock = (props) => {
     const { tours } = props;
+    const navigate = useNavigate();
+
+
   return (
     <div className="cards-block">
             <div className="cards-block__title">
@@ -15,11 +19,11 @@ const CardsBlock = (props) => {
                 {tours ? (
                     tours.map( (tour, index) => {
                         if (index < 6) return (
-                        <div className="card-container__card" key = {tour.id}>
+                        <div className="card-container__card" key = {tour.id} onClick = {() => navigate(tour.href)} >
                             <div className="card-container__bg">
                                 <img src={tour.smallImg}></img>
                             </div>
-                            <div className="card-container__text-container">
+                            <div className="card-container__text-container" >
                                 <div className="card-container__top-text">
                                     <div className="card-container__season">{tour.season}</div>
                                     <div className="card-container__title">{tour.title}</div>
@@ -37,7 +41,7 @@ const CardsBlock = (props) => {
                 
                 
             </div>
-            <div className="cards-block__link"><a href="./tours.html"> Перейти в каталог туров </a></div>
+            <div className="cards-block__link"><Link to = '/tours'> Перейти в каталог туров </Link></div>
         </div>
   )
 }

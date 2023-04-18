@@ -118,6 +118,9 @@ const Header = (props) => {
       case '/camping':
         setPageClass('tour-page-class')
         break;
+      case '/skitour':
+        setPageClass('tour-page-class')
+        break;
       default:
         setPageClass('other-page')
     }  

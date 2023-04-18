@@ -9,6 +9,7 @@ import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
+import { ScrollRestoration } from 'react-router-dom'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
@@ -44,7 +45,7 @@ const TourPage = () => {
         <TourPageAccmmdtn tour = {tour}/>
         <PhotoBlock photos = {photos}/>
         <TextTitle txtTitle = {txtTitle} />
-        <RequestBlock backgroundImage = {'./img/lostput_req.jpg'} />
+        <RequestBlock backgroundImage = {'./img/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )
 }

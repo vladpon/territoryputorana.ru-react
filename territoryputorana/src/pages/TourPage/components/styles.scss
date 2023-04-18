@@ -196,6 +196,19 @@
             color: lighten($main-blue, 45%);
         }
     }
+
+
+
+    & > ul {
+        margin-block-start: 2em;
+
+        & > li {
+            list-style-type: circle;
+            color: #fff;
+            @include font-size-adaptive(24px);
+            line-height: 1.4;
+        }
+    }
 }
 
 

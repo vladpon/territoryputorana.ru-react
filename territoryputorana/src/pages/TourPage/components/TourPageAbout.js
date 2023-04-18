@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TourPageAbout = (props) => {
-    const {about, yearTime, groupSize, time, accmdtnShort, difficultyLevel, price} = props.tour
+    const {about, yearTime, groupSize, time, accmdtnShort, difficultyLevel, price, aboutH3} = props.tour
   return (
     <div className = "tp-about__container">
         <div className='tp-about'>
@@ -10,7 +10,7 @@ const TourPageAbout = (props) => {
                 {about && about.map( (p, index) => <p key={index}>{p}</p>)}
             </div>
             <div className = "tp-about__hit">
-                <h3>Хит!</h3>
+                <h3>{aboutH3}</h3>
                 <p><span>Время проведения: </span><span>{yearTime}</span></p>
                 <p><span>Размер группы: </span><span>{groupSize}</span></p>
                 <p><span>Продолжительность: </span><span>{time}</span></p>
