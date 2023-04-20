@@ -150,6 +150,7 @@ const Header = (props) => {
         <div className = {`header__burger ${pageClass}`} onClick={ () => menuActive ? setMenuActive(false) : setMenuActive(true) }>
           <span></span>
         </div>
+        
         { renderMainMenu(MENU) }
         { renderBurgerMenu(MENU) }
         <div className = {`header__contacts ${pageClass}`}>
@@ -159,12 +160,12 @@ const Header = (props) => {
               <a href="https://wa.me/79039299383"><img className = "header__icon" src="./img/wa_ico.png"></img></a>
               <a href="https://t.me/lysov_anton"><img className = "header__icon" src="./img/tlgrm_ico.png"></img></a>
           </div>                  
-        </div>  
+        </div> 
         <div className = {`header__home ${pageClass}`}>
           <Link to = '/' onClick={() => setMenuActive(false)}>
               <img src='./img/home.png'></img>
-            </Link>
-          </div>      
+          </Link>
+        </div>       
       </div>
     </header>
   )

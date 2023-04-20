@@ -1,0 +1,80 @@
+@import '../../const';
+
+.fb-page {
+    width: 100%;
+    @include blockVPadding;
+    @include blockHPadding;
+    background-color: $secondary-background-color;
+}
+
+.fb {
+    background-color: $primary-background-color;
+    margin-top: 90px;
+    @media (max-width: map-get($breakpoints, lg)) {
+        margin-top: 75px;
+    }
+    @media (max-width: map-get($breakpoints, md)) {
+        margin-top: 60px;
+    }
+    @media (max-width: map-get($breakpoints, sm)) {
+        margin-top: 50px;
+    }
+    @media (max-width: map-get($breakpoints, xs)) {
+        margin-top: 35px;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        margin-top: 30px;
+    }    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: map-get($breakpoints, sm)) {
+        flex-direction: column;
+    }
+
+    &__photo {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 35%;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        padding: 50px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 60%;
+
+        @media (max-width: map-get($breakpoints, lg)) {
+            padding: 40px;
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            padding: 35px;
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            padding: 25px;
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            padding: 15px;
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            padding: 10px;
+        }    
+
+        & p {
+            @include font-size-adaptive(18px);
+        }
+
+        & span {
+            @include font-size-adaptive(18px);
+            font-style: italic;
+        }
+    }
+}
