@@ -52,7 +52,7 @@ const TourPage = () => {
             {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
         </div>
         
-        <RequestBlock backgroundImage = {'./img/weekend02.jpg'} />
+        <RequestBlock bgImage = {'./img/weekend02.jpg'} />
     </main>
   )
 }

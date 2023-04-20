@@ -2,8 +2,8 @@ import React from 'react'
 import './styles.scss'
 
 const RequestBlock = (props) => {
-    const { backgroundImage, h2Text, h3Text } = props
-    const styleString = '.req-block::before{background-image: url(' + backgroundImage + ');}'
+    const { bgImage, h2Text, h3Text } = props
+    const styleString = '.req-block::before{background-image: url(' + bgImage + ');}'
 
   return (    
     <div className = "req-block">

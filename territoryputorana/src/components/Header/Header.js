@@ -121,6 +121,21 @@ const Header = (props) => {
       case '/skitour':
         setPageClass('tour-page-class')
         break;
+      case '/trailrunning':
+        setPageClass('tour-page-class')
+        break;
+      case '/helicopter':
+        setPageClass('tour-page-class')
+        break;
+      case '/jar':
+        setPageClass('tour-page-class')
+        break;
+      case '/arctic':
+        setPageClass('tour-page-class')
+        break;
+      case '/photo':
+        setPageClass('tour-page-class')
+        break;
       default:
         setPageClass('other-page')
     }  

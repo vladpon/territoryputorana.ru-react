@@ -1,20 +1,24 @@
 @import '../../const';
 
-.about-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    @include blockHPadding;
+.about-page {   
     
 
     &:hover {
         .about-page__bg {
             filter: brightness(0.7);
         }
+    }
+
+    &__cover {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        @include blockHPadding;
     }
 
     &__bg {

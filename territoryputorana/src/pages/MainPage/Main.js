@@ -53,7 +53,7 @@ const Main = () => {
       <TextOneImage textOneImage = {textOneImage}/>
       <TextFewImages textFewImages = {textFewImages} />
       <TextOneImage2 />
-      <RequestBlock backgroundImage = {'./img/main_opt.jpg'} h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} />
+      <RequestBlock bgImage = {'./img/main_opt.jpg'} h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} />
     </main>
   )
 }

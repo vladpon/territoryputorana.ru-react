@@ -528,4 +528,20 @@
             width: 100%;
         }
     }
+
+    & ul {
+        align-self: flex-start;
+        @include font-size-adaptive(22px);
+        margin-bottom: 2em;
+
+        & li {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+    }
+
+    & img {
+        width: 100%;
+
+    }
 }

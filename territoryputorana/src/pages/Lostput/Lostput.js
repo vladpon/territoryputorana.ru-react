@@ -45,7 +45,7 @@ const TourPage = () => {
         <TourPageAccmmdtn tour = {tour}/>
         <PhotoBlock photos = {photos}/>
         <TextTitle txtTitle = {txtTitle} />
-        <RequestBlock backgroundImage = {'./img/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
+        <RequestBlock bgImage = {'./img/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )
 }
