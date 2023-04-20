@@ -24,6 +24,7 @@ import Jar from './pages/Jar/Jar'
 import Gallery from './pages/Gallery/Gallery'
 import Island from './pages/Island/Island';
 import Locations from './pages/Locations/Locations';
+import FeedBackPage from './pages/FeedBackPage/FeedBackPage';
 
 import { BrowserRouter, Routes } from 'react-router-dom';
 
@@ -62,6 +63,7 @@ function App() {
           <Route path = '/sr' Component={SnowRide} />
           <Route path = '/lamaproj' Component={LamaProj} />
           <Route path = '/arctic' Component={Arctic} />
+          <Route path = '/fb' Component={FeedBackPage} />
           <Route path = '*' Component={NotFound} />
         </Routes>
         <Footer />
