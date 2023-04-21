@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/vladpon/territoryputorana.ru-react#readme",
   "devDependencies": {
-    "create-react-app": "^5.0.1"
+    "create-react-app": "^1.2.1"
   }
 }

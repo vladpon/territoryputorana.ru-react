@@ -1,37 +1,53 @@
 import React from 'react'
 import { useState } from 'react'
 import '../TourPage/components/styles.scss'
-
 import './styles.scss'
 
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import PhotoAlbum from 'react-photo-album'
+
 const photos = [
-    './img/glr/img (1).jpg',
-    './img/glr/img (2).jpg',
-    './img/glr/img (3).jpg',
-    './img/glr/img (4).jpg',
-    './img/glr/img (5).jpg',
-    './img/glr/img (6).jpg',
-    './img/glr/img (8).jpg',
-    './img/glr/img (9).jpg',
-    './img/glr/img (10).jpg',
-    './img/glr/img (11).jpg',
-    './img/glr/img (12).jpg',
-    './img/glr/img (13).jpg',
-    './img/glr/img (14).jpg',
-    './img/glr/img (15).jpg',
-    './img/glr/img (16).jpg',
-    './img/glr/img (17).jpg',
-    './img/glr/img (18).jpg',
-    './img/glr/img (19).jpg',
-    './img/glr/img (20).jpg',
-    './img/glr/img (21).jpg',
-    './img/glr/img (22).jpg',   
-    './img/glr/img (23).jpg',
-    './img/glr/img (24).jpg',
-    './img/glr/img (25).jpg',
-    './img/glr/img (26).jpg',
-    './img/glr/img (27).jpg',
-    './img/glr/img (28).jpg'
+    { 
+        id: '001',
+        src: './img/glr/hiking001.jpg',
+        tag: 'hiking'
+    },
+    { 
+        id: '002',
+        src: './img/glr/hiking002.jpg',
+        tag: 'hiking'
+    },
+    { 
+        id: '003',
+        src: './img/glr/hiking003.jpg',
+        tag: 'hiking'
+    },
+    { 
+        id: '004',
+        src: './img/glr/hiking004.jpg',
+        tag: 'hiking'
+    },
+    { 
+        id: '005',
+        src: './img/glr/hiking005.jpg',
+        tag: 'hiking'
+    },
+    { 
+        id: '006',
+        src: './img/glr/hiking006.jpg',
+        tag: 'hiking'
+    },
+    { 
+        id: '007',
+        src: './img/glr/hiking007.jpg',
+        tag: 'hiking'
+    },
+    { 
+        id: '008',
+        src: './img/glr/hiking008.jpg',
+        tag: 'hiking'
+    }
 ]
 
 const Gallery = () => {
@@ -52,10 +68,25 @@ const Gallery = () => {
     }
 
 
+    const [index, setIndex] = React.useState(-1);
+
   return (
     <main className = 'gallery'>
         {showPhoto && <div className = 'gallery__big-photo' onClick = {() => zoomOff()}><img src = {photo} /></div>}
-        {photos && photos.map( (photo, index) => <div className = 'gallery__img' onClick={() => zoomOn(photo)} key = {index}><img src={photo} ></img></div>)}
+        {!photos && photos.map( (photo, index) => <div className = 'gallery__img' onClick={() => zoomOn(photo.src)} key = {index}><img src={photo.src} ></img></div>)}
+        <PhotoAlbum
+            layout="rows"
+            photos={photos}
+            targetRowHeight={150}
+            onClick={({ index }) => setIndex(index)}
+        />
+
+        <Lightbox
+            open={index >= 0}
+            index={index}
+            close={() => setIndex(-1)}
+            slides={photos}
+        />
     </main>
   )
 }

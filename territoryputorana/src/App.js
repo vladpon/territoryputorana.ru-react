@@ -2,6 +2,8 @@
 import './styles.scss'
 
 import { Route } from 'react-router-dom';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import React from 'react';
 
 import Main from './pages/MainPage/Main';
 import Lama3d from './pages/Lama3d/Lama3d';
@@ -26,7 +28,7 @@ import Island from './pages/Island/Island';
 import Locations from './pages/Locations/Locations';
 import FeedBackPage from './pages/FeedBackPage/FeedBackPage';
 
-import { BrowserRouter, Routes } from 'react-router-dom';
+
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import SnowRide from './pages/SnowRide/SnowRide';
