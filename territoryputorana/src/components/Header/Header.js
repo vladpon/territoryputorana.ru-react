@@ -134,7 +134,7 @@ const Header = (props) => {
         setPageClass('tour-page-class')
         break;
       case '/photo':
-        setPageClass('tour-page-class')
+        setPageClass('gallery-class')
         break;
       default:
         setPageClass('other-page')

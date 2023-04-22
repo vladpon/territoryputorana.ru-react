@@ -1,17 +1,17 @@
 @import '../../const';
 
 .gallery {
-    column-count: 3;
-    column-width: 33%;
+    // column-count: 3;
+    // column-width: 33%;
 
-    @media (max-width: map-get($breakpoints, sm)) {
-        column-count: 2;
-        column-width: 50%;
-    }
-    @media (max-width: map-get($breakpoints, xs)) {
-        column-count: 1;
-        column-width: 100%;
-    }
+    // @media (max-width: map-get($breakpoints, sm)) {
+    //     column-count: 2;
+    //     column-width: 50%;
+    // }
+    // @media (max-width: map-get($breakpoints, xs)) {
+    //     column-count: 1;
+    //     column-width: 100%;
+    // }
 
     &__img {
         overflow: hidden;
@@ -37,6 +37,66 @@
             width: 100%;
             height: 100%;  
             object-fit: contain;          
+        }
+    }
+
+    &__block {
+        margin-top: 80px;
+        width: 100%;
+        @include blockHPadding;
+        @include blockVPadding;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        & h2 {
+            font-weight: 400;
+            margin-block-end: 1.5em;
+        }
+    }
+
+    &__photo-container {
+        width: 100%;
+        display: grid;
+        grid-template-areas:    "a a b d"
+                                "a a c d"
+                                "a a c e"
+                                "f f c e";
+        grid-template-rows: repeat(4, 200px);  
+        gap: 5px;                      
+        & .gallery__photo:nth-child(1) {grid-area: a;}
+        & .gallery__photo:nth-child(2) {grid-area: b;}
+        & .gallery__photo:nth-child(3) {grid-area: c;}
+        & .gallery__photo:nth-child(4) {grid-area: d;}
+        & .gallery__photo:nth-child(5) {grid-area: e;}
+        & .gallery__photo:nth-child(6) {grid-area: f;}
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            grid-template-areas:    "a b"
+                                    "a c"
+                                    "d d"
+                                    "e f";
+        }
+    }
+
+
+    &__photo {
+        width: 100%;
+        overflow: hidden;
+        cursor: pointer;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.9s ease;
+            
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 }

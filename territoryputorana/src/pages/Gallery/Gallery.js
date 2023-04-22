@@ -3,11 +3,9 @@ import { useState } from 'react'
 import '../TourPage/components/styles.scss'
 import './styles.scss'
 
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import PhotoAlbum from 'react-photo-album'
+import PhotoBlock from './PhotoBlock';
 
-const photos = [
+const photos1 = [
     { 
         id: '001',
         src: './img/glr/hiking001.jpg',
@@ -50,43 +48,15 @@ const photos = [
     }
 ]
 
-const Gallery = () => {
-    const [showPhoto, setShowPhoto] = useState(false)
-    const [photo, setPhoto] = useState('')
-
-    const zoomOn = (src) => {
-        const body = document.body;
-        body.classList.add('lock');
-        setShowPhoto(true)
-        setPhoto(src)
-    }
-
-    const zoomOff = () => {
-        setShowPhoto(false)
-        const body = document.body;
-        body.classList.remove('lock');
-    }
 
 
-    const [index, setIndex] = React.useState(-1);
+const Gallery = () => {    
 
   return (
     <main className = 'gallery'>
-        {showPhoto && <div className = 'gallery__big-photo' onClick = {() => zoomOff()}><img src = {photo} /></div>}
-        {!photos && photos.map( (photo, index) => <div className = 'gallery__img' onClick={() => zoomOn(photo.src)} key = {index}><img src={photo.src} ></img></div>)}
-        <PhotoAlbum
-            layout="rows"
-            photos={photos}
-            targetRowHeight={150}
-            onClick={({ index }) => setIndex(index)}
-        />
-
-        <Lightbox
-            open={index >= 0}
-            index={index}
-            close={() => setIndex(-1)}
-            slides={photos}
-        />
+        <PhotoBlock section = 'hiking' length = {33} title = {'Пешие маршруты'}/> 
+        <PhotoBlock section = 'lamalake' length = {26} title = {'Озеро Лама'}/> 
+        <PhotoBlock section = 'waterfall' length = {17} title = {'Водопады'}/> 
     </main>
   )
 }

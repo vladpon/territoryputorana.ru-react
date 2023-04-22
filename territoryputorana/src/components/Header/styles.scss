@@ -38,6 +38,10 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         background-color: $tour-page-header-background-color
     }
 
+    &.gallery-class {
+        background-color: rgba(134, 134, 134, 0.65)
+    }
+
     &__body {
         @include space-btw(row);
         align-items: center;
@@ -118,6 +122,14 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
             }
         }
         &.other-page {
+            a {
+                color: $other-page-menu-link-color;
+            }
+            .header__icon {
+                filter: invert(1);
+            }
+        }
+        &.gallery-class {
             a {
                 color: $other-page-menu-link-color;
             }
@@ -277,6 +289,13 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
             color: $main-page-menu-link-color;
             &::after {
                 background-color: $main-page-menu-link-color;
+            }
+        }
+
+        &.gallery-class {
+            color: $other-page-menu-link-color;
+            &::after {
+                background-color: $other-page-menu-link-color;
             }
         }
 
