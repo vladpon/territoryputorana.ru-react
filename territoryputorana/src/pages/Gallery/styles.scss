@@ -12,6 +12,7 @@
     //     column-count: 1;
     //     column-width: 100%;
     // }
+    margin-top: 80px;
 
     &__img {
         overflow: hidden;
@@ -41,7 +42,6 @@
     }
 
     &__block {
-        margin-top: 80px;
         width: 100%;
         @include blockHPadding;
         @include blockVPadding;
@@ -65,8 +65,8 @@
                                 "a a c d"
                                 "a a c e"
                                 "f f c e";
-        grid-template-rows: repeat(4, 200px);  
-        gap: 5px;                      
+        grid-template-rows: repeat(4, 200px);
+        gap: 5px;
         & .gallery__photo:nth-child(1) {grid-area: a;}
         & .gallery__photo:nth-child(2) {grid-area: b;}
         & .gallery__photo:nth-child(3) {grid-area: c;}

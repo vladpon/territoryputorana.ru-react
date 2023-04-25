@@ -4,6 +4,8 @@ import "yet-another-react-lightbox/styles.css";
 import Lightbox from "yet-another-react-lightbox";
 import './styles.scss'
 
+import MainLogo from '../../components/MainLogo/MainLogo'
+
 const createPhotoArr = (section, length) => {
     let photoArr = []
     for (let x = 1; x <= length; x++) {
@@ -43,6 +45,7 @@ const PhotoBlock = (props) => {
 
 
     return (<div className='gallery__block'>
+            <MainLogo />
                 <div className='gallery__title'><h2>{title}</h2></div>
                 <div className='gallery__photo-container'>                
                     {tns && tns.map( (photo, index) => 
