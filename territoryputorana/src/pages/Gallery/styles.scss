@@ -1,18 +1,7 @@
 @import '../../const';
 
 .gallery {
-    // column-count: 3;
-    // column-width: 33%;
-
-    // @media (max-width: map-get($breakpoints, sm)) {
-    //     column-count: 2;
-    //     column-width: 50%;
-    // }
-    // @media (max-width: map-get($breakpoints, xs)) {
-    //     column-count: 1;
-    //     column-width: 100%;
-    // }
-    margin-top: 80px;
+    margin-top: 120px;
 
     &__img {
         overflow: hidden;
@@ -48,6 +37,8 @@
         display: flex;
         flex-direction: column;
     }
+
+    
 
     &__title {
         width: 100%;
