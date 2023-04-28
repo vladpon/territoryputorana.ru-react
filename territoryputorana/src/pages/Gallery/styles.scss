@@ -33,7 +33,28 @@
     &__block {
         width: 100%;
         @include blockHPadding;
-        @include blockVPadding;
+        padding-top: 70px;
+        padding-bottom: 70px;
+        @media (max-width: map-get($breakpoints, lg)) {
+            padding-top: 55px;
+            padding-bottom: 55px;
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }   
         display: flex;
         flex-direction: column;
     }
@@ -45,7 +66,7 @@
         text-align: center;
         & h2 {
             font-weight: 400;
-            margin-block-end: 1.5em;
+            margin-block-end: 1em;
         }
     }
 

@@ -1,5 +1,26 @@
 [
     {
+        "id": "rd",
+        "title": "Russia Discovery",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/rd_logo.svg",
+        "optImg": "",
+        "description": [
+            "Ведущий туроператор по России и наш постоянный партнер по организации туров для сборных групп туристов со всей России и мира."
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "+74951046436 ",
+            "email": "go@russiadiscovery.ru",
+            "site": "https://www.russiadiscovery.ru/regions/plato-putorana/"
+        },
+        "files" : [],
+        "href": "" 
+    },
+    {
         "id": "001",
         "title": "ЛАМА ТУР",
         "season": "",
@@ -9,7 +30,7 @@
         "smallImg": "./img/prtnrs_lamatour.jpg",
         "optImg": "",
         "description": [
-            "Активные туры «всё включено».",
+            "Активные туры «всё включено». Туры выходного дня на озеро Лама (пт-вс).",
             "Заброски из Норильска на плато Путорана на морских катерах"
             ],
         "tourPhoto": [],
@@ -71,5 +92,5 @@
             }
         ],
         "href": "" 
-    }
+    }    
 ]

@@ -16,7 +16,7 @@ const photos = [
   { src: "./img/lama_ph_002.jpg"},
   { src: "./img/lama_ph_003.jpg"},
   { src: "./img/lama_ph_004.jpg"},
-  { src: "./img/lama_ph_005.jpg"},
+  { src: "./img/lamaproj010.jpg"},
   { src: "./img/lama_ph_006.jpg"}
 ]
 

@@ -5,6 +5,10 @@
     @include blockVPadding;
     @include blockHPadding;
     background-color: $secondary-background-color;
+
+    .swiper-pagination-bullet-active {
+        background-color: $main-blue !important;
+   }
 }
 
 .fb {
@@ -30,8 +34,11 @@
     justify-content: space-between;
     width: 100%;
 
-    @media (max-width: map-get($breakpoints, sm)) {
-        flex-direction: column;
+    @media (max-width: map-get($breakpoints, md)) {
+        display: block;
+        &__photo {
+            height: 400px;
+        }
     }
 
     &__photo {

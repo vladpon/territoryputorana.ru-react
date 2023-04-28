@@ -10,7 +10,7 @@ const AboutPage = () => {
     <main className='about-page'>
         <MainLogo />
         <div className = "about-page__cover">        
-            <img className = "about-page__bg" src='./img/lysov_vert.jpg' />        
+            <img className = "about-page__bg" src='./img/lysov03.jpg' />        
             <div className = "about-page__text">
                 <h1>О компании</h1>                
             </div>
