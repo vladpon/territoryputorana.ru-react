@@ -1,7 +1,6 @@
 @import '../../const';
 
-.about-page {   
-    
+.about-page {       
 
     &:hover {
         .about-page__bg {
@@ -50,4 +49,9 @@
         }        
     }
     
+}
+
+.vk-container {
+    width: 100%;
+    @include blockHPadding;
 }

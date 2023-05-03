@@ -1,18 +1,27 @@
 import React from 'react'
 
+
 import './styles.scss'
 
 
 import MainLogo from '../../components/MainLogo/MainLogo'
+import { useEffect } from 'react'
 
 const AboutPage = () => {
+
+    useEffect ( () => {
+        const VK = window.VK
+        VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "800"}, 219297445);
+    }, [])
+
+
   return (
     <main className='about-page'>
         <MainLogo />
         <div className = "about-page__cover">        
-            <img className = "about-page__bg" src='./img/lysov03.jpg' />        
+            <img className = "about-page__bg" src='./img/lysov03.jpg' />
             <div className = "about-page__text">
-                <h1>О компании</h1>                
+                <h1>О компании</h1>
             </div>
         </div>   
         <div className = "tp-about__container">
@@ -31,6 +40,9 @@ const AboutPage = () => {
               </div>
           </div>
        </div> 
+       <div className='vk-container'>
+            <div id="vk_groups"></div>
+       </div>
     </main>
   )
 }
