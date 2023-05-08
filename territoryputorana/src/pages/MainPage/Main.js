@@ -50,7 +50,7 @@ const Main = () => {
       <TextWord text = {textWord.text} word = {textWord.word} />
       <CardsBlock tours = {tours}/>
       <TextOneImage textOneImage = {textOneImage}/>
-      <VideoClip src = './img/main.mp4#t=0.001' />
+      <VideoClip src = './img/main.mp4#t=0.001' h2Text = 'Покори Север с нами!'/>
       <TextFewImages textFewImages = {textFewImages} />
       <TextOneImage2 />
       <RequestBlock bgImage = {'./img/main_opt.jpg'} h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} />

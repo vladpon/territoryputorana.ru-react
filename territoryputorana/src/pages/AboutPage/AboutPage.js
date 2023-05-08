@@ -11,7 +11,7 @@ const AboutPage = () => {
 
     useEffect ( () => {
         const VK = window.VK
-        VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "800"}, 219297445);
+        VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "800", color3: "4d95be", no_cover: 0}, 219297445);
     }, [])
 
 
@@ -19,7 +19,7 @@ const AboutPage = () => {
     <main className='about-page'>
         <MainLogo />
         <div className = "about-page__cover">        
-            <img className = "about-page__bg" src='./img/lysov03.jpg' />
+            <img className = "about-page__bg" src='./img/anton002.jpg' />
             <div className = "about-page__text">
                 <h1>О компании</h1>
             </div>
@@ -41,6 +41,7 @@ const AboutPage = () => {
           </div>
        </div> 
        <div className='vk-container'>
+            <h2>Наши новости</h2>
             <div id="vk_groups"></div>
        </div>
     </main>

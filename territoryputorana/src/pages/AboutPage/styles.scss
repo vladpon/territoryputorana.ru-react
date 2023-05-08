@@ -52,6 +52,12 @@
 }
 
 .vk-container {
-    width: 100%;
-    @include blockHPadding;
+    @include blockMaxWidth;
+    @include blockVPadding;
+    margin: 0 auto;
+
+    & h2 {
+        text-align: center;
+        margin-block-end: 1.5em;
+    }
 }
