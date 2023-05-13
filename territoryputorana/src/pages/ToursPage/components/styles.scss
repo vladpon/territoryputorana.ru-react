@@ -30,6 +30,22 @@
         justify-content: start;
         height: 300px;
 
+        ::-webkit-scrollbar {
+            width: 4px;
+            background-color: darken($color: $main-blue, $amount: 0);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background-color: darken($color: $main-blue, $amount: 15);
+            border-radius: 9em;
+            // box-shadow: inset 1px 1px 10px #6b6b6b;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #303030;
+        }
+
+
 
         @media(min-width: 768px) {
             .big-cards &:nth-child(even) {
@@ -123,7 +139,8 @@
 
     &__description {
         width: 75%;
-        height: 100%;
+        min-height: 100%;
+        overflow: auto;
         padding: 30px;
         @include space-btw(column);
         align-items: flex-start;
