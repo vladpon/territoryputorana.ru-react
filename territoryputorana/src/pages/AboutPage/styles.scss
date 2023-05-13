@@ -1,7 +1,6 @@
 @import '../../const';
 
-.about-page {   
-    
+.about-page {       
 
     &:hover {
         .about-page__bg {
@@ -50,4 +49,15 @@
         }        
     }
     
+}
+
+.vk-container {
+    @include blockMaxWidth;
+    @include blockVPadding;
+    margin: 0 auto;
+
+    & h2 {
+        text-align: center;
+        margin-block-end: 1.5em;
+    }
 }

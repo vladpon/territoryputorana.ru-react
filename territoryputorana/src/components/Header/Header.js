@@ -63,30 +63,25 @@ const Header = (props) => {
 
   useEffect( () => 
   {    
-    console.log('constrtuctor')
     const burger = document.querySelector('.header__burger');
     const burgerMenu = document.querySelector('.burger-menu');
     const main = document.querySelector('main');
     const body = document.body;    
 
     const destructor = () => {
-      console.log('destructor')  
       main && main.removeEventListener('click', clickHandler)
     }
 
     const clickHandler = () => {
-      console.log('click on main')
       setMenuActive(false)
     }
 
     if(menuActive) {
-      console.log('menuActive true')
       burgerMenu.classList.add('active');
       body.classList.add('lock');
       burger.classList.add('active');
       setTimeout(() => main && main.addEventListener('click', clickHandler), 500);
     } else {
-      console.log('menuActive false')
       burgerMenu.classList.remove('active');
       body.classList.remove('lock');
       burger.classList.remove('active');

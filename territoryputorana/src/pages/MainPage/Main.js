@@ -1,6 +1,4 @@
 import React from 'react'
-import Footer from '../../components/Footer/Footer'
-import Header from '../../components/Header/Header'
 import './styles.scss'
 import Cover from './components/Cover'
 import TextWord from './components/TextWord'
@@ -9,6 +7,7 @@ import TextOneImage from './components/TextOneImage'
 import TextFewImages from './components/TextFewImages'
 import TextOneImage2 from './components/TextOneImage2'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
+import VideoClip from './components/VideoClip'
 
 import tours from '../../data/tours.json'
 
@@ -51,6 +50,7 @@ const Main = () => {
       <TextWord text = {textWord.text} word = {textWord.word} />
       <CardsBlock tours = {tours}/>
       <TextOneImage textOneImage = {textOneImage}/>
+      <VideoClip src = './img/main.mp4#t=0.001' h2Text = 'Покори Север с нами!'/>
       <TextFewImages textFewImages = {textFewImages} />
       <TextOneImage2 />
       <RequestBlock bgImage = {'./img/main_opt.jpg'} h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} />

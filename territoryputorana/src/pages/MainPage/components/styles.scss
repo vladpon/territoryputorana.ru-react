@@ -545,3 +545,21 @@
 
     }
 }
+
+.video-clip {
+    @include blockVPadding;
+    @include blockMaxWidth;
+    width: 100%;
+    margin: 0 auto;
+
+    & video {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    & h2 {
+        text-align: center;
+        margin-block-start: 0.5em;
+        margin-block-end: 1.5em;
+    }
+}
