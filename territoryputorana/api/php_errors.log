@@ -1,0 +1,4 @@
+[16-May-2023 13:28:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ssh2_connect() in Q:\territoryputorana.ru\react-src\territoryputorana\api\tours.php:7
+Stack trace:
+#0 {main}
+  thrown in Q:\territoryputorana.ru\react-src\territoryputorana\api\tours.php on line 7
