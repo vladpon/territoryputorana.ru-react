@@ -1,7 +1,7 @@
 
 import './styles.scss'
 
-import { Route } from 'react-router-dom';
+import { Link, Navigate, Route } from 'react-router-dom';
 import { BrowserRouter, Routes } from 'react-router-dom';
 import React from 'react';
 
@@ -66,7 +66,8 @@ function App() {
           <Route path = '/lamaproj' Component={LamaProj} />
           <Route path = '/arctic' Component={Arctic} />
           <Route path = '/fb' Component={FeedBackPage} />
-          <Route path = '*' Component={NotFound} />
+          <Route path = '/NotFound' Component={NotFound} />
+          <Route path = '*' Component= {NotFound} status={404}/>
         </Routes>
         <Footer />
       </BrowserRouter>

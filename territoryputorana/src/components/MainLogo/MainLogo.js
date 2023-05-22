@@ -6,7 +6,7 @@ const MainLogo = (props) => {
   const {logoImg, backgroundColor} = props
   return (
     <div className="main-logo" style = {backgroundColor ? {backgroundColor: backgroundColor, backgroundImage: 'none'} : {backgroundColor: 'none'}}>
-        <Link to = "/"><img src={ logoImg ? logoImg : "./img/main_logo.svg"} alt="logo" /></Link>
+        <Link to = "/"><img src={ logoImg ? logoImg : "https://territoryputorana.ru/img/main_logo.svg"} alt="logo" /></Link>
     </div>
   )
 }
