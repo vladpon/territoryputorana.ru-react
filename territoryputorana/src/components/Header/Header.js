@@ -151,14 +151,14 @@ const Header = (props) => {
         <div className = {`header__contacts ${pageClass}`}>
           <a href="tel:+79039299383">+7 (903) 929-93-83</a>
           <div className = "header__icons">
-              <a href="https://vk.cc/cmIUok"><img className = "header__icon" src="./img/vk_ico.png"></img></a>
-              <a href="https://wa.me/79039299383"><img className = "header__icon" src="./img/wa_ico.png"></img></a>
-              <a href="https://t.me/lysov_anton"><img className = "header__icon" src="./img/tlgrm_ico.png"></img></a>
+              <a href="https://vk.cc/cmIUok"><img className = "header__icon" src="https://territoryputorana.ru/img/vk_ico.png"></img></a>
+              <a href="https://wa.me/79039299383"><img className = "header__icon" src="https://territoryputorana.ru/img/wa_ico.png"></img></a>
+              <a href="https://t.me/lysov_anton"><img className = "header__icon" src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
           </div>                  
         </div> 
         <div className = {`header__home ${pageClass}`}>
           <Link to = '/' onClick={() => setMenuActive(false)}>
-              <img src='./img/home.png'></img>
+              <img src='https://territoryputorana.ru/img/home.png'></img>
           </Link>
         </div>       
       </div>
