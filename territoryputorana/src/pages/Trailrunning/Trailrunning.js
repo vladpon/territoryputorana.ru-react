@@ -14,7 +14,7 @@ import { ScrollRestoration } from 'react-router-dom'
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 
-const tour = tours[4]
+const tour = tours.find(tour => tour.id === 'trailrunning')
 
 const photos = [
   { src: "./img/tr_ph01.jpg"},

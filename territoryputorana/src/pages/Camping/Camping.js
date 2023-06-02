@@ -18,7 +18,7 @@ import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import '../TourPage/styles.scss'
 
-const tour = tours[2]
+const tour = tours.find(tour => tour.id === 'camping')
 
 const photos = [
     { src: "./img/camp_ph01.jpg"},

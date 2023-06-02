@@ -16,7 +16,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 
-const tour = tours[5]
+const tour = tours.find(tour => tour.id === 'helicopter')
 
 
 

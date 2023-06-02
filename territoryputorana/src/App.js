@@ -16,7 +16,7 @@ import Tours3d from './pages/Tours3d/Tours3d';
 import NotFound from './pages/NotFound/NotFound';
 import TourPage from './pages/TourPage/TourPage';
 import Lostput from './pages/Lostput/Lostput'
-import Weekend from './pages/Weekend/Weekend'
+// import Weekend from './pages/Weekend/Weekend'
 import Camping from './pages/Camping/Camping'
 import SkiTour from './pages/SkiTour/SkiTour'
 import Trailrunning from './pages/Trailrunning/Trailrunning'
@@ -54,7 +54,7 @@ function App() {
           <Route path = '/tours3d' Component={Tours3d} />
           <Route path = '/tourpage' Component={TourPage} />
           <Route path = '/lostput' Component={Lostput} />
-          <Route path = '/weekend' Component={Weekend} />
+          {/* <Route path = '/weekend' Component={Weekend} /> */}
           <Route path = '/camping' Component={Camping} />
           <Route path = '/skitour' Component={SkiTour} />
           <Route path = '/about' Component={AboutPage} />

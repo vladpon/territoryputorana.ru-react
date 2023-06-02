@@ -17,7 +17,7 @@ import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import '../TourPage/styles.scss'
 
-const tour = tours[3]
+const tour = tours.find(tour => tour.id === 'skitour')
 
 
 
