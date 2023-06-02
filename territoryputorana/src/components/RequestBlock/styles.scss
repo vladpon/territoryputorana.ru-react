@@ -44,10 +44,12 @@
         & h2 {
             font-weight: 800;
             text-transform: uppercase;
+            mix-blend-mode: overlay;
         }
 
         & h3 {
             margin-block-end: 2em;
+            mix-blend-mode: overlay;
         }
     }
 
