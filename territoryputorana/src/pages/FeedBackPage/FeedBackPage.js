@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 
 
 import './styles.scss'
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 
 const FeedBackPage = () => {
@@ -15,7 +16,7 @@ const FeedBackPage = () => {
   return (
     <main className='fb-page'>
         <div className='fb-page__fb fb'>
-            <Swiper pagination={true} modules={[Pagination]} className="fb__photo">
+            <Swiper navigation={true} modules={[Navigation]} className="fb__photo">
               <SwiperSlide><img src='./img/fb002.jpg'></img></SwiperSlide>
               <SwiperSlide><img src='./img/fb001.jpg'></img></SwiperSlide>
               <SwiperSlide><img src='./img/fb003.jpg'></img></SwiperSlide>
