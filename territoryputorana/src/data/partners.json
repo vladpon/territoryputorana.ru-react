@@ -18,7 +18,8 @@
             "site": "https://www.russiadiscovery.ru/regions/plato-putorana/"
         },
         "files" : [],
-        "href": "" 
+        "href": "",
+        "section": "Туры и походы"
     },
     {
         "id": "001",
@@ -40,7 +41,8 @@
             "site": "https://lama-tour.ru"
         },
         "files": [],
-        "href" : ""
+        "href" : "",
+        "section": "Туры и походы"
     },
     {
         "id": "weekend",
@@ -96,7 +98,8 @@
                 ]
                 }
             ]
-        }
+        },
+        "section": "Туры и походы"
     },
     {
         "id": "002",
@@ -117,7 +120,8 @@
             "site": "https://kit-norilsk.ru"
         },
         "files" : [],
-        "href": ""
+        "href": "",
+        "section": "Туры и походы"
     },
     {
         "id": "003",
@@ -147,7 +151,8 @@
             "src": "./img/Ayakli_combo.pdf"
             }
         ],
-        "href": "" 
+        "href": "" ,
+        "section": "Туры и походы"
     },
     {
         "id": "horizon",
@@ -167,6 +172,28 @@
             "email": "gorizont-norilsk@yandex.ru",
             "site": "https://gorizont-norilsk.ru/"
         },
-        "href": "" 
+        "href": "",
+        "section": "Гостиницы"
+    },
+    {
+        "id": "severgrand",
+        "title": "Севергранд",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/severgrand_logo03.svg",
+        "optImg": "",
+        "description": [
+            "Новый отель 3* в центре Норильска. Комфортные номера с дизайнерским ремонтом: стандарт, стандарт Superior, Junior Suite, Luxe. Сервис  премиум-уровня и теплое арктическое гостеприимство."
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "+73919457038",
+            "email": "hotel@severgrand.ru",
+            "site": "https://severgrand.ru"
+        },
+        "href": "",
+        "section": "Гостиницы"
     }  
 ]

@@ -4,20 +4,45 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 
 const BigCards = (props) => {
-    const { content } = props
+    const { content,  sections} = props
+    const [filteredContent, setFilteredContent] = useState(content)
     const location = useLocation();
     const [cardsType, setCardsType] = useState('')
     let navigate = useNavigate()
+    
+    const [activeSections, setActiveSections] = useState([])
 
     useEffect( () => {
         (location.pathname === '/partners') ? setCardsType('big-cards__img_partners') : setCardsType('big-cards__img_other')
+        setActiveSections(sections)
     }, [] )
+
+    useEffect( () => {
+        if(sections) {
+                setFilteredContent(content.filter( (item) => activeSections.includes(item.section)))
+                }        
+    }, [activeSections])
+
+
+    const handleSectionButton = (section) => 
+        (activeSections.includes(section)) ? setActiveSections(activeSections.filter( item => item !== section))
+            : setActiveSections([...activeSections, section])
+        
+
 
   return (
     <div className = "big-cards">
+        {sections ? (
+                        <div className='big-cards__sections'>
+                            {sections.map((section) => (
+                                <button key={section} onClick={() => handleSectionButton(section)} className = {activeSections.includes(section) ? 'active' : ''}>{section}</button>
+                                )
+                                )
+                            }
+                        </div>) : <></>}
         { content ? (
-            content.map( ( item ) => 
-                    {
+            filteredContent.map( ( item ) => 
+                    {  
                         return (
                             <div className = "big-cards__card" key = {item.id} onClick={() => navigate(item.href)}>
                                 <div className = {"big-cards__img " + cardsType} >                                    

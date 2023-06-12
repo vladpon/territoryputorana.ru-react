@@ -24,7 +24,7 @@ const RequestBlock = (props) => {
 
 
     const handleSubmit = (e) => {
-      e.preventDefault()      
+      e.preventDefault()
       if (ipName === '') {
         alert('Введите Ваше имя')
         return
