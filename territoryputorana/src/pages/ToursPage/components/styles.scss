@@ -195,4 +195,22 @@
         display: block;
     }
 
+    &__sections {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & button {
+            background-color: rgb(165, 190, 215);
+            &.active {       
+                background-color: $main-blue;         
+                box-shadow: none;
+                top: 2px;
+                left: 2px;
+            }
+        }
+    }
+
 }

@@ -1,5 +1,33 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow: /*.html$
+Allow: /$
+Allow: /tours
+Allow: /lostput
+Allow: /camping
+Allow: /skitour
+Allow: /trailrunning
+Allow: /helicopter
+Allow: /jar
+Allow: /heliski
+Allow: /about
+Allow: /projects
+Allow: /sr
+Allow: /lamaproj
+Allow: /arctic
+Allow: /partners
+Allow: /photo
+Allow: /fb
+Allow: /tours3d
+Allow: /Lama3d
+Allow: /island
+Allow: /locations
+Disallow: /
+
+User-agent: Googlebot
+Allow: /robots.txt
+
+User-agent: Yandex
+Allow: /robots.txt
 
 Sitemap: https://territoryputorana.ru/sitemap.xml

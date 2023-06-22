@@ -9,12 +9,11 @@ import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
-import { ScrollRestoration } from 'react-router-dom'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 
-const tour = tours.find(tour => tour.id === 'trailrunning')
+const tour = tours.find(tour => tour.id === 'heliski')
 
 const photos = [
   { src: "./img/tr_ph01.jpg"},
@@ -29,8 +28,7 @@ const txtTitle = {
   title: "Транспорт",
   text: [
     'Трансферы по Норильску будут выполняться на автомобилях или микроавтобусах (в зависимости от количества человек в группе).',
-    'Заброска на озеро Лама и обратно будет осуществляться на скоростном закрытом катере на воздушной подушке.',
-    'При необходимости на активных дневных маршрутах также будут использоваться судно на воздушной подушке и моторные лодки.'
+    'Заброска на озеро Лама и обратно будет осуществляться на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах также будут использоваться судно на воздушной подушке и моторные лодки.'
   ]
 }
 
@@ -41,12 +39,7 @@ const TourPage = () => {
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>
-        <TourPageAux/>
-        <TourPageProgram tour = {tour}/>
-        <TourPageAccmmdtn tour = {tour}/>
-        <PhotoBlock photos = {photos}/>
-        <TextTitle txtTitle = {txtTitle} />
-        <RequestBlock bgImage = {'./img/trail_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
+        <RequestBlock bgImage = {'./img/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )
 }

@@ -44,10 +44,12 @@
         & h2 {
             font-weight: 800;
             text-transform: uppercase;
+            mix-blend-mode: overlay;
         }
 
         & h3 {
             margin-block-end: 2em;
+            mix-blend-mode: overlay;
         }
     }
 
@@ -57,13 +59,15 @@
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 10px;
 
         @media (max-width: map-get($breakpoints, sm)) {
             width: 100%;
         }
 
         input {
-            margin-bottom: 2em;
+            // margin-bottom: 2em;
             padding: 5px;
         }
 
@@ -96,5 +100,82 @@
             }
         }
     }
+}
+
+.thankyou {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    z-index: 11;
+    background: transparent;
+    border: 1px solid #bbc3d3;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, .5);
+    overflow: hidden;
+    
+    &__close {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 45px;
+        height: 45px;
+        background-color: $main-blue;
+        border-bottom-left-radius: 20px; 
+            
+        &:hover {
+            cursor: pointer;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 80%;
+        height: 80%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+
+        & h3 {
+            color: darken($main-blue, 10);
+            font-weight: 500;
+        }
+    }
+}
+
+.thankyou__close:hover::after, .thankyou__close:hover::before {
+    background-color: $main-blue;
+    transition: all 0.3s ease;
+}
+
+.thankyou__close::after {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+}
+
+.thankyou__close::before {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transform: rotate(-45deg);
 }
 

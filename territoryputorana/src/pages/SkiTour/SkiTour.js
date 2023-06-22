@@ -17,7 +17,7 @@ import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import '../TourPage/styles.scss'
 
-const tour = tours[3]
+const tour = tours.find(tour => tour.id === 'skitour')
 
 
 
@@ -40,7 +40,7 @@ const TourPage = () => {
         <TourPageProgram tour = {tour}/>
         <div className = "tp-accmmdtn">
             <h2 className = "tp-accmmdtn__title">Проживание</h2>
-            <p>Комфортабельный глэмпинг из тёплых трехслойных палаток с отопителем.</p>
+            <p>Комфортабельный глэмпинг из теплых трехслойных палаток с отопителем.</p>
             <p>В глэмпинге располагаются: палатки для проживания, кухня, столовая, мобильная баня, сушилка, туалет.</p>            
         </div>
         <div className = 'txt-title light-back'>

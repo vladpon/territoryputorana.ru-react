@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom'
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 
-const tour = tours[6]
+const tour = tours.find(tour => tour.id === 'jar')
 
 const photos = [
   { src: "./img/tr_ph01.jpg"},

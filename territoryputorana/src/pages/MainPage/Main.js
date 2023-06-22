@@ -10,6 +10,7 @@ import RequestBlock from '../../components/RequestBlock/RequestBlock'
 import VideoClip from './components/VideoClip'
 
 import tours from '../../data/tours.json'
+import { Link, useNavigate } from 'react-router-dom'
 
 const textWord = {
   text: 'Плато Путорана — одно из самых удивительных мест России и объект Всемирного наследия ЮНЕСКО. Край бездонных каньонов, уникальных гор без вершин и тысячи озер. Здесь бурные реки, срываясь со скал, образуют высочайшие в России водопады. Здесь нет дорог, и не ходят поезда. Побывать в этих труднодоступных местах посчастливилось совсем небольшому числу людей. Но чем сложнее добраться, тем сильнее восторг от покорения!',
@@ -44,12 +45,39 @@ const textFewImages = {
 }
 
 const Main = () => {
+
+  const navigate = useNavigate();
+
+
   return (
     <main className='main-page'>
       <Cover />
       <TextWord text = {textWord.text} word = {textWord.word} />
       <CardsBlock tours = {tours}/>
       <TextOneImage textOneImage = {textOneImage}/>
+
+      <div className="cards-block">
+            <div className="cards-block__title">
+                <h2><span>Туры</span> партнеров</h2>
+            </div>
+            <div className="cards-block__card-container">
+                <div className="card-container__card" onClick={() => navigate('/partners#weekend')}>
+                    <div className="card-container__bg">
+                        <img src='./img/mp_weekend.jpg'></img>
+                    </div>
+                    <div className="card-container__text-container" >
+                        <div className="card-container__top-text">
+                            <div className="card-container__title">Тур выходного дня на озеро Лама</div>
+                        </div>
+                        <div className="card-container__bottom-text">
+                            <div className="card-container__days">Пт-пн</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="cards-block__link"><Link to = '/partners'> Перейти к турам партнеров </Link></div>
+        </div>
+
       <VideoClip src = './img/main.mp4#t=0.001' h2Text = 'Покори Север с нами!'/>
       <TextFewImages textFewImages = {textFewImages} />
       <TextOneImage2 />

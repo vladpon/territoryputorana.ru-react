@@ -1,5 +1,4 @@
 import React from 'react'
-import MainLogo from '../../components/MainLogo/MainLogo'
 import BigCards from '../ToursPage/components/BigCards'
 
 import './styles.scss'
@@ -15,7 +14,7 @@ const PartnersPage = () => {
                 <h1>Партнеры</h1>
                 <h3>Территории Путорана</h3>
             </div>
-            <BigCards content = {partners}/>
+            <BigCards content = {partners} sections = {['Туры и походы', 'Гостиницы']}/>
         </div>
     </main>
   )

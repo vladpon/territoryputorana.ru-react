@@ -16,7 +16,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 
-const tour = tours[5]
+const tour = tours.find(tour => tour.id === 'helicopter')
 
 
 
@@ -50,7 +50,7 @@ const TourPage = () => {
             <h2>{txtTitle.title}</h2>
             {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
         </div>        
-        <RequestBlock bgImage = {'./img/heli_req.jpg'} />
+        <RequestBlock bgImage = {'./img/heli_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )
 }

@@ -139,6 +139,7 @@
     margin: 0 auto;
     z-index: 0;
 
+
     &__title {
         width: 100%;
         align-self: flex-start;
@@ -288,6 +289,10 @@
     &__title {
         @include font-size-adaptive(30px);
         font-weight: 600;
+
+        & a {
+            color: #fff;
+        }
     }
     &__bottom-text {
         align-self: flex-end;
@@ -548,7 +553,8 @@
 
 .video-clip {
     @include blockVPadding;
-    @include blockMaxWidth;
+    @include blockHPadding;
+    background-color: $secondary-background-color;
     width: 100%;
     margin: 0 auto;
 
