@@ -9,6 +9,7 @@ Allow: /skitour
 Allow: /trailrunning
 Allow: /helicopter
 Allow: /jar
+Allow: /heliski
 Allow: /about
 Allow: /projects
 Allow: /sr

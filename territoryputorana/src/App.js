@@ -23,6 +23,7 @@ import Trailrunning from './pages/Trailrunning/Trailrunning'
 import AboutPage from './pages/AboutPage/AboutPage';
 import Helicopter from './pages/Helicopter/Helicopter'
 import Jar from './pages/Jar/Jar'
+import Heliski from './pages/Heliski/Heliski'
 import Gallery from './pages/Gallery/Gallery'
 import Island from './pages/Island/Island';
 import Locations from './pages/Locations/Locations';
@@ -61,6 +62,7 @@ function App() {
           <Route path = '/trailrunning' Component={Trailrunning} />
           <Route path = '/helicopter' Component={Helicopter} />
           <Route path = '/jar' Component={Jar} />
+          <Route path = '/heliski' Component={Heliski} />
           <Route path = '/photo' Component={Gallery} />
           <Route path = '/sr' Component={SnowRide} />
           <Route path = '/lamaproj' Component={LamaProj} />

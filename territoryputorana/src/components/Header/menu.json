@@ -33,6 +33,11 @@
                 "id": "jar",
                 "href": "/jar",
                 "title": "Усадьба Жар. Птица"
+            },
+            {
+                "id": "heliski",
+                "href": "/heliski",
+                "title": "Хели-ски"
             }
         ]
     },

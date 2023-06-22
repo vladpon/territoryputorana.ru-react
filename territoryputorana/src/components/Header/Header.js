@@ -125,6 +125,9 @@ const Header = (props) => {
       case '/jar':
         setPageClass('tour-page-class')
         break;
+      case '/heliski':
+        setPageClass('tour-page-class')
+        break;
       case '/arctic':
         setPageClass('tour-page-class')
         break;

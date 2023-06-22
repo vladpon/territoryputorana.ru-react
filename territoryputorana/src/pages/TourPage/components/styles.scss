@@ -158,6 +158,7 @@
 
     &__note {
         font-style: italic;
+        @include font-size-adaptive(19px);
     }
 
 

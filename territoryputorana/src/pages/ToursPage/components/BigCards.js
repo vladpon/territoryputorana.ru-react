@@ -14,7 +14,7 @@ const BigCards = (props) => {
 
     useEffect( () => {
         (location.pathname === '/partners') ? setCardsType('big-cards__img_partners') : setCardsType('big-cards__img_other')
-        setActiveSections(sections)
+        if(sections) setActiveSections(sections[0])
     }, [] )
 
     useEffect( () => {
@@ -25,8 +25,9 @@ const BigCards = (props) => {
 
 
     const handleSectionButton = (section) => 
-        (activeSections.includes(section)) ? setActiveSections(activeSections.filter( item => item !== section))
-            : setActiveSections([...activeSections, section])
+        // (activeSections.includes(section)) ? setActiveSections(activeSections.filter( item => item !== section))
+        //     : setActiveSections([...activeSections, section])
+        setActiveSections(section)
         
 
 
