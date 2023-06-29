@@ -11,6 +11,7 @@ const RequestBlock = (props) => {
 
     const token = '5861006903:AAFry8owUoELNl7R6zg8d0zzAhvJaXm1e4Y';
     const chatId = '-641195533';
+    const chat2Id = '-993753426';
 
     const [ipName, setIpName]  = useState('');
     const [ipEmail, setIpEmail] = useState('');
@@ -20,10 +21,14 @@ const RequestBlock = (props) => {
     const [ipText, setIpText] = useState('');
     const [showThankYou, setShowThankYou] = useState(false);
 
-    const url = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=html&text='
+    
 
 
     const handleSubmit = (e) => {
+
+      const url = (ipTour === 'Палаточный кемпинг на озере Лама') ? 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat2Id + '&parse_mode=html&text=' :
+      'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=html&text='
+
       e.preventDefault()
       if (ipName === '') {
         alert('Введите Ваше имя')
