@@ -43,10 +43,10 @@ const RequestBlock = (props) => {
         return
       }
       if (ipCount === '') {
-        alert('Введите колличество участников')
+        alert('Введите количество участников')
         return
       }
-      const query = url + '<b>Имя:</b> ' + ipName + '%0A<b>e-mail:</b> ' + ipEmail  + '%0A<b>Телефон:</b> ' + ipTel + '%0A<b>Выбранный тур:</b> ' + ipTour + '%0A<b>Колличество участников:</b> ' + ipCount + '%0A<b>Дополнительная информация:</b> ' + ipText
+      const query = url + '<b>Имя:</b> ' + ipName + '%0A<b>e-mail:</b> ' + ipEmail  + '%0A<b>Телефон:</b> ' + ipTel + '%0A<b>Выбранный тур:</b> ' + ipTour + '%0A<b>Количество участников:</b> ' + ipCount + '%0A<b>Дополнительная информация:</b> ' + ipText
       setShowThankYou(true)
       fetch(query)
     }
@@ -83,7 +83,7 @@ const RequestBlock = (props) => {
               <option value="Вертолетная экскурсия">Вертолетная экскурсия</option>
               <option value="Усадьба Жар. Птица">Усадьба Жар. Птица</option>
             </select>
-            <input type="text" required  name="count" placeholder="Колличество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
+            <input type="text" required  name="count" placeholder="Количество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
             <textarea name="text" placeholder="Дополнительная информация и вопросы" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
             <button onClick={(e) => handleSubmit(e)}>Отправить</button>
         </form>
