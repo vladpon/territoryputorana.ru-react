@@ -12,6 +12,7 @@ const RequestBlock = (props) => {
     const token = '5861006903:AAFry8owUoELNl7R6zg8d0zzAhvJaXm1e4Y';
     const chatId = '-641195533';
     const chat2Id = '-993753426';
+    const testChatId = '-979763403'
 
     const [ipName, setIpName]  = useState('');
     const [ipEmail, setIpEmail] = useState('');
@@ -26,8 +27,12 @@ const RequestBlock = (props) => {
 
     const handleSubmit = (e) => {
 
-      const url = (ipTour === 'Палаточный кемпинг на озере Лама') ? 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat2Id + '&parse_mode=html&text=' :
+      let url = (ipTour === 'Палаточный кемпинг на озере Лама') ? 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat2Id + '&parse_mode=html&text=' :
       'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=html&text='
+
+      if (ipName === 'TEST') {
+          url = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + testChatId + '&parse_mode=html&text='
+      }
 
       e.preventDefault()
       if (ipName === '') {
@@ -47,6 +52,28 @@ const RequestBlock = (props) => {
         return
       }
       const query = url + '<b>Имя:</b> ' + ipName + '%0A<b>e-mail:</b> ' + ipEmail  + '%0A<b>Телефон:</b> ' + ipTel + '%0A<b>Выбранный тур:</b> ' + ipTour + '%0A<b>Количество участников:</b> ' + ipCount + '%0A<b>Дополнительная информация:</b> ' + ipText
+
+
+      if (ipTour === 'Палаточный кемпинг на озере Лама' && ipCount < 8) {
+        const reqBody =  new URLSearchParams({
+          'name': ipName,
+          'email': ipEmail
+          })
+        let options = {
+          method: 'POST',
+          body: reqBody,
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          }
+        }
+        try {
+          const res = fetch('https://territoryputorana.ru/api/mailer.php', options)
+          console.log(res)
+        }
+        catch (err) {
+          console.error(err)
+        }
+      }
       setShowThankYou(true)
       fetch(query)
     }
