@@ -3,7 +3,7 @@ import TourPageCover from '../TourPage/components/TourPageCover'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import '../TourPage/components/styles.scss'
-import RequestBlock from '../../components/RequestBlock/RequestBlock'
+import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
 
 const snowRide = {
   title: "Снегоходная гонка за полярным кругом",
@@ -82,7 +82,7 @@ const SnowRide = () => {
         </ul>
         <img src='./img/sr_partners.jpg' />
       </div>
-      <RequestBlock bgImage = {'./img/sr_req.jpg'} h2Text = {"Стать участником или партнером"} h3Text = {"Оставьте заявку и мы обязательно Вам ответим"}/>
+      <RequestBlockProjects bgImage = {'./img/sr_req.jpg'} h2Text = {"Стать участником или партнером"} h3Text = {"Оставьте заявку и мы обязательно Вам ответим"}/>
 
     </main>
   )
