@@ -1,14 +1,17 @@
 <?php
 
-// require_once '../../const/const.php';
+require_once '../../const/const.php';
 
 $sqlStr = $_POST['sqlStr'];
 //var_dump($_POST);
 
+global $DBNAME;
+global $DBPASS;
+
 $pdo = new PDO(
-    'mysql:host=lysovanton.beget.tech:3306;dbname=lysovanton_tours',
-    'lysovanton_tours',
-    'pjoe6qU&');
+    'mysql:host=lysovanton.beget.tech:3306;dbname=' . $DBNAME,
+    $DBNAME,
+    $DBPASS);
 
 
     $stmt = $pdo->prepare($sqlStr);
