@@ -5,6 +5,10 @@ require './phpmailer/PHPMailer.php';
 require './phpmailer/SMTP.php';
 require './phpmailer/Exception.php';
 
+require_once '../../const/const.php';
+
+global $EMAILPASS;
+
 $clientName = $_POST['name'];
 $clientEmail = $_POST['email'];
 
@@ -28,7 +32,7 @@ try {
     // Настройки вашей почты
     $mail->Host       = 'smtp.yandex.com'; // SMTP сервера вашей почты
     $mail->Username   = 'putoranatours@ya.ru'; // Логин на почте
-    $mail->Password   = 'bcquaowopyftzabw'; // Пароль на почте
+    $mail->Password   = $EMAILPASS; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
     $mail->setFrom('putoranatours@ya.ru', 'Территория Путорана'); // Адрес самой почты и имя отправителя
