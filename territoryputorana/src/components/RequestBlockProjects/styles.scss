@@ -69,36 +69,11 @@
         input {
             // margin-bottom: 2em;
             padding: 5px;
-            border: 0;
-            border-radius: 0;
-
-            *:focus {
-                border: 0;
-                outline: 0;
-            }
-        }
-
-        select {
-            border-radius: 0;
-            color: black;
-
-            * option {
-                color: black;
-            }
-
-            *:focus {
-                border: 1px solid black ;
-                color: black;
-                outline: 0;
-                box-shadow: 0;
-            }
         }
 
         textarea {
             padding: 0.4em;
             margin-bottom: 3em;
-            border: 0;
-            border-radius: 0;
         }
 
         button {

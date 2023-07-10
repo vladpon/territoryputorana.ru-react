@@ -1,16 +1,22 @@
 import React, { useEffect } from 'react'
 import './styles.scss'
 import { useState } from 'react'
+import { putRequest } from '../../api/requests'
+import { useLocation } from 'react-router-dom'
 
 
 
 
 const RequestBlock = (props) => {
+    let location = useLocation() 
+
     const { bgImage, h2Text, h3Text } = props
     const styleString = '.req-block::before{background-image: url(' + bgImage + ');}'
 
     const token = '5861006903:AAFry8owUoELNl7R6zg8d0zzAhvJaXm1e4Y';
     const chatId = '-641195533';
+    const chat2Id = '-993753426';
+    const testChatId = '-979763403'
 
     const [ipName, setIpName]  = useState('');
     const [ipEmail, setIpEmail] = useState('');
@@ -20,10 +26,18 @@ const RequestBlock = (props) => {
     const [ipText, setIpText] = useState('');
     const [showThankYou, setShowThankYou] = useState(false);
 
-    const url = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=html&text='
+    
 
 
     const handleSubmit = (e) => {
+
+      let url = (ipTour === 'Палаточный кемпинг на озере Лама') ? 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat2Id + '&parse_mode=html&text=' :
+      'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=html&text='
+
+      if (ipName === 'TEST') {
+          url = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + testChatId + '&parse_mode=html&text='
+      }
+
       e.preventDefault()
       if (ipName === '') {
         alert('Введите Ваше имя')
@@ -38,10 +52,44 @@ const RequestBlock = (props) => {
         return
       }
       if (ipCount === '') {
-        alert('Введите колличество участников')
+        alert('Введите количество участников')
         return
       }
-      const query = url + '<b>Имя:</b> ' + ipName + '%0A<b>e-mail:</b> ' + ipEmail  + '%0A<b>Телефон:</b> ' + ipTel + '%0A<b>Выбранный тур:</b> ' + ipTour + '%0A<b>Колличество участников:</b> ' + ipCount + '%0A<b>Дополнительная информация:</b> ' + ipText
+
+      const query = url + '<b>Имя:</b> ' + ipName + '%0A<b>e-mail:</b> ' + ipEmail  + '%0A<b>Телефон:</b> ' + ipTel + '%0A<b>Выбранный тур:</b> ' + ipTour + '%0A<b>Количество участников:</b> ' + ipCount + '%0A<b>Дополнительная информация:</b> ' + ipText
+
+
+      if (ipTour === 'Палаточный кемпинг на озере Лама' && ipCount < 8) {
+        const reqBody =  new URLSearchParams({
+          'name': ipName,
+          'email': ipEmail
+          })
+        let options = {
+          method: 'POST',
+          body: reqBody,
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          }
+        }
+        try {
+          const res = fetch('https://territoryputorana.ru/api/mailer.php', options)
+          console.log(res)
+        }
+        catch (err) {
+          console.error(err)
+        }
+      }
+
+      putRequest({
+        'new-request': true,
+        'request-page': location.pathname,
+        'client-name': ipName,
+        'client-email': ipEmail,
+        'client-tel': ipTel,
+        'select-value': ipTour,
+        'members-count': ipCount,
+        'aux-text': ipText
+      })
       setShowThankYou(true)
       fetch(query)
     }
@@ -78,8 +126,8 @@ const RequestBlock = (props) => {
               <option value="Вертолетная экскурсия">Вертолетная экскурсия</option>
               <option value="Усадьба Жар. Птица">Усадьба Жар. Птица</option>
             </select>
-            <input type="text" required  name="count" placeholder="Колличество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
-            <textarea name="text" placeholder="Дополнительная информация и вопросы" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
+            <input type="text" required  name="count" placeholder="Количество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
+            <textarea name="text" placeholder="Дополнительная информация (желательные даты, количество дней)" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
             <button onClick={(e) => handleSubmit(e)}>Отправить</button>
         </form>
         <style>{styleString}</style>

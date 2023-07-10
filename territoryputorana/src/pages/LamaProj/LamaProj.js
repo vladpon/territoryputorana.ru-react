@@ -3,7 +3,7 @@ import TourPageCover from '../TourPage/components/TourPageCover'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import '../TourPage/components/styles.scss'
-import RequestBlock from '../../components/RequestBlock/RequestBlock'
+import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
 
 const lamaProj = {
   title: "Экологический проект",
@@ -42,7 +42,7 @@ const LamaProj = () => {
             </div>
         </div>
       <PhotoBlock photos = {photos}/>
-      <RequestBlock bgImage = {'./img/lama_req.jpg'} h2Text = {"Стать волонтером или партнером"} h3Text = {"Оставьте заявку и мы обязательно Вам ответим"}/>
+      <RequestBlockProjects bgImage = {'./img/lama_req.jpg'} h2Text = {"Стать волонтером или партнером"} h3Text = {"Оставьте заявку и мы обязательно Вам ответим"}/>
 
     </main>
   )
