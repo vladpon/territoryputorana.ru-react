@@ -11,6 +11,8 @@ import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
 import { ScrollRestoration } from 'react-router-dom'
 
+import { getTourByTourId } from '../../api/tours'
+
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 
