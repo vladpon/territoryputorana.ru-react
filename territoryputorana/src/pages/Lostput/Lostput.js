@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../TourPage/styles.scss'
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -16,7 +16,7 @@ import { getTourByTourId } from '../../api/tours'
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 
-const tour = tours.find(tour => tour.id === 'lostput')
+const blankTour = tours.find(tour => tour.id === 'lostput')
 
 const photos = [
   { src: "./img/tr_ph01.jpg"},
@@ -37,6 +37,17 @@ const txtTitle = {
 
 
 const TourPage = () => {
+  const [tour, setTour] = useState(blankTour);
+
+  useEffect( () => {
+      const getNewTour = async () => {
+        const newTour = await getTourByTourId('lostput')
+        setTour(newTour)
+      }
+      getNewTour()      
+
+  }, [])
+
   return (
     <main className='tour-page'>
         <MainLogo />

@@ -12,7 +12,7 @@ export async function getTourByTourId (tourId) {
         let resJSON = await res.json()
         return resJSON
     } else {
-        console.error('can not fetch tour by tou id ' + res.status)
+        console.error('can not fetch tour by tour id ' + res.status)
         return
     }
 }
