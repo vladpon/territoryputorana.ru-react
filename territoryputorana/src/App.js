@@ -35,6 +35,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import SnowRide from './pages/SnowRide/SnowRide';
 import LamaProj from './pages/LamaProj/LamaProj'
 import Arctic from './pages/Arctic/Arctic';
+import AdminPage from './pages/AdminPage/AdminPage';
 
 
 
@@ -70,6 +71,7 @@ function App() {
           <Route path = '/fb' Component={FeedBackPage} />
           <Route path = '/NotFound' Component={NotFound} />
           <Route path = '*' Component= {NotFound} status={404}/>
+          <Route path = '/admin' Component= {AdminPage} />
         </Routes>
         <Footer />
       </BrowserRouter>
