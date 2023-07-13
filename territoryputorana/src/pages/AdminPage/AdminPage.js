@@ -6,6 +6,8 @@ import './styles.scss'
 const AdminPage = () => {
     const [tours, setTours] = useState();
 
+    const [showTours, setShowTours] = useState(true);
+
     useEffect( () => {
         const getNewTours = async () => {
           const newTour = await getTours()
@@ -14,19 +16,35 @@ const AdminPage = () => {
         getNewTours().then(() => console.log(tours))
     }, [])
 
-  return (
-    <main className='admin-page'>
-      <div className='admin-page__container'>
+
+    const renderTours = () => {
+      return (
         <div className='admin-page__tours'>
           {tours && tours.map( (tour) => {
             return (
             <div className='admin-page__tour'>
+              <h3>tours</h3>
               <input value={tour.title}></input>
             </div>
             )
           })}
-          <div className='admin-page__tour'></div>
         </div>
+      )
+    }
+
+  return (
+    <main className='admin-page'>
+      <div className='admin-page__wrapper'>
+        <div className='admin-page__adminka adminka'>
+          <div className='adminka__tabs'>
+            <div  className='adminka__tab' onClick={() => setShowTours(true)}>Tours</div>
+            <div  className='adminka__tab'>Gallery</div>
+          </div>
+          <div className='adminka__content'>
+            {showTours && renderTours()}
+          </div>
+        </div>
+        
       </div>
     </main>
   )
