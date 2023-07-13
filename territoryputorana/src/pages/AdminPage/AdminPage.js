@@ -9,7 +9,7 @@ const AdminPage = () => {
           const newTour = await getTours()
           setTours(newTour)
         }
-        getNewTours().then(console.log(tours))
+        getNewTours().then(() => console.log(tours))
     }, [])
 
   return (
