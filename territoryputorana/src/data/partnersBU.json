@@ -1,0 +1,22 @@
+{
+    "id": "rd",
+    "title": "Russia Discovery",
+    "season": "",
+    "time": "",
+    "price": "",
+    "bigImg": "",
+    "smallImg": "./img/rd_logo.png",
+    "optImg": "",
+    "description": [
+        "Ведущий туроператор по России и наш постоянный партнер по организации туров для сборных групп туристов со всей России и мира."
+        ],
+    "tourPhoto": [],
+    "contacts": {
+        "tel": "+74951046436 ",
+        "email": "go@russiadiscovery.ru",
+        "site": "https://www.russiadiscovery.ru/regions/plato-putorana/"
+    },
+    "files" : [],
+    "href": "",
+    "section": "Туры и походы"
+}
