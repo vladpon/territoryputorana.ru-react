@@ -6,6 +6,7 @@ header('Content-Type: application/json');
 global $DBNAME;
 global $DBPASS;
 global $DBHOST;
+global $USERSDBPASS;
 
 
 if(isset($_GET['gettourbyid']))
@@ -86,7 +87,6 @@ elseif(isset($_GET['gettourbytourid']))
             $res['tourProgram']['days'][] = $day;
         }
 
-        
 
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
     }
@@ -131,7 +131,7 @@ elseif(isset($_GET['gettours']))
             $stmt = $pdo->prepare($sqlStrTourProg);
             $state = $stmt->execute(array('tour_id' => $tourId));
             $res['tourProgram'] = $stmt->fetch(PDO::FETCH_ASSOC);
-            if(!is_array($res['tourProgram'])) $res['tourProgram'] = [];
+            if(!is_array($res['tourProgram'])) $res['tourProgram'] = ['textH4' => '', 'begin' => ''];
 
             $stmt = $pdo->prepare($sqlStrDays);
             $state = $stmt->execute(array('tour_id' => $tourId));
@@ -153,7 +153,35 @@ elseif(isset($_GET['gettours']))
 
     echo json_encode($tours, JSON_UNESCAPED_UNICODE);
 }
+
+elseif(isset($_POST['updatetour'])) {
+    
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+
+    
+    $pdo = new PDO(
+        'mysql:host=' . $DBHOST . ':3306;dbname=lysovanton_users',
+        'lysovanton_users',
+        $USERSDBPASS
+    );
+
+    $sqlStr = 'SELECT user_password FROM users WHERE user_login = :login';
+    
+    $stmt = $pdo->prepare($sqlStr);
+    $state = $stmt->execute(array('login' => $login));
+    $res = $stmt->fetch(PDO::FETCH_COLUMN);
+
+    if ($res === md5(md5($password))) {
+        echo 'login success';
+    } else {
+        echo 'login failed';
+    }
+}
+
+
 else 
 {
     echo 'another request';
+    var_dump($_POST);
 }
