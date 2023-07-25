@@ -1,12 +1,23 @@
 <?php
 require_once '../../const/const.php';
+require_once 'auth.php';
 
 header('Content-Type: application/json');
+header('Access-Control-Allow-Credentials: true');
+// header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Methods: POST, GET, DELETE, PUT, PATCH, OPTIONS');
+// header('Access-Control-Allow-Headers: token, Content-Type');
 
 global $DBNAME;
 global $DBPASS;
 global $DBHOST;
 global $USERSDBPASS;
+
+global $answer;
+
+// var_dump($_SESSION);
+// var_dump($_COOKIE);
+
 
 
 if(isset($_GET['gettourbyid']))
@@ -18,15 +29,15 @@ if(isset($_GET['gettourbyid']))
 
 
         try {
-    		$pdo = new PDO(
-        		'mysql:host=localhost:3306;dbname=' . $DBNAME,
-        		$DBNAME,
-        		$DBPASS
-		    );
-		
-		    $stmt = $pdo->prepare($sqlStr);
-    		$state = $stmt->execute(array('id' => $tourId));
-    		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $pdo = new PDO(
+                'mysql:host=' . $DBHOST . ':3306;dbname=' . $DBNAME,
+                $DBNAME,
+                $DBPASS
+            );
+        
+            $stmt = $pdo->prepare($sqlStr);
+            $state = $stmt->execute(array('id' => $tourId));
+            $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
             catch (Exception $e) {
                 echo $e->getMessage();
@@ -36,7 +47,6 @@ if(isset($_GET['gettourbyid']))
     }
     else echo 'no tour ID';
 }
-
 
 elseif(isset($_GET['gettourbytourid']))
 {
@@ -108,7 +118,7 @@ elseif(isset($_GET['gettours']))
     $stateM = $stmtM->execute();
     while($tourId = $stmtM->fetch(PDO::FETCH_COLUMN)) 
     {
-            $sqlStr = 'SELECT group_size AS groupSize, year_time AS yearTime, accmdtn_short AS accmdtnShort, difficulty_level AS difficultyLevel, big_img AS bigImg, small_img AS smallImg, title, season, time, price, reference, tour_id AS tourId, href  FROM tours WHERE tour_id = :tour_id;';
+            $sqlStr = 'SELECT group_size AS groupSize, year_time AS yearTime, accmdtn_short AS accmdtnShort, difficulty_level AS difficultyLevel, big_img AS bigImg, small_img AS smallImg, title, season, time, price, reference, tour_id AS tourId, href, id  FROM tours WHERE tour_id = :tour_id;';
             $sqlStrDesc = 'SELECT paragraph FROM descriptions WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
             $sqlStrAbouts = 'SELECT paragraph FROM abouts WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
             $sqlStrDays = 'SELECT day_img AS dayImg, day_title AS dayTitle, id FROM programs_days  WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
@@ -155,27 +165,45 @@ elseif(isset($_GET['gettours']))
 }
 
 elseif(isset($_POST['updatetour'])) {
-    
-    $login = $_POST['login'];
-    $password = $_POST['password'];
+    if(online()) {
+        echo json_encode(array('online', 'succ'));
 
-    
-    $pdo = new PDO(
-        'mysql:host=' . $DBHOST . ':3306;dbname=lysovanton_users',
-        'lysovanton_users',
-        $USERSDBPASS
-    );
 
-    $sqlStr = 'SELECT user_password FROM users WHERE user_login = :login';
-    
-    $stmt = $pdo->prepare($sqlStr);
-    $state = $stmt->execute(array('login' => $login));
-    $res = $stmt->fetch(PDO::FETCH_COLUMN);
+        $pdo = new PDO(
+            'mysql:host=' . $DBHOST . ':3306;dbname=' . $DBNAME,
+            $DBNAME,
+            $DBPASS
+        );
 
-    if ($res === md5(md5($password))) {
-        echo 'login success';
+        $sqlStr = 'UPDATE tours SET 
+                        title = :title,
+                        season = :season, 
+                        year_time = :yearTime, 
+                        time = :time, 
+                        group_size = :groupSize, 
+                        accmdtn_short = :accmdtnShort, 
+                        difficulty_level = :difficultyLevel,
+                        price = :price,
+                        big_img = :bigImg,
+                        small_img = :smallImg,
+                        opt_img = :optImg,
+                        href = :href,
+                        about_h3 = :aboutH3,
+                        tour_id = :tourId,
+                        reference = :reference 
+                    WHERE id = :id;';
+    
+        $stmt = $pdo->prepare($sqlStr);
+        // $state = $stmt->execute($_POST);
+        // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        var_dump($_POST['tour']);
+
+
+
     } else {
-        echo 'login failed';
+        $answer['online'] = 'err';
+        echo json_encode($answer);
     }
 }
 
@@ -185,3 +213,6 @@ else
     echo 'another request';
     var_dump($_POST);
 }
+
+
+

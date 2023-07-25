@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { getTours } from '../../api/tours'
+import { getTours, updateTour } from '../../api/tours'
+import { logIn, checkOnline } from '../../api/auth'
 
 import './styles.scss'
 
@@ -61,8 +62,21 @@ const AdminPage = () => {
 
     const saveTour = (e) => {
       e.preventDefault();
-      
+      const data = tours[selectedTour];
+      updateTour(data).then( (res) => {
+        console.log(res)
+      })      
     }
+
+    const submitLogIn = (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target.form);
+      data.append('auth', '');
+      logIn(data).then(res => {
+        res.login === 'success' ? setOnline(true) : setOnline(false)
+      })
+    }
+
 
 
 
@@ -70,10 +84,21 @@ const AdminPage = () => {
 
     const [selectedTour, setSelectedTour] = useState(0);
 
+    const [online, setOnline] = useState(false);
+
+   
+
     useEffect( () => {
         getTours().then((tours) => {
                       setTours(tours)
                       console.log(tours)
+        })
+    }, [])
+
+    useEffect( () => {
+        checkOnline().then(res => {
+          res.login === 'success' ? setOnline(true) : setOnline(false)
+          console.log('constructor checking auth ', res)
         })
     }, [])
 
@@ -202,7 +227,8 @@ const AdminPage = () => {
   return (
     <main className='admin-page'>
       <div className='admin-page__wrapper'>
-        <div className='admin-page__adminka adminka'>
+        {online ? 
+        (<div className='admin-page__adminka adminka'>
           <div className='adminka__tabs'>
             <div  className='adminka__tab' onClick={() => setShowTours(true)}>Tours</div>
             <div  className='adminka__tab' onClick={() => setShowTours(false)}>Gallery</div>
@@ -210,7 +236,13 @@ const AdminPage = () => {
           <div className='adminka__content'>
             {showTours && renderTours()}
           </div>
-        </div>        
+        </div>) : (
+          <form>
+            <input type='text' name = 'login'></input>
+            <input type='password' name = 'password'></input>
+            <input type='submit' value='submit' onClick={ (e) => submitLogIn(e)}></input>
+          </form>
+        ) }
       </div>
     </main>
   )

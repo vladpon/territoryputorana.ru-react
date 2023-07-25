@@ -1,6 +1,6 @@
 export async function getTourByTourId (tourId) {
 
-    const url = 'https://territoryputorana.ru/api/tours_api.php?gettourbytourid&tour_id=' + tourId
+    const url = process.env.REACT_APP_API_URL + '/tours_api.php?gettourbytourid&tour_id=' + tourId
     const options = {
         method: 'GET'
     }
@@ -19,7 +19,7 @@ export async function getTourByTourId (tourId) {
 
 
 export async function getTours () {
-    const url = 'https://territoryputorana.ru/api/tours_api.php?gettours'
+    const url = process.env.REACT_APP_API_URL + '/tours_api.php?gettours'
     const options = {
         method: 'GET'
     }
@@ -32,6 +32,52 @@ export async function getTours () {
         return resJSON
     } else {
         console.error('can not fetch tours' + res.status)
+        return
+    }
+}
+
+export async function updateTour (tour) {
+    const url = process.env.REACT_APP_API_URL + '/tours_api.php'
+    let toursObj = {
+        'title' : tour.title,
+        'season' : tour.season,
+        'yearTime' : tour.yearTime,
+        'time' : tour.time,
+        'groupSize' : tour.groupSize,
+        'accmdtnShort' : tour.accmdtnShort,
+        'difficultyLevel' : tour.difficultyLevel,
+        'price' : tour.price,
+        'bigImg' : tour.bigImg,
+        'smallImg' : tour.smallImg,
+        'optImg' : tour.optImg,
+        'href' : tour.href,
+        'aboutH3' : tour.aboutH3,
+        'tourId' : tour.tourId,
+        'reference' : tour.reference
+    }
+
+    let data = {
+        'updatetour': '',
+        'tour' : toursObj
+    }
+
+    const options = {
+        method: 'POST',
+        credentials: "include",
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        },
+        body: new URLSearchParams(data)
+    }
+
+
+    let res = await fetch(url, options);
+
+    if (res.ok) {
+        let resJSON = await res.json() 
+        return resJSON
+    } else {
+        console.error('auth failed ' + res.status)
         return
     }
 }
