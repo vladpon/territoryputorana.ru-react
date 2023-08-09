@@ -6,7 +6,7 @@ import '../TourPage/components/styles.scss'
 import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
 
 const lamaProj = {
-  title: "Экологический проект",
+  title: 'Экологический проект "Чисто Лама"',
   bigImg: "./img/lama_cover03.jpg"
 }
 
