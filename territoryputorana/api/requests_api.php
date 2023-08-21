@@ -75,13 +75,13 @@ if(isset($_POST['new-request'])){
 		);
 		
 		$stmt = $pdo->prepare($sqlStr);
-    		$state = $stmt->execute();
-    		$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    	$state = $stmt->execute();
+    	$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 	catch (Exception $e) {
 		echo $e->getMessage();
 	}
 
 
-    var_dump($res);
+    echo json_encode($res);
     }

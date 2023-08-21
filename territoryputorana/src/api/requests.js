@@ -13,8 +13,8 @@ export async function putRequest (req) {
 
     let res = await fetch(url, options);
 
-    if (res.ok) {
-        let resJSON = await res.json() 
+    if (res.ok) {        
+        let resJSON = await res.json()
         return resJSON
     } else {
         console.error('cant write req to db ' + res.status)

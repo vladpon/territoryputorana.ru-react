@@ -31,6 +31,7 @@ const RequestBlock = (props) => {
 
     const handleSubmit = (e) => {
 
+
       let url = (ipTour === 'Палаточный кемпинг на озере Лама') ? 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat2Id + '&parse_mode=html&text=' :
       'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatId + '&parse_mode=html&text='
 
@@ -92,6 +93,12 @@ const RequestBlock = (props) => {
       })
       setShowThankYou(true)
       fetch(query)
+      setIpName('')
+      setIpEmail('')
+      setIpTel('')
+      setIpTour('')
+      setIpCount('')
+      setIpText('')
     }
 
     const thankYou = (name) => {
