@@ -36,6 +36,8 @@ import SnowRide from './pages/SnowRide/SnowRide';
 import LamaProj from './pages/LamaProj/LamaProj'
 import Arctic from './pages/Arctic/Arctic';
 import AdminPage from './pages/AdminPage/AdminPage';
+import { Helmet } from 'react-helmet';
+import Test3d from './pages/test3d/Test3d';
 
 
 
@@ -43,6 +45,10 @@ function App() {
   return (
     <>  
       <BrowserRouter>
+        <Helmet>
+          <title>Территория Путорана</title>
+          <meta name="description" content="Побывать на плато Путорана и воплотить свою мечту о покорении Севера! Своими глазами увидеть уникальные горы без вершин, грандиозные каньоны и величественные водопады. Активные летние туры, вертолетные экскурсии, скитур, фрирайд, хелиски."/>
+        </Helmet>
         <ScrollToTop />
         <Header />
         <Routes>          
@@ -72,6 +78,9 @@ function App() {
           <Route path = '/NotFound' Component={NotFound} />
           <Route path = '*' Component= {NotFound} status={404}/>
           <Route path = '/admin' Component= {AdminPage} />
+
+          <Route path = '/test' Component= {Test3d} />
+
         </Routes>
         <Footer />
       </BrowserRouter>

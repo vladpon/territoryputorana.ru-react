@@ -15,6 +15,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 
 import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
+import { Helmet } from 'react-helmet'
 
 const tour = tours.find(tour => tour.id === 'helicopter')
 
@@ -40,6 +41,10 @@ const photos = [
 const TourPage = () => {
   return (
     <main className='tour-page'>
+      <Helmet>
+        <title>Вертолетные экскурсии</title>
+        <meta name = 'description' content = 'Плато Путорана с высоты птичьего полета. Знаменитые водопады Кандинский, Оранский и другие. Каньон реки Хибарба. Авторские маршруты в Путоранский природный заповедник.' />
+      </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>

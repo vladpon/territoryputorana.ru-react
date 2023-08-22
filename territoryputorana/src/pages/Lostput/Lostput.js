@@ -15,6 +15,7 @@ import { getTourByTourId } from '../../api/tours'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
+import { Helmet } from 'react-helmet'
 
 const blankTour = tours.find(tour => tour.id === 'lostput')
 
@@ -50,6 +51,10 @@ const TourPage = () => {
 
   return (
     <main className='tour-page'>
+      <Helmet>
+        <title>Затерянный мир плато Путорана</title>
+        <meta name = 'description' content = 'Динамичный недельный тур на плато Путорана. Размещение с комфортом класса люкс. Трекинговые маршруты, каньоны, водопады. Водные прогулки. Вертолетные экскурсии. Гастрономический туризм.' />
+      </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>

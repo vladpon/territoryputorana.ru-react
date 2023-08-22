@@ -4,6 +4,7 @@ import '../TourPage/components/styles.scss'
 import './styles.scss'
 
 import PhotoBlock from './PhotoBlock';
+import { Helmet } from 'react-helmet';
 
 const photos1 = [
     { 
@@ -54,6 +55,10 @@ const Gallery = () => {
 
   return (
     <main className = 'gallery'>
+        <Helmet>
+            <title>Галерея</title>
+            <meta name = 'description' content = 'Плато Путорана. Озеро Лама. Таймыр. Водопады плато Путорана.' />
+        </Helmet>
         <PhotoBlock section = 'hiking' length = {33} title = {'Пешие маршруты'}/> 
         <PhotoBlock section = 'lamalake' length = {26} title = {'Озеро Лама'}/> 
         <PhotoBlock section = 'waterfall' length = {17} title = {'Водопады'}/> 

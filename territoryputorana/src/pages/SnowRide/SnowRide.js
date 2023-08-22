@@ -4,6 +4,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import '../TourPage/components/styles.scss'
 import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
+import { Helmet } from 'react-helmet'
 
 const snowRide = {
   title: "Снегоходная гонка за полярным кругом",
@@ -23,6 +24,10 @@ const photos = [
 const SnowRide = () => {
   return (
     <main className = 'snow-ride'>
+      <Helmet>
+        <title>Snow Ride</title>
+        <meta name = 'description' content = 'Ежегодная снегоходная гонка и фестиваль зимних активностей «SNOW RIDE Putorana». Норильск, ущелье Красные камни.' />
+      </Helmet>
       <MainLogo logoImg = './img/sr_logo.png' backgroundColor = '#fff'/>
       <TourPageCover tour = {snowRide} />
       <div className = 'tp-program__container'>

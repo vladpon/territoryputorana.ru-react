@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
+import { Helmet } from 'react-helmet'
 
 const tour = tours.find(tour => tour.id === 'jar')
 
@@ -37,6 +38,10 @@ const txtTitle = {
 const TourPage = () => {
   return (
     <main className='tour-page'>
+      <Helmet>
+        <title>Усадьба Жар. Птица</title>
+        <meta name = 'description' content = 'Озеро Лама – самое знаменитое озеро плато Путорана. Комфорт и сервис класса люкс. Гастрономическое сопровождение. Вертолетные экскурсии. Водные прогулки. Радиальные маршруты.' />
+      </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>

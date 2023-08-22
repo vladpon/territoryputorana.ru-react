@@ -16,6 +16,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import '../TourPage/styles.scss'
+import { Helmet } from 'react-helmet'
 
 const tour = tours.find(tour => tour.id === 'skitour')
 
@@ -34,6 +35,10 @@ const txtTitle = {
 const TourPage = () => {
   return (
     <main className='tour-page'>
+      <Helmet>
+        <title>Ски-тур</title>
+        <meta name = 'description' content = 'Недельный лыжный тур на плато Путорана. Комфортабельный теплый глэмпинг. Авторские маршруты. Профессиональные гиды.' />
+      </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>

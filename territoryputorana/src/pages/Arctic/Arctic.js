@@ -3,6 +3,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import TourPageCover from '../TourPage/components/TourPageCover'
 
 import './styles.scss'
+import { Helmet } from 'react-helmet'
 
 const arctic = {
     title: 'Исследовательский проект',
@@ -47,6 +48,10 @@ const routes = [
 const Arctic = () => {
   return (
     <main>
+        <Helmet>
+            <title>Исследовательский проект</title>
+            <meta name = 'description' content = 'Экспедиции Арктики – разработка маршрутов экологического и познавательного туризма на плато Путорана. Объединенная дирекция заповедников Таймыра. Путоранский заповедник. Территория Путорана.' />
+        </Helmet>
         <MainLogo logoImg = './img/arcticLogo3.svg' backgroundColor = '#fff'/>
         <TourPageCover tour = {arctic} />
         <div className = 'tp-aux__container'>

@@ -4,6 +4,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import '../TourPage/components/styles.scss'
 import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
+import { Helmet } from 'react-helmet'
 
 const lamaProj = {
   title: 'Экологический проект "Чисто Лама"',
@@ -23,6 +24,10 @@ const photos = [
 const LamaProj = () => {
   return (
     <main className = 'lama-proj'>
+      <Helmet>
+        <title>Экологический проект</title>
+        <meta name = 'description' content = '«Чисто Лама» - экологический проект АНО «Центр развития туризма «Территория Путорана». Президентский грант 2023 в направлении «Охрана окружающей среды и защита животных». Путоранский заповедник. Волонтеры.' />
+      </Helmet>
       <MainLogo />
       <TourPageCover tour = {lamaProj} />
         <div className = "tp-about__container">

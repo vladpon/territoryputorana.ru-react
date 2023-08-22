@@ -5,10 +5,15 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import tours3d from '../../data/tours3d.json'
 
 import './styles.scss'
+import { Helmet } from 'react-helmet'
 
 const Tours3d = () => {
   return (
     <main className='tours3d-page'>
+      <Helmet>
+        <title>3d туры</title>
+        <meta name = 'description' content = 'Приглашаем на виртуальную прогулку по плато Путорана. Усадьба «Жар. Птица» и палаточный кемпинг на озере Лама. Природные локации, которые вы сможете посетить во время тура.' />
+      </Helmet>
         <div className = 'tours3d-page__content'>
             <MainLogo />
             <div className="tours3d-page__title">

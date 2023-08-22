@@ -6,6 +6,7 @@ import './styles.scss'
 
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 
 const AboutPage = () => {
 
@@ -17,6 +18,10 @@ const AboutPage = () => {
 
   return (
     <main className='about-page'>
+        <Helmet>
+        <title>О нас</title>
+        <meta name = 'description' content = 'Туры и экспедиции на плато Путорана с местным туроператором. Сертифицированные горные гиды. Собственная комфортабельная база на озере Лама.' />
+      </Helmet>
         <MainLogo />
         <div className = "about-page__cover">        
             <img className = "about-page__bg" src='./img/anton002.jpg' />

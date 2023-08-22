@@ -13,6 +13,7 @@ import { ScrollRestoration } from 'react-router-dom'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
+import { Helmet } from 'react-helmet'
 
 const tour = tours.find(tour => tour.id === 'trailrunning')
 
@@ -38,6 +39,10 @@ const txtTitle = {
 const TourPage = () => {
   return (
     <main className='tour-page'>
+      <Helmet>
+        <title>Трейлраннинг кемп</title>
+        <meta name = 'description' content = 'Недельный трейлраннинг-кемп на плато Путорана. Беговые маршруты в уникальных природных локациях: горы, каньоны, водопады. Размещение с комфортом класса люкс.' />
+      </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>

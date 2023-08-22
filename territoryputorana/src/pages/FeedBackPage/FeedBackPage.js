@@ -7,6 +7,7 @@ import './styles.scss'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Helmet } from 'react-helmet';
 
 
 const FeedBackPage = () => {
@@ -15,7 +16,11 @@ const FeedBackPage = () => {
 
   return (
     <main className='fb-page'>
-        <div className='fb-page__fb fb'>
+      <Helmet>
+            <title>Отзывы</title>
+            <meta name = 'description' content = 'Мы будем рады, если Вы поделитесь своими впечатлениями о путешествии на плато Путорана с нами. Ваш отзыв будет очень полезен для тех, кто собирается в тур.' />
+      </Helmet>
+        <div className='fb-page__fb fb'>        
             <Swiper navigation={true} modules={[Navigation]} className="fb__photo">
               <SwiperSlide><img src='./img/fb002.jpg'></img></SwiperSlide>
               <SwiperSlide><img src='./img/fb001.jpg'></img></SwiperSlide>

@@ -17,6 +17,7 @@ import tours from '../../data/tours.json'
 import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import '../TourPage/styles.scss'
+import { Helmet } from 'react-helmet'
 
 const tour = tours.find(tour => tour.id === 'camping')
 
@@ -39,6 +40,10 @@ const txtTitle = {
 const TourPage = () => {
   return (
     <main className='tour-page'>
+      <Helmet>
+        <title>Палаточный кемпинг</title>
+        <meta name = 'description' content = 'Палаточный кемпинг на озере Лама с комфортными условиями размещения для самостоятельных туристов.' />
+      </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>

@@ -12,6 +12,7 @@ import RequestBlock from '../../components/RequestBlock/RequestBlock'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
+import { Helmet } from 'react-helmet'
 
 const tour = tours.find(tour => tour.id === 'heliski')
 
@@ -36,6 +37,10 @@ const txtTitle = {
 const TourPage = () => {
   return (
     <main className='tour-page'>
+      <Helmet>
+        <title>Хели-ски</title>
+        <meta name = 'description' content = 'Высокий уровень безопасности и комфорта. Маневренный вертолет. Сертифицированные горные гиды-инструкторы.' />
+      </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour}/>

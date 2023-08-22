@@ -93,12 +93,14 @@ const RequestBlock = (props) => {
       })
       setShowThankYou(true)
       fetch(query)
+
       setIpName('')
       setIpEmail('')
       setIpTel('')
       setIpTour('')
       setIpCount('')
       setIpText('')
+      
     }
 
     const thankYou = (name) => {
