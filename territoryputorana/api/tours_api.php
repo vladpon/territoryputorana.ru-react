@@ -168,7 +168,6 @@ elseif(isset($_POST['updatetour'])) {
     if(online()) {
         echo json_encode(array('online', 'succ'));
 
-
         $pdo = new PDO(
             'mysql:host=' . $DBHOST . ':3306;dbname=' . $DBNAME,
             $DBNAME,
@@ -177,9 +176,9 @@ elseif(isset($_POST['updatetour'])) {
 
         $sqlStr = 'UPDATE tours SET 
                         title = :title,
-                        season = :season, 
-                        year_time = :yearTime, 
-                        time = :time, 
+                        season = :season,
+                        year_time = :yearTime,
+                        time = :time,
                         group_size = :groupSize, 
                         accmdtn_short = :accmdtnShort, 
                         difficulty_level = :difficultyLevel,
