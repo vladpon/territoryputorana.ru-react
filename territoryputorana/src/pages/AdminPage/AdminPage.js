@@ -3,9 +3,12 @@ import { getTours, updateTour } from '../../api/tours'
 import { logIn, checkOnline } from '../../api/auth'
 
 import './styles.scss'
+import { getGallery, getGalleryCategories } from '../../api/gallery'
 
 const AdminPage = () => {
     const [tours, setTours] = useState();
+    const [gallery, setGallery] = useState();
+    const [galleryCat, setGalleryCat] = useState();
 
     function setToursField(e) { 
       setTours(tours.map((tour,index) => (index == selectedTour) ? {...tour, [e.target.name]:e.target.value} : tour))
@@ -81,6 +84,7 @@ const AdminPage = () => {
 
 
     const [showTours, setShowTours] = useState(false);
+    const [tab, setTab] = useState("");
 
     const [selectedTour, setSelectedTour] = useState(0);
 
@@ -93,6 +97,18 @@ const AdminPage = () => {
                       setTours(tours)
                       console.log(tours)
         })
+    }, [])
+    useEffect( () => {
+      getGallery().then( (gallery) => {
+                      setGallery(gallery)
+                      console.log(gallery)
+      })
+    }, [])
+    useEffect( () => {
+      getGalleryCategories().then( (galleryCat) => {
+                      setGalleryCat(galleryCat)
+                      console.log(galleryCat)
+      })
     }, [])
 
     useEffect( () => {
@@ -224,17 +240,37 @@ const AdminPage = () => {
       )
     }
 
+    function setCatName(e, id) {
+      setGalleryCat(galleryCat.map((cat) => (cat.id == id) ? {...gallery, [e.target.name]:e.target.value} : cat))
+    }
+
+    const renderGallery = () => {
+      return (
+        <>
+          {galleryCat && (
+            <div className='gallery-cat'>
+              <span>Categories</span>
+              {galleryCat.map( (cat, index) => {
+                return <input className = 'gallery-cat_name' name = 'catName' key={index} value = {cat.catName} onChange={ (e) => setCatName(e, cat.id)}></input>
+              })}
+            </div>
+          )}
+        </>
+      )
+    }
+
   return (
     <main className='admin-page'>
       <div className='admin-page__wrapper'>
         {online ? 
         (<div className='admin-page__adminka adminka'>
           <div className='adminka__tabs'>
-            <div  className='adminka__tab' onClick={() => setShowTours(true)}>Tours</div>
-            <div  className='adminka__tab' onClick={() => setShowTours(false)}>Gallery</div>
+            <div  className='adminka__tab' onClick={() => setTab('tours')}>Tours</div>
+            <div  className='adminka__tab' onClick={() => setTab('gallery')}>Gallery</div>
           </div>
           <div className='adminka__content'>
-            {showTours && renderTours()}
+            {(tab === 'tours') && renderTours()}
+            {(tab === 'gallery') && renderGallery()}
           </div>
         </div>) : (
           <form>

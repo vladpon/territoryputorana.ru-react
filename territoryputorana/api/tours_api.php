@@ -118,7 +118,7 @@ elseif(isset($_GET['gettours']))
     $stateM = $stmtM->execute();
     while($tourId = $stmtM->fetch(PDO::FETCH_COLUMN)) 
     {
-            $sqlStr = 'SELECT group_size AS groupSize, year_time AS yearTime, accmdtn_short AS accmdtnShort, difficulty_level AS difficultyLevel, big_img AS bigImg, small_img AS smallImg, title, season, time, price, reference, tour_id AS tourId, href, id  FROM tours WHERE tour_id = :tour_id;';
+            $sqlStr = 'SELECT group_size AS groupSize, year_time AS yearTime, accmdtn_short AS accmdtnShort, difficulty_level AS difficultyLevel, big_img AS bigImg, small_img AS smallImg, title, season, time, price, reference, tour_id AS tourId, about_h3 AS aboutH3, opt_img AS optImg, href, id  FROM tours WHERE tour_id = :tour_id;';
             $sqlStrDesc = 'SELECT paragraph FROM descriptions WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
             $sqlStrAbouts = 'SELECT paragraph FROM abouts WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
             $sqlStrDays = 'SELECT day_img AS dayImg, day_title AS dayTitle, id FROM programs_days  WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
