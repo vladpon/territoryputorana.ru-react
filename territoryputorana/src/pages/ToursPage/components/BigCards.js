@@ -28,7 +28,7 @@ const BigCards = (props) => {
         // (activeSections.includes(section)) ? setActiveSections(activeSections.filter( item => item !== section))
         //     : setActiveSections([...activeSections, section])
         setActiveSections(section)
-        
+
 
 
   return (
@@ -43,7 +43,7 @@ const BigCards = (props) => {
                         </div>) : <></>}
         { content ? (
             filteredContent.map( ( item ) => 
-                    {  
+                    {
                         return (
                             <div className = "big-cards__card" key = {item.id} onClick={() => navigate(item.href)}>
                                 <div className = {"big-cards__img " + cardsType} >                                    
@@ -65,6 +65,11 @@ const BigCards = (props) => {
                                             <span>{item.price}</span>
                                             <span>{item.time}</span>
                                         </div>
+
+                                        {/* MULTITOUR */}
+                                        {item.ISMULTITOUR && (<div className='miltitour'></div>)}
+
+                                        
                                     </div>
                                 </div>
                             </div> 
