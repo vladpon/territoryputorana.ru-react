@@ -36,7 +36,7 @@ const BigCards = (props) => {
         {sections ? (
                         <div className='big-cards__sections'>
                             {sections.map((section) => (
-                                <button key={section} onClick={() => handleSectionButton(section)} className = {activeSections.includes(section) ? 'active' : ''}>{section}</button>
+                                <button  key={section} onClick={() => handleSectionButton(section)} className = {activeSections.includes(section) ? 'active main-button' : 'main-button'}>{section}</button>
                                 )
                                 )
                             }
@@ -59,17 +59,20 @@ const BigCards = (props) => {
                                     {item.contacts.wa && (<><a href={`https://wa.me/${item.contacts.wa}`}>{'whatsapp: '+item.contacts.wa}</a></>)}
                                     {item.contacts.address && (<><br />{`${item.contacts.address}`}</>)}
                                     {item.files && item.files.map( (file, index) => (<a className = 'big-cards__filelink' key = {index} href={`${file.src}`} style={{textDecoration: "underline"}} >{file.name}</a>))}
-                                    </p>                            
+                                    </p>
                                     <div className="big-cards__info">
                                         <div className="big-cards__cost">
                                             <span>{item.price}</span>
                                             <span>{item.time}</span>
                                         </div>
+                                        {(item.varPrice !== "") && (
+                                            <div className='big-cards__cost'>
+                                                <span>{item.varPrice}</span>
+                                                <span>{item.varTime}</span>
+                                            </div>
+                                        )}
 
-                                        {/* MULTITOUR */}
-                                        {item.ISMULTITOUR && (<div className='miltitour'></div>)}
 
-                                        
                                     </div>
                                 </div>
                             </div> 
