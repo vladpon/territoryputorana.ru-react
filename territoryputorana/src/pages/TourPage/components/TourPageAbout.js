@@ -1,7 +1,10 @@
 import React from 'react'
 
+import InfoFrame from '../../../components/InfoFrame/InfoFrame'
+
 const TourPageAbout = (props) => {
-    const {about, yearTime, groupSize, time, accmdtnShort, difficultyLevel, price, varPrice, aboutH3, routes, reference, varAboutH3, varHitDescription} = props.tour
+    const {about, yearTime, groupSize, time, accmdtnShort, difficultyLevel, price, varPrice, aboutH3, routes, reference, varAboutH3, varHitDescription, hitDescription} = props.tour
+
   return (
     <div className = "tp-about__container">
         <div className='tp-about'>
@@ -21,10 +24,11 @@ const TourPageAbout = (props) => {
                         <span className = "tp-about__price">{price}</span><br />
                         {reference && <span className = 'tp-about__note'>*{reference}</span>}
                 </div>
+                {/* <InfoFrame price = {price} title = {aboutH3} reference = {reference} description = {hitDescription} /> */}
                 {(varAboutH3 !== "") && (
                     <div className = "tp-about__hit">
                         <h3>{varAboutH3}</h3>
-                        {<div dangerouslySetInnerHTML={{__html: varHitDescription}} />}          
+                        {<div dangerouslySetInnerHTML={{__html: varHitDescription}} />}
                         <span className = "tp-about__price">{varPrice}</span><br />
                         {reference && <span className = 'tp-about__note'>*{reference}</span>}
                     </div>

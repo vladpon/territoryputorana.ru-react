@@ -9,12 +9,38 @@ import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
+import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
+import BigCards from '../ToursPage/components/BigCards'
 
 const tour = tours.find(tour => tour.id === 'heliski')
+
+const severgrandHotel = [
+  {
+    "id": "severgrand",
+    "title": "Севергранд",
+    "season": "",
+    "time": "",
+    "price": "",
+    "bigImg": "",
+    "smallImg": "./img/severgrand_logo03.svg",
+    "optImg": "",
+    "description": [
+        "Новый отель 3* в центре Норильска. Комфортные номера с дизайнерским ремонтом: стандарт, стандарт Superior, Junior Suite, Luxe. Сервис  премиум-уровня и теплое арктическое гостеприимство."
+        ],
+    "tourPhoto": [],
+    "contacts": {
+        "tel": "+73919457038",
+        "email": "hotel@severgrand.ru",
+        "site": "https://severgrand.ru"
+    },
+    "href": "",
+    "section": "Гостиницы"
+  }
+]
 
 const photos = [
   { src: "./img/tr_ph01.jpg"},
@@ -43,7 +69,36 @@ const TourPage = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour}/>
+        <div className = "tp-about__container">
+          <div className='tp-about'>
+              <div className = "tp-about__main">
+                  <h2>О туре</h2>
+                  {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
+              </div>
+              <div className='tp-about__hit-container'>
+                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.hitDescription} refSpan = {tour.refSpan}/>
+                  <InfoFrame price = {tour.varPrice} title = {tour.varAboutH3} reference = {tour.reference} description = {tour.varHitDescription} refSpan = {tour.refSpan}/>
+              </div>
+          </div>
+        </div>
+        <div className = 'tp-aux__container'>
+          <div className = "tp-aux">
+                  {/* <h2>Дополнительно</h2> */}
+                  <p><b>Перепады высот:</b> 400 м — 800 м за один спуск</p>
+                  <p><b>Зона катания:</b> преимущественно альпийский рельеф</p>
+                  <p><b>Калькуляция летного времени: </b> поминутная, время считается от начала вращения винта и прекращается с его остановкой.</p>
+              </div>
+          </div>
+        <TourPageProgram tour = {tour}/>
+        <div className = "tp-accmmdtn">
+            <h2 className = "tp-accmmdtn__title">Даты хели-ски туров на Плато Путорана: </h2>
+            <p><b>20.10 — 24.10.2023 Сборная группа</b> </p>
+            <p>Для готовых групп мы готовы рассмотреть варианты с другими датами в период с 10.10.2023 по 30.10.2023, с 1 мая по 15 июня 2024 года.</p>
+        </div>
+        <div className = 'partners-page__content'>
+          <BigCards content = {severgrandHotel}/>
+        </div>
+        
         <RequestBlock bgImage = {'./img/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )

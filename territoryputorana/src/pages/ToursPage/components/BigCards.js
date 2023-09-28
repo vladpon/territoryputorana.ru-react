@@ -13,7 +13,7 @@ const BigCards = (props) => {
     const [activeSections, setActiveSections] = useState([])
 
     useEffect( () => {
-        (location.pathname === '/partners') ? setCardsType('big-cards__img_partners') : setCardsType('big-cards__img_other')
+        ((location.pathname === '/partners') || (location.pathname === '/heliski')) ? setCardsType('big-cards__img_partners') : setCardsType('big-cards__img_other')
         if(sections) setActiveSections(sections[0])
     }, [] )
 

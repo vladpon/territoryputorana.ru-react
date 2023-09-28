@@ -28,6 +28,7 @@ import Gallery from './pages/Gallery/Gallery'
 import Island from './pages/Island/Island';
 import Locations from './pages/Locations/Locations';
 import FeedBackPage from './pages/FeedBackPage/FeedBackPage';
+import LostWaterfalls from './pages/LostWaterfalls/LostWaterFalls';
 
 
 
@@ -67,7 +68,8 @@ function App() {
           <Route path = '/skitour' Component={SkiTour} />
           <Route path = '/about' Component={AboutPage} />
           <Route path = '/trailrunning' Component={Trailrunning} />
-          <Route path = '/helicopter' Component={Helicopter} />
+          {/* <Route path = '/helicopter' Component={Helicopter} /> */}
+          <Route path = '/lostwaterfalls' Component={LostWaterfalls} />
           <Route path = '/jar' Component={Jar} />
           <Route path = '/heliski' Component={Heliski} />
           <Route path = '/photo' Component={Gallery} />
