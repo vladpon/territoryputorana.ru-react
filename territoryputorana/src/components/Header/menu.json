@@ -30,9 +30,14 @@
                 "title": "Тейлраннинг кемп"
             },
             {
-                "id": "helicopter",
-                "href": "/helicopter",
-                "title": "Вертолетные экскурсии"
+                "id": "lostwaterfalls",
+                "href": "/lostwaterfalls",
+                "title": "Вертолетный VIP-тур «Затерянные водопады»"
+            },
+            {
+                "id": "helitour",
+                "href": "/helitour",
+                "title": "Вертолетная экскурсия"
             },
             {
                 "id": "jar",

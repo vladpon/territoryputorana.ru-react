@@ -99,7 +99,7 @@ const TourPage = () => {
           <BigCards content = {severgrandHotel}/>
         </div>
         
-        <RequestBlock bgImage = {'./img/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
+        <RequestBlock bgImage = {'./img/helireqback.JPG'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )
 }

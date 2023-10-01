@@ -131,6 +131,12 @@ const Header = (props) => {
       case '/arctic':
         setPageClass('tour-page-class')
         break;
+      case '/lostwaterfalls':
+        setPageClass('tour-page-class')
+        break;
+      case '/helitour':
+        setPageClass('tour-page-class')
+        break;
       case '/photo':
         setPageClass('gallery-class')
         break;

@@ -28,7 +28,7 @@ import Gallery from './pages/Gallery/Gallery'
 import Island from './pages/Island/Island';
 import Locations from './pages/Locations/Locations';
 import FeedBackPage from './pages/FeedBackPage/FeedBackPage';
-import LostWaterfalls from './pages/LostWaterfalls/LostWaterFalls';
+import LostWaterfalls from './pages/LostWaterfalls/LostWaterfalls';
 
 
 
@@ -39,6 +39,7 @@ import Arctic from './pages/Arctic/Arctic';
 import AdminPage from './pages/AdminPage/AdminPage';
 import { Helmet } from 'react-helmet';
 import Test3d from './pages/test3d/Test3d';
+import HeliTour from './pages/HeliTour/HeliTour';
 
 
 
@@ -80,6 +81,7 @@ function App() {
           <Route path = '/NotFound' Component={NotFound} />
           <Route path = '*' Component= {NotFound} status={404}/>
           <Route path = '/admin' Component= {AdminPage} />
+          <Route path = '/helitour' Component={HeliTour} />
 
           <Route path = '/test' Component= {Test3d} />
 

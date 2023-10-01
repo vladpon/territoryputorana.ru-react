@@ -43,10 +43,14 @@
         right: calc(50vw - 150px);
         top: 10vh;
         // height: 80%;
-        width: 300px;
+        max-width: 450px;
         background-color: $secondary-background-color;
         border-radius: 2%;
         z-index: 11;
+
+        & ul > li {
+            @include font-size-adaptive(17px);
+        }
     }
 
     &__note {

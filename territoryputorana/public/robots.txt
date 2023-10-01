@@ -1,6 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow: /*.html$
+Disallow: /404.html
+Allow: /index.html
 Allow: /$
 Allow: /tours
 Allow: /lostput
@@ -22,12 +24,71 @@ Allow: /tours3d
 Allow: /Lama3d
 Allow: /island
 Allow: /locations
-Disallow: /
+Allow: /lostwaterfalls
+Allow: /helitour
+Allow: /sitemap.xml
+
 
 User-agent: Googlebot
+Disallow: /*.html$
+Allow: /index.html
+Allow: /$
+Allow: /tours
+Allow: /lostput
+Allow: /camping
+Allow: /skitour
+Allow: /trailrunning
+Allow: /helicopter
+Allow: /jar
+Allow: /heliski
+Allow: /about
+Allow: /projects
+Allow: /sr
+Allow: /lamaproj
+Allow: /arctic
+Allow: /partners
+Allow: /photo
+Allow: /fb
+Allow: /tours3d
+Allow: /lostwaterfalls
+Allow: /Lama3d
+Allow: /island
+Allow: /locations
+Allow: /helitour
 Allow: /robots.txt
+Allow: /sitemap.xml
+
+
+
 
 User-agent: Yandex
+Disallow: /*.html$
+Allow: /index.html
+Allow: /$
+Allow: /tours
+Allow: /lostput
+Allow: /camping
+Allow: /skitour
+Allow: /trailrunning
+Allow: /helicopter
+Allow: /jar
+Allow: /heliski
+Allow: /lostwaterfalls
+Allow: /about
+Allow: /projects
+Allow: /sr
+Allow: /lamaproj
+Allow: /arctic
+Allow: /partners
+Allow: /photo
+Allow: /fb
+Allow: /tours3d
+Allow: /Lama3d
+Allow: /island
+Allow: /locations
+Allow: /helitour
 Allow: /robots.txt
+Allow: /sitemap.xml
+
 
 Sitemap: https://territoryputorana.ru/sitemap.xml
