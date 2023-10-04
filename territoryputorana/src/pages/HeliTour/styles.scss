@@ -1,0 +1,13 @@
+@import '../../const';
+
+
+.map {
+    @include blockHPadding;
+    @include blockVPadding;
+    width: 100%;
+    height: 100%;
+
+    & img {
+        width: 100%;
+    }
+}

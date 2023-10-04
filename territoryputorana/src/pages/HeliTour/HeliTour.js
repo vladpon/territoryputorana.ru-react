@@ -1,6 +1,8 @@
 import React from 'react'
 
 import '../TourPage/styles.scss'
+import './styles.scss'
+
 import TourPageCover from '../TourPage/components/TourPageCover'
 import TourPageAbout from '../TourPage/components/TourPageAbout'
 import TourPageAux from '../TourPage/components/TourPageAux'
@@ -25,7 +27,7 @@ const tour = tours.find(tour => tour.id === 'helitour')
 const txtTitle = {
   title: "Транспорт",
   text: [
-    "Экскурсия проводиться на вертолете ВО 105 или Еврокоптер (вместимость — до 4 пассажиров)."
+    "Экскурсия проводится на вертолете ВО 105 или Еврокоптер (вместимость — до 4 пассажиров)."
   ]
 }
 
@@ -71,6 +73,11 @@ const HeliTour = () => {
         <div className = 'txt-title'>
             <h2>{txtTitle.title}</h2>
             {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
+        </div>
+
+        <div className='map'>
+          <h2>Карта маршрута</h2>
+          <img src='./img/helimap.jpg'></img>
         </div>
 
         <PhotoBlock photos = {photos}/>

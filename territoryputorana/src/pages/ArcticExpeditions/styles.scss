@@ -1,0 +1,64 @@
+@import '../../const';
+
+
+
+.tours-page {
+    position: relative;
+    background-color: $secondary-background-color;
+    padding-top: map-get($header-height, vl);
+        @media (max-width: map-get($breakpoints, lg)) {
+            padding-top: map-get($header-height, lg);
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            padding-top: map-get($header-height, md);
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            padding-top: map-get($header-height, sm);
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            padding-top: map-get($header-height, xs);
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            padding-top: map-get($header-height, vs);
+        }
+    
+        &__content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            @include blockMaxWidth;
+            margin: 0 auto;
+        }
+
+        &__title {
+            position: relative;
+
+            h1 {
+                position: relative;
+                text-transform: uppercase;
+                font-weight: 500;
+                z-index: 1;
+
+                &::after {
+                    content: 'ЭКСПЕДИЦИИ';
+                    position: absolute;
+                    left: 0.4em;
+                    top: -0.4em;
+                    @include font-size-adaptive(105px);
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: darken($secondary-background-color, 10%);
+                    z-index: -1;
+                }
+            }
+
+            h3 {
+                font-weight: 400;
+                color: #7c7c7c;
+                // margin-block-end: 1.5em;
+            }
+
+        }
+}
+

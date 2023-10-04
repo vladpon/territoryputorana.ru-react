@@ -40,6 +40,7 @@ import AdminPage from './pages/AdminPage/AdminPage';
 import { Helmet } from 'react-helmet';
 import Test3d from './pages/test3d/Test3d';
 import HeliTour from './pages/HeliTour/HeliTour';
+import ArcticExpeditions from './pages/ArcticExpeditions/ArcticExpeditions';
 
 
 
@@ -82,6 +83,7 @@ function App() {
           <Route path = '*' Component= {NotFound} status={404}/>
           <Route path = '/admin' Component= {AdminPage} />
           <Route path = '/helitour' Component={HeliTour} />
+          <Route path = '/arcticexpeditions' Component={ArcticExpeditions} />
 
           <Route path = '/test' Component= {Test3d} />
 
