@@ -5,6 +5,7 @@ import PhotoBlock from '../TourPage/components/PhotoBlock'
 import '../TourPage/components/styles.scss'
 import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
 import { Helmet } from 'react-helmet'
+import { useLocation } from 'react-router-dom'
 
 const lamaProj = {
   title: 'Экологический проект "Чисто Лама"',
@@ -22,10 +23,15 @@ const photos = [
 ]
 
 const LamaProj = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <main className = 'lama-proj'>
       <Helmet>
         <title>Экологический проект</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = '«Чисто Лама» - экологический проект АНО «Центр развития туризма «Территория Путорана». Президентский грант 2023 в направлении «Охрана окружающей среды и защита животных». Путоранский заповедник. Волонтеры.' />
       </Helmet>
       <MainLogo />

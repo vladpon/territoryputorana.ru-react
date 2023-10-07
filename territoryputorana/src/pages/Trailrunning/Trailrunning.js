@@ -9,7 +9,7 @@ import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
-import { ScrollRestoration } from 'react-router-dom'
+import { ScrollRestoration, useLocation } from 'react-router-dom'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
@@ -37,10 +37,15 @@ const txtTitle = {
 
 
 const TourPage = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <main className='tour-page'>
       <Helmet>
         <title>Трейлраннинг кемп</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Недельный трейлраннинг-кемп на плато Путорана. Беговые маршруты в уникальных природных локациях: горы, каньоны, водопады. Размещение с комфортом класса люкс.' />
       </Helmet>
         <MainLogo />

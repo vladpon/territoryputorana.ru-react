@@ -5,6 +5,7 @@ import PhotoBlock from '../TourPage/components/PhotoBlock'
 import '../TourPage/components/styles.scss'
 import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
 import { Helmet } from 'react-helmet'
+import { useLocation } from 'react-router-dom'
 
 const snowRide = {
   title: "Снегоходная гонка за полярным кругом",
@@ -22,10 +23,16 @@ const photos = [
 ]
 
 const SnowRide = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
+
   return (
     <main className = 'snow-ride'>
       <Helmet>
         <title>Snow Ride</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Ежегодная снегоходная гонка и фестиваль зимних активностей «SNOW RIDE Putorana». Норильск, ущелье Красные камни.' />
       </Helmet>
       <MainLogo logoImg = './img/sr_logo.png' backgroundColor = '#fff'/>

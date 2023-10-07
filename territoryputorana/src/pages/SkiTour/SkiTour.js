@@ -17,6 +17,7 @@ import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import '../TourPage/styles.scss'
 import { Helmet } from 'react-helmet'
+import { useLocation } from 'react-router-dom'
 
 const tour = tours.find(tour => tour.id === 'skitour')
 
@@ -33,10 +34,15 @@ const txtTitle = {
 
 
 const TourPage = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <main className='tour-page'>
       <Helmet>
         <title>Ски-тур</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Недельный лыжный тур на плато Путорана. Комфортабельный теплый глэмпинг. Авторские маршруты. Профессиональные гиды.' />
       </Helmet>
         <MainLogo />

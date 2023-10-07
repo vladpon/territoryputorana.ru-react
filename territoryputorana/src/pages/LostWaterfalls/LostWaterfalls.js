@@ -17,7 +17,7 @@ import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import { Helmet } from 'react-helmet'
 import InfoFrame from '../../components/InfoFrame/InfoFrame'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const tour = tours.find(tour => tour.id === 'lostwaterfalls')
 
@@ -44,10 +44,15 @@ const photos = [
 
 
 const LostWaterfalls = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <main className='tour-page'>
       <Helmet>
         <title>VIP-тур</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Исследуйте с нами заповедный мир плато Путорана!' />
       </Helmet>
         <MainLogo />

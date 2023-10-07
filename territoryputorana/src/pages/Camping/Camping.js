@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import TourPageCover from '../TourPage/components/TourPageCover'
 import TourPageAbout from '../TourPage/components/TourPageAbout'
@@ -38,10 +38,15 @@ const txtTitle = {
 
 
 const TourPage = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <main className='tour-page'>
       <Helmet>
         <title>Палаточный кемпинг</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Палаточный кемпинг на озере Лама с комфортными условиями размещения для самостоятельных туристов.' />
       </Helmet>
         <MainLogo />

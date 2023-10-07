@@ -11,6 +11,9 @@ import VideoClip from './components/VideoClip'
 
 import tours from '../../data/tours.json'
 import { Link, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet'
+
 
 const textWord = {
   text: 'Плато Путорана — одно из самых удивительных мест России и объект Всемирного наследия ЮНЕСКО. Край бездонных каньонов, уникальных гор без вершин и тысячи озер. Здесь бурные реки, срываясь со скал, образуют высочайшие в России водопады. Здесь нет дорог, и не ходят поезда. Побывать в этих труднодоступных местах посчастливилось совсем небольшому числу людей. Но чем сложнее добраться, тем сильнее восторг от покорения!',
@@ -44,14 +47,24 @@ const textFewImages = {
   text: 'Когда везде зимний сезон заканчивается, у нас в Заполярье он только начинается! С 2022 года в марте-апреле «Территория Путорана» совместно с «Лама тур» организует снегоходную гонку в предгорье знаменитого ущелья Красные камни.'
 }
 
+
+
+
+
+
 const Main = () => {
 
   const navigate = useNavigate();
-
+  const location = useLocation()
+  const pathname = location.pathname
+  
 
   return (
     <main className='main-page'>      
 
+      <Helmet>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
+      </Helmet>
       <Cover />
       <TextWord text = {textWord.text} word = {textWord.word} />
       <CardsBlock tours = {tours}/>

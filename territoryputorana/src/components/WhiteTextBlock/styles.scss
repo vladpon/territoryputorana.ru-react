@@ -1,0 +1,47 @@
+@import '../../const';
+
+
+
+
+.white-text-block {
+    &__container {
+        width: 100%;
+        // background-color: $main-blue;
+        @include blockHPadding;
+        @include blockVPadding;
+    }
+
+    & h2 {
+        color: lighten($main-blue, 45%);
+        text-align: center;
+    }
+
+    & p {
+        text-align: justify;
+        color: lighten($main-blue, 45%);
+
+        & a {
+            text-decoration: underline;
+            color: lighten($main-blue, 45%);
+        }
+    }
+
+
+
+    & > ul {
+        margin-block-start: 2em;
+
+        & > li {
+            list-style-type: circle;
+            color: #fff;
+            @include font-size-adaptive(24px);
+            line-height: 1.4;
+            margin-left: 2em;
+
+            & a {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+}

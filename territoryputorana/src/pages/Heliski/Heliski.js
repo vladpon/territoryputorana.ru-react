@@ -15,6 +15,7 @@ import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
 import BigCards from '../ToursPage/components/BigCards'
+import { useLocation } from 'react-router-dom'
 
 const tour = tours.find(tour => tour.id === 'heliski')
 
@@ -61,10 +62,15 @@ const txtTitle = {
 
 
 const TourPage = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <main className='tour-page'>
       <Helmet>
         <title>Хели-ски</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Высокий уровень безопасности и комфорта. Маневренный вертолет. Сертифицированные горные гиды-инструкторы.' />
       </Helmet>
         <MainLogo />

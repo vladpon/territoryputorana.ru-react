@@ -127,8 +127,7 @@
             width: 100%;
             vertical-align: middle;
             object-fit: cover;
-        }
-        
+        }        
     }
 
     &__description {
@@ -139,7 +138,7 @@
         @include space-btw(column);
         align-items: flex-start;
 
-        p {
+        & p {
             @include font-size-adaptive(17px);
             align-self: flex-start;
             width: 100%;
@@ -147,47 +146,38 @@
             line-height: 1.4em; 
         }
 
-        a {
+        & a {
             &:hover {
                 color: $main-blue;
             }
         }
-    }
 
-    & h3 {
+        & h3 {
         @include font-size-adaptive(30px);
         font-weight: 700;
         text-transform: uppercase;
         margin-block-end: 0.5em;
-    }
-
-    &__info {
-        @include space-btw(row);
-        width: 100%;
-    }
-
-    &__cost {
-        display: flex;
-        flex-direction: column;
-        min-width: 30%;
-
-        span:first-child {
-            @include font-size-adaptive(24px);
-            font-weight: 700;
-
-            // &::after {
-            //     content: ' \20bd';
-            // }
         }
-        span:last-child {
+    }
+
+
+    &__bottom {
+        @include space-btw(column);
+        width: 100%;
+        }
+
+    &__bold {
+        display: flex;
+        flex-direction: row;
+        min-width: 30%;
+        @include font-size-adaptive(24px);
+        font-weight: 700;
+        }
+
+    &__pale {
             @include font-size-adaptive(17px);
             color: #979797;
         }
-    }
-
-    &__filelink {
-        display: block;
-    }
 
     &__sections {
         width: 100%;

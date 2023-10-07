@@ -7,8 +7,12 @@ import './styles.scss'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
+import { useLocation } from 'react-router-dom'
 
 const AboutPage = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
 
     useEffect ( () => {
         const VK = window.VK
@@ -20,6 +24,7 @@ const AboutPage = () => {
     <main className='about-page'>
         <Helmet>
         <title>О нас</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Туры и экспедиции на плато Путорана с местным туроператором. Сертифицированные горные гиды. Собственная комфортабельная база на озере Лама.' />
       </Helmet>
         <MainLogo />

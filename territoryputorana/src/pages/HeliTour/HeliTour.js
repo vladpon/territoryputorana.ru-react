@@ -19,6 +19,7 @@ import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import { Helmet } from 'react-helmet'
 import InfoFrame from '../../components/InfoFrame/InfoFrame'
+import { useLocation } from 'react-router-dom'
 
 const tour = tours.find(tour => tour.id === 'helitour')
 
@@ -45,10 +46,16 @@ const photos = [
 
 
 const HeliTour = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
+
   return (
     <main className='tour-page'>
       <Helmet>
         <title>Вертолетная экскурсия </title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Увидеть первозданную красоту природы с высоты птичьего полета? Вертолетная экскурсия гарантирует полный восторг и незабываемые впечатления!' />
       </Helmet>
         <MainLogo />

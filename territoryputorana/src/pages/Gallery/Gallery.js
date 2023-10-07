@@ -5,6 +5,7 @@ import './styles.scss'
 
 import PhotoBlock from './PhotoBlock';
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 
 // const photos1 = [
 //     { 
@@ -419,10 +420,14 @@ const tundra = [
 
 const Gallery = () => {    
 
+    const location = useLocation()
+    const pathname = location.pathname
+
   return (
     <main className = 'gallery'>
         <Helmet>
             <title>Галерея</title>
+            <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
             <meta name = 'description' content = 'Плато Путорана. Озеро Лама. Таймыр. Водопады плато Путорана.' />
         </Helmet>
 

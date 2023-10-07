@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 
 const arctic = {
-    title: 'Исследовательский проект',
+    title: 'По следам толсторога',
     bigImg: './img/arctic_cover.jpg'
 }
 
@@ -46,7 +46,7 @@ const routes = [
     }
 ]
 
-const Arctic = () => {
+const Tolstorog = () => {
 
     const location = useLocation()
   const pathname = location.pathname
@@ -106,4 +106,4 @@ const Arctic = () => {
   )
 }
 
-export default Arctic
+export default Tolstorog

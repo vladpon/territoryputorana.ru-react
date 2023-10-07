@@ -8,16 +8,21 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
 
 
 const FeedBackPage = () => {
 
+
+  const location = useLocation()
+  const pathname = location.pathname
 
 
   return (
     <main className='fb-page'>
       <Helmet>
             <title>Отзывы</title>
+            <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
             <meta name = 'description' content = 'Мы будем рады, если Вы поделитесь своими впечатлениями о путешествии на плато Путорана с нами. Ваш отзыв будет очень полезен для тех, кто собирается в тур.' />
       </Helmet>
         <div className='fb-page__fb fb'>        

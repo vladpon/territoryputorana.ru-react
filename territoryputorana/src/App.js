@@ -41,14 +41,18 @@ import { Helmet } from 'react-helmet';
 import Test3d from './pages/test3d/Test3d';
 import HeliTour from './pages/HeliTour/HeliTour';
 import ArcticExpeditions from './pages/ArcticExpeditions/ArcticExpeditions';
+import Tolstorog from './pages/Tolstorog/Tolstorog';
+
 
 
 
 function App() {
+  
   return (
     <>  
       <BrowserRouter>
         <Helmet>
+          
           <title>Территория Путорана</title>
           <meta name="description" content="Побывать на плато Путорана и воплотить свою мечту о покорении Севера! Своими глазами увидеть уникальные горы без вершин, грандиозные каньоны и величественные водопады. Активные летние туры, вертолетные экскурсии, скитур, фрирайд, хелиски."/>
         </Helmet>
@@ -84,6 +88,7 @@ function App() {
           <Route path = '/admin' Component= {AdminPage} />
           <Route path = '/helitour' Component={HeliTour} />
           <Route path = '/arcticexpeditions' Component={ArcticExpeditions} />
+          <Route path = '/tolstorog' Component={Tolstorog} />
 
           <Route path = '/test' Component= {Test3d} />
 

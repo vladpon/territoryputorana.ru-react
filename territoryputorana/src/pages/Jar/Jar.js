@@ -9,7 +9,7 @@ import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
-import { ScrollRestoration } from 'react-router-dom'
+import { ScrollRestoration, useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import tours from '../../data/tours.json'
@@ -36,10 +36,15 @@ const txtTitle = {
 
 
 const TourPage = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
   return (
     <main className='tour-page'>
       <Helmet>
         <title>Усадьба Жар. Птица</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Озеро Лама – самое знаменитое озеро плато Путорана. Комфорт и сервис класса люкс. Гастрономическое сопровождение. Вертолетные экскурсии. Водные прогулки. Радиальные маршруты.' />
       </Helmet>
         <MainLogo />

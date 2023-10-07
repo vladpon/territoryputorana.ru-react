@@ -9,7 +9,7 @@ import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
-import { ScrollRestoration } from 'react-router-dom'
+import { ScrollRestoration, useLocation } from 'react-router-dom'
 
 import { getTourByTourId } from '../../api/tours'
 
@@ -40,6 +40,9 @@ const txtTitle = {
 const TourPage = () => {
   const [tour, setTour] = useState(blankTour);
 
+  const location = useLocation()
+  const pathname = location.pathname
+
   useEffect( () => {
       const getNewTour = async () => {
         const newTour = await getTourByTourId('lostput')
@@ -53,6 +56,7 @@ const TourPage = () => {
     <main className='tour-page'>
       <Helmet>
         <title>Затерянный мир плато Путорана</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Динамичный недельный тур на плато Путорана. Размещение с комфортом класса люкс. Трекинговые маршруты, каньоны, водопады. Водные прогулки. Вертолетные экскурсии. Гастрономический туризм.' />
       </Helmet>
         <MainLogo />

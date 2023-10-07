@@ -1,0 +1,89 @@
+@import '../../const';
+
+.arctic-routes {
+    @include blockVPadding;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+
+    & h1 {
+        text-align: center;
+    }
+
+    &__route {
+        @include blockHPadding; 
+        @include blockVPadding;
+        @include blockInternalMarginTop;
+        width: 100%;
+        // min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
+
+    &__img {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        width: 100%;
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            grid-template-columns: 1fr;
+        }
+
+        img {
+            height: 100%;
+            @media (max-width: map-get($breakpoints, lg)) {height: 300px}
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        margin-top: 2em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        & h3 {
+            align-self: flex-start;
+            text-transform: uppercase;
+            color: white;
+            background-color: #000;
+            font-weight: 500;
+        }
+
+        & p {
+            letter-spacing: .08em;
+        }
+    }
+}
+
+
+.tolstorog {
+    width: 100%;
+    height: 100%;
+    @include blockHPadding;
+    @include blockVPadding;
+
+    & h2 {
+        margin-block-end: 1.2em;
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+        & img {
+            width: 100%;
+        }
+    }
+    &__text {
+        @include blockInternalMarginTop;
+    }
+}

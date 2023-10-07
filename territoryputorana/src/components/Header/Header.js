@@ -137,6 +137,12 @@ const Header = (props) => {
       case '/helitour':
         setPageClass('tour-page-class')
         break;
+      case '/arcticexpeditions':
+        setPageClass('tour-page-class')
+        break;
+      case '/tolstorog':
+        setPageClass('tour-page-class')
+        break;
       case '/photo':
         setPageClass('gallery-class')
         break;

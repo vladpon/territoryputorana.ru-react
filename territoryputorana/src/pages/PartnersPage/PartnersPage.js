@@ -5,13 +5,20 @@ import './styles.scss'
 
 import partners from '../../data/partners.json'
 import { Helmet } from 'react-helmet'
+import { useLocation } from 'react-router-dom'
 
 
 const PartnersPage = () => {
+
+  const location = useLocation()
+  const pathname = location.pathname
+
+
   return (
     <main className='partners-page'>
         <Helmet>
             <title>Партнеры</title>
+            <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
             <meta name = 'description' content = 'В этом разделе представлены туры, экскурсии и гостиницы Норильска. Туры на плато Путорана. Джип-туры. Однодневные экскурсии. Спортивно-туристические походы. Гостиницы, базы отдыха.' />
         </Helmet>
         <div className = 'partners-page__content'>

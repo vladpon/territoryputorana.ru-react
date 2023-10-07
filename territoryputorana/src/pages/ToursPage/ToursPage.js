@@ -6,13 +6,21 @@ import './styles.scss'
 
 import tours from '../../data/tours.json'
 import { Helmet } from 'react-helmet'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 
 const ToursPage = () => {
+
+  const navigate = useNavigate();
+  const location = useLocation()
+  const pathname = location.pathname
+
+
   return (
     <main className='tours-page'>
       <Helmet>
         <title>Туры</title>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
         <meta name = 'description' content = 'Туры на плато Путорана с местным туроператором. Летние туры все включено. Вертолетные экскурсии. Хели-ски и ски-тур.' />
       </Helmet>
         <div className = 'tours-page__content'>
