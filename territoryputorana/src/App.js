@@ -42,6 +42,7 @@ import Test3d from './pages/test3d/Test3d';
 import HeliTour from './pages/HeliTour/HeliTour';
 import ArcticExpeditions from './pages/ArcticExpeditions/ArcticExpeditions';
 import Tolstorog from './pages/Tolstorog/Tolstorog';
+import Zaton from './pages/Zaton/Zaton';
 
 
 
@@ -89,6 +90,7 @@ function App() {
           <Route path = '/helitour' Component={HeliTour} />
           <Route path = '/arcticexpeditions' Component={ArcticExpeditions} />
           <Route path = '/tolstorog' Component={Tolstorog} />
+          <Route path = '/zaton' Component={Zaton} />
 
           <Route path = '/test' Component= {Test3d} />
 

@@ -48,7 +48,6 @@ const WideCards = (props) => {
                                     <img src={item.img} alt="" />
                                 </div>
                                 <div className = "wide-cards__description">
-                                    {console.log(item)}
                                     <h3>{item.title}</h3>
                                     {item.description.map( (p, index) => <p key = {index}>{p}</p>)}                                  
                                     {(item.bold || item.pale) &&

@@ -9,7 +9,7 @@ const Footer = () => {
             <Link to = '/' className = 'footer__logo'>
                 <img src='https://territoryputorana.ru/img/main_logo.svg'></img>
             </Link>
-            <Link to = '/arctic' className = 'footer__logo'>
+            <Link to = '/arcticexpeditions' className = 'footer__logo'>
                 <img src='https://territoryputorana.ru/img/arctic_logo.svg'></img>
             </Link>
             <Link to = '/sr' className = 'footer__logo'>
