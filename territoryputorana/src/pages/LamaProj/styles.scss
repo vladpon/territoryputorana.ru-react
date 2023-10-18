@@ -1,0 +1,18 @@
+@import '../../const';
+
+.lama-proj__article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lighten($color: $main-blue, $amount: 42);
+    @include blockVPadding;
+    gap: 15px;
+
+    & h2 {
+        color: $dark-gray;
+        margin-block-end: 1em;
+        @include blockMaxWidth;
+        text-align: center;
+    }
+}

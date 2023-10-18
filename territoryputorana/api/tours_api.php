@@ -53,7 +53,7 @@ elseif(isset($_GET['gettourbytourid']))
     if(isset($_GET['tour_id']) && $_GET['tour_id'] != NULL)
     {
         $tourId = $_GET['tour_id'];
-        $sqlStr = 'SELECT group_size AS groupSize, year_time AS yearTime, accmdtn_short AS accmdtnShort, difficulty_level AS difficultyLevel, big_img AS bigImg, small_img AS smallImg, id AS tourId, title, season, time, price, reference, href  FROM tours WHERE tour_id = :tour_id;';
+        $sqlStr = 'SELECT group_size AS groupSize, year_time AS yearTime, accmdtn_short AS accmdtnShort, difficulty_level AS difficultyLevel, big_img AS bigImg, small_img AS smallImg, id AS tourId, title, season, time, price, reference, href, about_h3 AS aboutH3, var_about_h3 as varAboutH3  FROM tours WHERE tour_id = :tour_id;';
         $sqlStrDesc = 'SELECT paragraph FROM descriptions WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
         $sqlStrAbouts = 'SELECT paragraph FROM abouts WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';
         $sqlStrDays = 'SELECT day_img AS dayImg, day_title AS dayTitle, id FROM programs_days  WHERE tour_id = (SELECT id FROM tours WHERE tour_id = :tour_id);';

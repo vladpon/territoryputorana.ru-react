@@ -19,9 +19,9 @@ const ToursPage = () => {
   return (
     <main className='tours-page'>
       <Helmet>
-        <title>Туры</title>
+        <title>Туры на Плато Путорана из Красноярска в 2023 году</title>
         <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
-        <meta name = 'description' content = 'Туры на плато Путорана с местным туроператором. Летние туры все включено. Вертолетные экскурсии. Хели-ски и ски-тур.' />
+        <meta name = 'description' content = 'Туры на Плато Путорана из Красноярска в 2023 году – Все туристические маршруты на Плато Путорана можно найти на сайте или узнать по телефону 8 (903) 929-93-83. Плато Путорана туры и цены на 2023 году вылет на Плато из Красноярска. Бронируйте и покупайте туры на Плато Путорана онлайн на сайте' />
       </Helmet>
         <div className = 'tours-page__content'>
             <MainLogo />

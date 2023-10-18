@@ -11,7 +11,7 @@ const CardsBlock = (props) => {
   return (
     <div className="cards-block">
             <div className="cards-block__title">
-                <h1><span>Туры</span> на плато Путорана</h1>
+                <h1>Плато <span>Путорана</span> туры и цены</h1>
                 <p>Готовые программы для вашего путешествия и отдыха</p>
             </div>
             <div className="cards-block__card-container card-container">
@@ -29,8 +29,14 @@ const CardsBlock = (props) => {
                                     <div className="card-container__title">{tour.title}</div>
                                 </div>
                                 <div className="card-container__bottom-text">
-                                    <div className="card-container__days">{tour.time}</div>
-                                    <div className="card-container__price">{tour.price}</div>
+                                    <div className="card-container__days">                                        
+                                        <span>Плато Путорана</span>    
+                                        <span>{tour.time}</span>
+                                    </div>
+                                    <div className="card-container__price">
+                                        <span>цена тура</span>
+                                        <span>{tour.price}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

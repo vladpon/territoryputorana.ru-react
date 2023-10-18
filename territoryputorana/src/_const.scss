@@ -1,6 +1,7 @@
 $main-blue: #4d95be;
 $white: #fff;
 $black: #000;
+$dark-gray: #282828;
 
 $primary-background-color: #fefefe;
 $secondary-background-color: #eee;
@@ -73,6 +74,11 @@ $header-height: (
         padding-left: 18px;
         padding-right: 18px;
     }    
+}
+
+@mixin blockPadding {
+    @include blockHPadding;
+    @include blockVPadding;
 }
 
 @mixin blockMaxWidth {

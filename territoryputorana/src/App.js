@@ -1,5 +1,6 @@
 
 import './styles.scss'
+import './_const.scss'
 
 import { Link, Navigate, Route } from 'react-router-dom';
 import { BrowserRouter, Routes } from 'react-router-dom';

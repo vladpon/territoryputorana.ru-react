@@ -133,48 +133,6 @@
         "section": "Туры и походы"
     },
     {
-        "id": "horizon",
-        "title": "Горизонт",
-        "season": "",
-        "time": "",
-        "price": "",
-        "bigImg": "",
-        "smallImg": "./img/horizon_logo02.png",
-        "optImg": "",
-        "description": [
-            "Уникальный загородный комплекс, аналога которому нет на территории Большого Норильска. Расположен вблизи района Оганер. Современные гостевые домики вместимостью до 8-10 человек. Банный комплекс. В зимнее время прокат снегоходов, сноутьюбинг."
-            ],
-        "tourPhoto": [],
-        "contacts": {
-            "tel": "33-15-14",
-            "email": "gorizont-norilsk@yandex.ru",
-            "site": "https://gorizont-norilsk.ru/"
-        },
-        "href": "",
-        "section": "Гостиницы"
-    },
-    {
-        "id": "severgrand",
-        "title": "Севергранд",
-        "season": "",
-        "time": "",
-        "price": "",
-        "bigImg": "",
-        "smallImg": "./img/severgrand_logo03.svg",
-        "optImg": "",
-        "description": [
-            "Новый отель 3* в центре Норильска. Комфортные номера с дизайнерским ремонтом: стандарт, стандарт Superior, Junior Suite, Luxe. Сервис  премиум-уровня и теплое арктическое гостеприимство."
-            ],
-        "tourPhoto": [],
-        "contacts": {
-            "tel": "+73919457038",
-            "email": "hotel@severgrand.ru",
-            "site": "https://severgrand.ru"
-        },
-        "href": "",
-        "section": "Гостиницы"
-    },
-    {
         "id": "norilsk",
         "title": "Гостиница Норильск",
         "season": "",
@@ -217,5 +175,48 @@
         },
         "href": "",
         "section": "Гостиницы"
-    }  
+    },
+    {
+        "id": "severgrand",
+        "title": "Севергранд",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/severgrand_logo03.svg",
+        "optImg": "",
+        "description": [
+            "Новый отель 3* в центре Норильска. Комфортные номера с дизайнерским ремонтом: стандарт, стандарт Superior, Junior Suite, Luxe. Сервис  премиум-уровня и теплое арктическое гостеприимство."
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "+73919457038",
+            "email": "hotel@severgrand.ru",
+            "site": "https://severgrand.ru"
+        },
+        "href": "",
+        "section": "Гостиницы"
+    },
+    {
+        "id": "horizon",
+        "title": "Горизонт",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/horizon_logo02.png",
+        "optImg": "",
+        "description": [
+            "Уникальный загородный комплекс, аналога которому нет на территории Большого Норильска. Расположен вблизи района Оганер. Современные гостевые домики вместимостью до 8-10 человек. Банный комплекс. В зимнее время прокат снегоходов, сноутьюбинг."
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "33-15-14",
+            "email": "gorizont-norilsk@yandex.ru",
+            "site": "https://gorizont-norilsk.ru/"
+        },
+        "href": "",
+        "section": "Гостиницы"
+    }   
+    
 ]
