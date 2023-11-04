@@ -17,6 +17,10 @@ const FeedBackPage = () => {
   const location = useLocation()
   const pathname = location.pathname
 
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
 
   return (
     <main className='fb-page'>

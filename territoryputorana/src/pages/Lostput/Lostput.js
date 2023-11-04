@@ -38,6 +38,12 @@ const txtTitle = {
 
 
 const TourPage = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
+
   const [tour, setTour] = useState(blankTour);
 
   const location = useLocation()

@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles.scss'
 import { Helmet } from 'react-helmet'
 
 const Island = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
   return (
     <main className='island-page'>
       <Helmet>

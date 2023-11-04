@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 // import '../TourPage/components/styles.scss'
 import './styles.scss'
@@ -419,6 +419,10 @@ const tundra = [
 
 
 const Gallery = () => {    
+
+    useEffect( () => {
+        window.YandexRotorSettings.isLoaded = true
+      }, [])
 
     const location = useLocation()
     const pathname = location.pathname

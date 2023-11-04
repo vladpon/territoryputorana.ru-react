@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Helmet } from 'react-helmet'
 import MainLogo from '../../components/MainLogo/MainLogo'
@@ -35,6 +35,10 @@ const ArcticExpeditions = () => {
 
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
 
   return (
     <main className='page-container'>

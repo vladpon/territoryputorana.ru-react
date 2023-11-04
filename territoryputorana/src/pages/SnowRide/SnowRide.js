@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TourPageCover from '../TourPage/components/TourPageCover'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
@@ -26,6 +26,11 @@ const SnowRide = () => {
 
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
 
 
   return (

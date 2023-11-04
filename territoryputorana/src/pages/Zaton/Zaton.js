@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import TourPageCover from '../TourPage/components/TourPageCover'
 
@@ -35,6 +35,10 @@ const Zaton = () => {
 
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
 
 
   return (

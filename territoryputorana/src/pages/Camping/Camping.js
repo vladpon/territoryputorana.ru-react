@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -41,6 +41,10 @@ const TourPage = () => {
 
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
 
   return (
     <main className='tour-page'>

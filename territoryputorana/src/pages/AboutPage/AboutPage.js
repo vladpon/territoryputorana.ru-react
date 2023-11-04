@@ -14,6 +14,10 @@ const AboutPage = () => {
   const location = useLocation()
   const pathname = location.pathname
 
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
     useEffect ( () => {
         const VK = window.VK
         VK.Widgets.Group("vk_groups", {mode: 4, width: "auto", height: "800", color3: "4d95be", no_cover: 0}, 219297445);

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BigCards from '../ToursPage/components/BigCards'
 import MainLogo from '../../components/MainLogo/MainLogo'
 
@@ -12,6 +12,12 @@ const Tours3d = () => {
 
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
+
 
   return (
     <main className='tours3d-page'>

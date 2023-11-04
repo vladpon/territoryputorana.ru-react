@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../components/Header/Header'
 import './styles.scss'
 import { Helmet } from 'react-helmet'
 
 const Lama3d = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
   return (
     <main className='lama3d-page'>
       <Helmet>

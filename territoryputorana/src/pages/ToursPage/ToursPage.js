@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import BigCards from './components/BigCards'
 
@@ -14,6 +14,12 @@ const ToursPage = () => {
   const navigate = useNavigate();
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
+
 
 
   return (

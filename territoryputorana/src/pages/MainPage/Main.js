@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles.scss'
 import Cover from './components/Cover'
 import TextWord from './components/TextWord'
@@ -53,6 +53,10 @@ const textFewImages = {
 
 
 const Main = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
 
   const navigate = useNavigate();
   const location = useLocation()

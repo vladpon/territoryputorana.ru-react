@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import '../TourPage/styles.scss'
 import './styles.scss'
@@ -47,8 +47,14 @@ const photos = [
 
 const HeliTour = () => {
 
+
+
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
 
 
   return (

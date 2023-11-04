@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles.scss'
 import { Helmet } from 'react-helmet'
 
 const Locations = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
   return (
     <main className='locations-page'>
       <Helmet>

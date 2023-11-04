@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BigCards from '../ToursPage/components/BigCards'
 
 import './styles.scss'
@@ -9,6 +9,11 @@ import { useLocation } from 'react-router-dom'
 
 
 const PartnersPage = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
 
   const location = useLocation()
   const pathname = location.pathname

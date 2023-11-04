@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TourPageCover from '../TourPage/components/TourPageCover'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
@@ -54,6 +54,10 @@ const summer23report = [
 ]
 
 const LamaProj = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
 
   const location = useLocation()
   const pathname = location.pathname

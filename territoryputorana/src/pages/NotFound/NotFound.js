@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles.scss'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Link, useLocation } from 'react-router-dom'
@@ -6,6 +6,12 @@ import { Helmet } from 'react-helmet'
 
 const NotFound = () => {
     const location = useLocation();
+
+    useEffect( () => {
+      window.YandexRotorSettings.isLoaded = true
+    }, [])
+
+
 
   return (
     <main className='notfound-page'>

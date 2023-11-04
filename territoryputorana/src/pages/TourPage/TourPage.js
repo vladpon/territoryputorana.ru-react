@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './styles.scss'
 import TourPageCover from './components/TourPageCover'
@@ -33,6 +33,12 @@ const txtTitle = {
 
 
 const TourPage = () => {
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
+
+
   return (
     <main className='tour-page'>
         <TourPageCover tour = {tour}/>

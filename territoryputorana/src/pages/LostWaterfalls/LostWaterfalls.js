@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import '../TourPage/styles.scss'
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -47,6 +47,10 @@ const LostWaterfalls = () => {
 
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    window.YandexRotorSettings.isLoaded = true
+  }, [])
 
   return (
     <main className='tour-page'>
