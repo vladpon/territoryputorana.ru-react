@@ -14,9 +14,9 @@ const AboutPage = () => {
   const location = useLocation()
   const pathname = location.pathname
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
     useEffect ( () => {
         const VK = window.VK

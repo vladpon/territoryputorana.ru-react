@@ -48,9 +48,9 @@ const routes = [
 
 const Tolstorog = () => {
 
-    useEffect( () => {
-        window.YandexRotorSettings.isLoaded = true
-      }, [])
+    // useEffect( () => {
+    //     window.YandexRotorSettings.isLoaded = true
+    //   }, [])
 
     const location = useLocation()
   const pathname = location.pathname

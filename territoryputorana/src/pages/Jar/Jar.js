@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom'
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
+import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
 const tour = tours.find(tour => tour.id === 'jar')
 
@@ -37,9 +38,9 @@ const txtTitle = {
 
 const TourPage = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
   const location = useLocation()
   const pathname = location.pathname
@@ -53,13 +54,28 @@ const TourPage = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour}/>
+        {/* <TourPageAbout tour = {tour}/> */}
+
+        <div className = "tp-about__container">
+          <div className='tp-about'>
+              <div className = "tp-about__main">
+                  <h2>О туре</h2>
+                  {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
+              </div>
+              <div className='tp-about__hit-container'>
+                  <InfoFrame price = {tour.price} title = {tour.detailsTitle} reference = {tour.reference} refSpan = {tour.refSpan} description = {tour.details} included = {tour.included}/>
+                  
+              </div>
+            </div>
+        </div>
+
+
         <div className = 'tp-aux__container'>
         <div className = "tp-aux">
                 <h2>Во время отдыха мы можем организовать для вас:</h2>
                 <ul>
                     <li>водно-пешие экскурсии по достопримечательностям и потрясающим видовым локациям плато Путорана,</li>
-                    <li><Link to = '/helicopter'>вертолетные экскурсии</Link> в Путоранский заповедник,</li>
+                    <li><Link to = '/helitour'>вертолетные экскурсии</Link> в Путоранский заповедник,</li>
                     <li>гастрономический ужин из адаптированных блюд национальной северной кухни с олениной и северной рыбой,</li>
                     <li>пикник на горной вершине или возле водопада,</li>
                     <li>рыбалку.</li>

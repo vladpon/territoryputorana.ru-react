@@ -55,9 +55,9 @@ const summer23report = [
 
 const LamaProj = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
   const location = useLocation()
   const pathname = location.pathname

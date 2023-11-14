@@ -38,6 +38,11 @@
                 "id": "jar",
                 "href": "/jar",
                 "title": "Усадьба Жар. Птица"
+            },
+            {
+                "id": "expedition",
+                "href": "/expedition",
+                "title": "Экспедиция выходного дня"
             }
         ]
     },

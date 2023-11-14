@@ -33,14 +33,23 @@ const txtTitle = {
   ]
 }
 
+// const photos = [
+//     { src: "./img/heli_ph01.jpg"},
+//     { src: "./img/heli_ph02.jpg"},
+//     { src: "./img/heli_ph03.jpg"},
+//     { src: "./img/heli_ph04.jpg"},
+//     { src: "./img/heli_ph05.jpg"},
+//     { src: "./img/heli_ph06.jpg"}
+//   ]
+
 const photos = [
-    { src: "./img/heli_ph01.jpg"},
-    { src: "./img/heli_ph02.jpg"},
-    { src: "./img/heli_ph03.jpg"},
-    { src: "./img/heli_ph04.jpg"},
-    { src: "./img/heli_ph05.jpg"},
-    { src: "./img/heli_ph06.jpg"}
-  ]
+  { src: "./img/tr_ph01.jpg"},
+  { src: "./img/tr_ph02.jpg"},
+  { src: "./img/tr_ph03.jpg"},
+  { src: "./img/tr_ph04.jpg"},
+  { src: "./img/tr_ph05.jpg"},
+  { src: "./img/tr_ph06.jpg"}
+]
 
 
 const LostWaterfalls = () => {
@@ -48,9 +57,9 @@ const LostWaterfalls = () => {
   const location = useLocation()
   const pathname = location.pathname
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
   return (
     <main className='tour-page'>
@@ -71,7 +80,7 @@ const LostWaterfalls = () => {
                   {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
               </div>
               <div className='tp-about__hit-container'>
-                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} refSpan = {tour.refSpan} description = {tour.hitDescription} />
+                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} refSpan = {tour.refSpan} description = {tour.details} included = {tour.included}/>
                   
               </div>
             </div>
@@ -93,6 +102,7 @@ const LostWaterfalls = () => {
         </div>
 
         {/* <PhotoBlock photos = {photos}/>      */}
+        <PhotoBlock photos = {photos}/>
         <div className = 'txt-title light-back'>
             <h2>{txtTitle.title}</h2>
             {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
@@ -120,6 +130,7 @@ const LostWaterfalls = () => {
             </ul>
         </div> */}
 
+        
         <RequestBlock bgImage = {'./img/reqback.JPG'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )

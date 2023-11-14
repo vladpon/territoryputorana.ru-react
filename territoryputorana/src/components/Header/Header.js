@@ -146,6 +146,9 @@ const Header = (props) => {
       case '/zaton':
         setPageClass('tour-page-class')
         break;
+      case '/expedition':
+        setPageClass('tour-page-class')
+        break;
       case '/photo':
         setPageClass('gallery-class')
         break;

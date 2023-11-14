@@ -16,6 +16,7 @@ import { getTourByTourId } from '../../api/tours'
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
+import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
 const blankTour = tours.find(tour => tour.id === 'lostput')
 
@@ -37,11 +38,11 @@ const txtTitle = {
 }
 
 
-const TourPage = () => {
+const Lostput = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
 
   const [tour, setTour] = useState(blankTour);
@@ -49,14 +50,13 @@ const TourPage = () => {
   const location = useLocation()
   const pathname = location.pathname
 
-  useEffect( () => {
-      const getNewTour = async () => {
-        const newTour = await getTourByTourId('lostput')
-        setTour(newTour)
-      }
-      getNewTour()      
-
-  }, [])
+  // useEffect( () => {
+  //     const getNewTour = async () => {
+  //       const newTour = await getTourByTourId('lostput')
+  //       setTour(newTour)
+  //     }
+  //     getNewTour()
+  // }, [])
 
   return (
     <main className='tour-page'>
@@ -67,7 +67,18 @@ const TourPage = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour}/>
+        <div className = "tp-about__container">
+          <div className='tp-about'>
+              <div className = "tp-about__main">
+                  <h2>О туре</h2>
+                  {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
+              </div>
+              <div className='tp-about__hit-container'>
+                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan}/>
+                  <InfoFrame price = {tour.varPrice} title = {tour.varAboutH3} reference = {tour.varReference} description = {tour.varDetails} />
+              </div>
+          </div>
+        </div>
         <TourPageAux/>
         <TourPageProgram tour = {tour}/>
         <TourPageAccmmdtn tour = {tour}/>
@@ -78,4 +89,4 @@ const TourPage = () => {
   )
 }
 
-export default TourPage
+export default Lostput

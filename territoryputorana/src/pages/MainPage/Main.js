@@ -54,9 +54,9 @@ const textFewImages = {
 
 const Main = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
   const navigate = useNavigate();
   const location = useLocation()

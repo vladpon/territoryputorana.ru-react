@@ -10,9 +10,9 @@ import { useLocation } from 'react-router-dom'
 
 const PartnersPage = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
 
   const location = useLocation()

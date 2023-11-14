@@ -66,9 +66,9 @@ const TourPage = () => {
   const location = useLocation()
   const pathname = location.pathname
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
   return (
     <main className='tour-page'>
@@ -86,8 +86,7 @@ const TourPage = () => {
                   {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
               </div>
               <div className='tp-about__hit-container'>
-                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.hitDescription} refSpan = {tour.refSpan}/>
-                  <InfoFrame price = {tour.varPrice} title = {tour.varAboutH3} reference = {tour.reference} description = {tour.varHitDescription} refSpan = {tour.refSpan}/>
+                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan} included = {tour.included}/>
               </div>
           </div>
         </div>
@@ -101,9 +100,8 @@ const TourPage = () => {
           </div>
         <TourPageProgram tour = {tour}/>
         <div className = "tp-accmmdtn">
-            <h2 className = "tp-accmmdtn__title">Даты хели-ски туров на Плато Путорана: </h2>
-            <p><b>20.10 — 24.10.2023 Сборная группа</b> </p>
-            <p>Для готовых групп мы готовы рассмотреть варианты с другими датами в период с 10.10.2023 по 30.10.2023, с 1 мая по 15 июня 2024 года.</p>
+            <h2 className = "tp-accmmdtn__title">Открыто бронирование: февраль-июнь 2024 </h2>
+            <p><b>для организованных (частных) групп</b> </p>
         </div>
         <div className = 'partners-page__content'>
           <BigCards content = {severgrandHotel}/>

@@ -52,9 +52,9 @@ const HeliTour = () => {
   const location = useLocation()
   const pathname = location.pathname
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
 
   return (
@@ -68,7 +68,6 @@ const HeliTour = () => {
         <TourPageCover tour = {tour}/>
 
 
-
         <div className = "tp-about__container">
           <div className='tp-about'>
               <div className = "tp-about__main">
@@ -76,7 +75,7 @@ const HeliTour = () => {
                   {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
               </div>
               <div className='tp-about__hit-container'>
-                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.hitDescription} refSpan = {tour.refSpan}/>
+                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan}/>
               </div>
             </div>
         </div>

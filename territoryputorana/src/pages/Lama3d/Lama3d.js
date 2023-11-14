@@ -5,9 +5,9 @@ import { Helmet } from 'react-helmet'
 
 const Lama3d = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
   return (
     <main className='lama3d-page'>

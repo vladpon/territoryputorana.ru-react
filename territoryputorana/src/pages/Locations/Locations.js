@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet'
 
 const Locations = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
   return (
     <main className='locations-page'>

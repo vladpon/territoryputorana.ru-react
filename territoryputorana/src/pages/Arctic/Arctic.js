@@ -51,9 +51,9 @@ const Arctic = () => {
     const location = useLocation()
   const pathname = location.pathname
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+//   useEffect( () => {
+//     window.YandexRotorSettings.isLoaded = true
+//   }, [])
 
   return (
     <main>

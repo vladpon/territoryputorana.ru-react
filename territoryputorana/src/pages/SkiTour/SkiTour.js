@@ -18,9 +18,12 @@ import '../MainPage/components/styles.scss'
 import '../TourPage/styles.scss'
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
+import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
 const tour = tours.find(tour => tour.id === 'skitour')
-
+const tourPhotos = tour.tourPhotos.map( (photo) => {
+        return {src: photo}
+    })
 
 
 const txtTitle = {
@@ -35,11 +38,11 @@ const txtTitle = {
 
 const TourPage = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
-
+  
 
   const location = useLocation()
   const pathname = location.pathname
@@ -53,17 +56,33 @@ const TourPage = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour}/>
-        <TourPageProgram tour = {tour}/>
-        <div className = "tp-accmmdtn">
+        <div className = "tp-about__container">
+          <div className='tp-about'>
+              <div className = "tp-about__main">
+                  <h2>О туре</h2>
+                  {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
+              </div>
+              <div className='tp-about__hit-container'>
+                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan} included = {tour.included}/>                
+              </div>
+          </div>
+        </div>
+        <div className = 'tp-aux__container'>
+          <div className = "tp-aux">
+                  <p>Маршруты ски-тура построены таким образом, чтобы показать вам самые впечатляющие зимние пейзажи плато Путорана. В пути гармонично выстроены подъемы, спуски и переходы по снежным просторам.</p>
+              </div>
+          </div>
+        {/* <div className = "tp-accmmdtn">
             <h2 className = "tp-accmmdtn__title">Проживание</h2>
             <p>Комфортабельный глэмпинг из теплых трехслойных палаток с отопителем.</p>
             <p>В глэмпинге располагаются: палатки для проживания, кухня, столовая, мобильная баня, сушилка, туалет.</p>            
-        </div>
-        <div className = 'txt-title light-back'>
+        </div> */}
+        {/* <div className = 'txt-title light-back'>
             <h2>{txtTitle.title}</h2>
             {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
-        </div>
+        </div> */}
+ 
+        <PhotoBlock photos = {tourPhotos} />
         
         <RequestBlock bgImage = {'./img/ski01.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>

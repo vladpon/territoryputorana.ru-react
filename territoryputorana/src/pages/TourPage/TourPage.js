@@ -34,9 +34,9 @@ const txtTitle = {
 
 const TourPage = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
 
   return (

@@ -7,9 +7,9 @@ import { Helmet } from 'react-helmet'
 const NotFound = () => {
     const location = useLocation();
 
-    useEffect( () => {
-      window.YandexRotorSettings.isLoaded = true
-    }, [])
+    // useEffect( () => {
+    //   window.YandexRotorSettings.isLoaded = true
+    // }, [])
 
 
 

@@ -44,6 +44,7 @@ import HeliTour from './pages/HeliTour/HeliTour';
 import ArcticExpeditions from './pages/ArcticExpeditions/ArcticExpeditions';
 import Tolstorog from './pages/Tolstorog/Tolstorog';
 import Zaton from './pages/Zaton/Zaton';
+import Expedition from './pages/Expedition/Expedition';
 
 
 
@@ -92,6 +93,7 @@ function App() {
           <Route path = '/arcticexpeditions' Component={ArcticExpeditions} />
           <Route path = '/tolstorog' Component={Tolstorog} />
           <Route path = '/zaton' Component={Zaton} />
+          <Route path = '/expedition' Component={Expedition} />
 
           <Route path = '/test' Component= {Test3d} />
 

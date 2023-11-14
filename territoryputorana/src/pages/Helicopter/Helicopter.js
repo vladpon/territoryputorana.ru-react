@@ -40,9 +40,9 @@ const photos = [
 
 const TourPage = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, []) 
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, []) 
 
   return (
     <main className='tour-page'>

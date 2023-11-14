@@ -11,9 +11,9 @@ import { useLocation } from 'react-router-dom'
 
 const ProjectsPage = () => {
 
-  useEffect( () => {
-    window.YandexRotorSettings.isLoaded = true
-  }, [])
+  // useEffect( () => {
+  //   window.YandexRotorSettings.isLoaded = true
+  // }, [])
 
 
   const location = useLocation()
