@@ -45,6 +45,7 @@ import ArcticExpeditions from './pages/ArcticExpeditions/ArcticExpeditions';
 import Tolstorog from './pages/Tolstorog/Tolstorog';
 import Zaton from './pages/Zaton/Zaton';
 import Expedition from './pages/Expedition/Expedition';
+import ThankYou from './pages/ThankYou/ThankYou';
 
 
 
@@ -94,6 +95,7 @@ function App() {
           <Route path = '/tolstorog' Component={Tolstorog} />
           <Route path = '/zaton' Component={Zaton} />
           <Route path = '/expedition' Component={Expedition} />
+          <Route path = '/thankyou' Component={ThankYou} />
 
           <Route path = '/test' Component= {Test3d} />
 

@@ -8,6 +8,7 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
+import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
 const AboutPage = () => {
 
@@ -46,11 +47,8 @@ const AboutPage = () => {
                   <p>Каждый сезон наша команда разрабатывает новые зимние и летние маршруты, уделяя особое внимание вопросам комфорта и безопасности туристов. Мы лично проходим намеченные маршруты, поэтому уверены в них, и с удовольствием рекомендуем своим гостям.</p>
                   <p>Наша цель – создать для вас настоящее приключение, которое подарит самые яркие эмоции и запомнится надолго.</p>
               </div>
-              <div className = "tp-about__hit">
-                  <h3>Антон Лысов</h3>
-                  <p><span>Основатель и руководитель компании «Территория Путорана»</span></p>
-                  <p><span>Член Русского географического общества</span></p>
-                  <p><span>Организатор проектов «Экспедиции Арктики», «Чисто Лама», «SNOW RIDE Putorana»</span></p>
+              <div className = "tp-about__hit-container">
+                <InfoFrame title = {"Антон Лысов"} description = {"<p><b>Основатель и руководитель компании «Территория Путорана»</b></p><p><b>Член Русского географического общества</b></p><p><b>Организатор проектов «Экспедиции Арктики», «Чисто Лама», «SNOW RIDE Putorana»</b></p>"} />
               </div>
           </div>
        </div> 

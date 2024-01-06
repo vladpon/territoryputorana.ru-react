@@ -14,12 +14,15 @@ import InfoFrame from '../../components/InfoFrame/InfoFrame'
 import TextTitle from '../MainPage/components/TextTitle'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
+import TourPageProgram from '../TourPage/components/TourPageProgram'
+
+import './styles.scss'
 
 
 const txtTitle = {
     title: "Транспорт",
     text: [
-        "Заброска на озеро Лама и обратно осуществляется на скоросном катере или судне на воздушной подушке"
+        "Заброска на озеро Лама и обратно осуществляется на скоростном катере или судне на воздушной подушке"
     ]
 }
 
@@ -28,7 +31,7 @@ const photos = [
     { src: "./img/photo1699212158 (1).jpeg" },
     { src: "./img/photo1699212158 (2).jpeg" },
     { src: "./img/photo1699212158 (3).jpeg" },
-    { src: "./img/photo1699212158 (4).jpeg" },
+    { src: "./img/1335f6f2-1e10-48b6-8d1c-d5c7d6620fd6.jpg" },
     { src: "./img/photo1699212266.jpeg" }
 ]
 
@@ -67,6 +70,28 @@ const Expedition = (props) => {
             </div>
         </div>
         <TextTitle txtTitle = {txtTitle} />
+        <div className = 'tp-aux__container'>
+          <div className = "tp-aux">
+                  <p>Безопасность участников экспедиции выходного дня обеспечивается на всех уровнях, включая регистрацию в МЧС, сопровождение группы опытным гидом-проводником, постоянная спутниковая и радио-связь.</p>
+              </div>
+        </div>
+        {/* <div className = 'tp-program__container'>
+            <div className = "tp-program">
+                {tourData.tourProgram.days && tourData.tourProgram.days.map( (day) => {
+                        return <div className = "tp-program__day" key = {day.dayTitle}>
+                                    <div className = "tp-program__text">
+                                        <h3>{day.dayTitle}</h3>
+                                        {day.dayDesc && day.dayDesc.map( (p, index) => <p key = {index}>{p}</p>)}
+                                    </div>
+                                    <div className="tp-program__img">
+                                        <img src={day.dayImg} />
+                                    </div>
+                                </div>   
+                    })}   
+            </div>
+        </div> */}
+
+        <TourPageProgram tour = {tourData}/>
         <PhotoBlock photos = {photos}/>
         <RequestBlock bgImage = {'/img/photo1699212266.jpeg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
@@ -87,7 +112,11 @@ const Expedition = (props) => {
         description: [],
         bigImg: "",
         smallImg: "",
-        about : []
+        about : [],
+        tourProgram: {
+            begin: "",
+            days: [{}]
+        }
     }
 }
 

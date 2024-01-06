@@ -107,6 +107,7 @@
         display: flex;
         flex-direction: column;
         width: 55%;
+        align-self: flex-start;
 
         & ul {
             margin-left: 2em;
@@ -122,6 +123,7 @@
     &__hit-container {
         width: 40%;
         gap: 10px;
+        align-self: flex-start;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

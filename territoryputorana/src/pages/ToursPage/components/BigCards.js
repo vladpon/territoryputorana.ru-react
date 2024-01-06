@@ -70,12 +70,12 @@ const BigCards = (props) => {
                                             <span>{item.price}</span>
                                             <span>{item.time}</span>
                                         </div>
-                                        {(item.varPrice !== "") && (
+                                        {/* {(item.varPrice !== "") && (
                                             <div className='big-cards__cost'>
                                                 <span>{item.varPrice}</span>
                                                 <span>{item.varTime}</span>
                                             </div>
-                                        )}
+                                        )} */}
 
 
                                     </div>

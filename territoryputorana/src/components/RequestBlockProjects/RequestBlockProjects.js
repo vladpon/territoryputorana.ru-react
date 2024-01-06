@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './styles.scss'
 import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 
 
@@ -65,7 +66,8 @@ const RequestBlockProjects = (props) => {
 
   return (
     <div className = "req-block">
-        {showThankYou && thankYou(ipName)}
+        {/* {showThankYou && thankYou(ipName)} */}
+        {showThankYou && <Navigate to = '/thankyou' />} 
         <div className = "req-block__text">
             <h2>{h2Text}</h2>
             <h3>{h3Text}</h3>

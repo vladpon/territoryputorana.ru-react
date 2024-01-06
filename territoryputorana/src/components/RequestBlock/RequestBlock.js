@@ -3,12 +3,19 @@ import './styles.scss'
 import { useState } from 'react'
 import { putRequest } from '../../api/requests'
 import { useLocation } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 
+import tours from '../../data/tours.json'
 
 
 const RequestBlock = (props) => {
     let location = useLocation() 
+    const [toursNames, setToursNames]  = useState([])
+
+    useEffect( () => {
+      setToursNames(tours.map( item => item.title))
+    }, [])
 
     const { bgImage, h2Text, h3Text } = props
     const styleString = '.req-block::before{background-image: url(' + bgImage + ');}'
@@ -40,6 +47,7 @@ const RequestBlock = (props) => {
       }
 
       e.preventDefault()
+
       if (ipName === '') {
         alert('Введите Ваше имя')
         return
@@ -91,8 +99,11 @@ const RequestBlock = (props) => {
         'members-count': ipCount,
         'aux-text': ipText
       })
-      setShowThankYou(true)
+      
+
       fetch(query)
+      setShowThankYou(true)
+      
 
       setIpName('')
       setIpEmail('')
@@ -117,7 +128,8 @@ const RequestBlock = (props) => {
 
   return (
     <div className = "req-block">
-        {showThankYou && thankYou(ipName)}
+        {/* {showThankYou && thankYou(ipName)} */}
+        {showThankYou && <Navigate to = '/thankyou' />} 
         <div className = "req-block__text">
             <h2>{h2Text}</h2>
             <h3>{h3Text}</h3>
@@ -128,12 +140,17 @@ const RequestBlock = (props) => {
             <input type="tel" required  name="tel" placeholder="Телефон" value = {ipTel} onChange={ (e) => setIpTel(e.target.value)} />
             <select name ="tour-select" onChange={ (e) => setIpTour(e.target.value)}>
               <option disabled selected = "selected">Какой тур Вас интересует</option>
-              <option value="Затерянный мир плато Путорана">Затерянный мир плато Путорана</option>
+              {toursNames.map( (item, index) => {
+                return (
+                  <option key={index} value = {item}>{item}</option>
+                )
+              })}
+              {/* <option value="Затерянный мир плато Путорана">Затерянный мир плато Путорана</option>
               <option value="Палаточный кемпинг на озере Лама">Палаточный кемпинг на озере Лама</option>
               <option value="Ски-тур">Ски-тур</option>
               <option value="Трейлраннинг кемп">Трейлраннинг кемп</option>
               <option value="Вертолетная экскурсия">Вертолетная экскурсия</option>
-              <option value="Усадьба Жар. Птица">Усадьба Жар. Птица</option>
+              <option value="Усадьба Жар. Птица">Усадьба Жар. Птица</option> */}
             </select>
             <input type="text" required  name="count" placeholder="Количество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
             <textarea name="text" placeholder="Дополнительная информация (желательные даты, количество дней)" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
