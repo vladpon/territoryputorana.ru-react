@@ -2,6 +2,7 @@ import React from 'react'
 
 const TourPageProgram = (props) => {
     const {tourProgram} = props.tour
+    console.log(tourProgram)
   return (
     <div className = 'tp-program__container'>
         <div className = "tp-program">

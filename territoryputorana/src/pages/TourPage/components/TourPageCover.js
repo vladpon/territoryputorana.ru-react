@@ -15,7 +15,7 @@ const TourPageCover = (props) => {
                     <div className = 'tp-cover__opt-item'>
                         <img src='./img/time.png' />
                         <span>{time}</span>
-                        {(varTime !== "") && (<span>; {varTime}</span>)}
+                        {(varTime) && (<span>; {varTime}</span>)}
                     </div>
                     <div className = 'tp-cover__opt-item'>
                         <img src='./img/calendar.png' />

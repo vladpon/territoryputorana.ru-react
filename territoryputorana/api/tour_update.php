@@ -17,8 +17,25 @@ global $USERSDBPASS;
 
 global $answer;
 
+function firstLevelNesting($item) {
+    return !is_array($item);
+}
+
+
 if (online()) {
+ 
+    // TOTAL 6 TABLES
+    //
+    //  tours; descriptions; abouts; tours_photos; programs_days; days_descriptions;
+    // 
+
+
+
     $data = json_decode(file_get_contents("php://input"), true);
+
+    $toursArr = array_filter($data, "firstLevelNesting");
+    $descriptionsArr = $data["description"];
+
 
     $main = array(
         'title' => $data['title'],
@@ -71,7 +88,7 @@ if (online()) {
     $state = $stmt->execute($main);
 
 
-    var_dump($descriptions);
+    // var_dump($descriptions);
 
     if($state)
     {
@@ -91,7 +108,6 @@ if (online()) {
         }    
     }
     
-
 
     // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

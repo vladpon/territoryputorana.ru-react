@@ -261,6 +261,7 @@ const AdminPage = () => {
 
   return (
     <main className='admin-page'>
+
       <div className='admin-page__wrapper'>
         {online ? 
         (<div className='admin-page__adminka adminka'>

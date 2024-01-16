@@ -1,0 +1,36 @@
+
+    {
+        "tourId": "",
+        "title": "",
+        "price": null,
+        "varPrice": null,
+        "season": null,
+        "time": null,
+        "reference": null,
+        "varReference": null,
+        "included": null,
+        "varIncluded": null,
+        "bigImg": null,
+        "smallImg": null,
+        "href" : "",
+        "details": null,
+        "varDetails": null,
+        "detailsTitle": null,
+        "varDetailsTitle": null,
+        "aboutTitle": null,
+
+
+        "description": [],
+        "about" : [],
+        "tourPhoto": [],
+        
+        
+
+        "tourProgram" : {
+            "programTitle": null,
+            "programSubtitle": null,
+            "programPreface" : null,
+
+            "days" : []
+        }
+}

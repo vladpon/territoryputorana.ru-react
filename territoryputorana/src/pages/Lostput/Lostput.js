@@ -18,7 +18,10 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
 import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
+import blanktour from '../../data/blanktour.json' 
+
 const blankTour = tours.find(tour => tour.id === 'lostput')
+
 
 const photos = [
   { src: "./img/tr_ph01.jpg"},

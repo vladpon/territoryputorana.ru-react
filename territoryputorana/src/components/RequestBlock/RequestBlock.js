@@ -153,7 +153,7 @@ const RequestBlock = (props) => {
               <option value="Усадьба Жар. Птица">Усадьба Жар. Птица</option> */}
             </select>
             <input type="text" required  name="count" placeholder="Количество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
-            <textarea name="text" placeholder="Дополнительная информация (желательные даты, количество дней)" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
+            <textarea name="text" placeholder="Дополнительная информация (желательные даты)" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
             <button  className = 'main-button' onClick={(e) => handleSubmit(e)}>Отправить</button>
         </form>
         <style>{styleString}</style>
