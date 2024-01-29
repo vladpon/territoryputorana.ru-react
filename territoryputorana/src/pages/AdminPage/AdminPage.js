@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { getTours, updateTour } from '../../api/tours'
+import { getToursIds } from '../../api/tours'
 import { logIn, checkOnline } from '../../api/auth'
-
-import './styles.scss'
 import { getGallery, getGalleryCategories } from '../../api/gallery'
 
+import './styles.scss'
+
+
 const AdminPage = () => {
+    const [ toursIds, setToursIds ] = useState(null);
+
     const [tours, setTours] = useState();
     const [gallery, setGallery] = useState();
     const [galleryCat, setGalleryCat] = useState();
@@ -91,6 +95,12 @@ const AdminPage = () => {
     const [online, setOnline] = useState(false);
 
    
+    useEffect( () => {
+      getToursIds().then((toursIdsArr) => {
+        setToursIds(toursIdsArr)
+      })
+    }, [])
+
 
     useEffect( () => {
         getTours().then((tours) => {
@@ -259,6 +269,19 @@ const AdminPage = () => {
       )
     }
 
+
+    const renderToursContainer = () => {
+      return (
+        <div className='adminka__tours-container'>
+          { toursIds && (
+            <select>
+              {toursIds.map( (tourId, index) => <option key = {index}>{tourId.tourId}</option>)}
+            </select>
+          )}
+        </div>
+      )
+    }
+
   return (
     <main className='admin-page'>
 
@@ -270,7 +293,7 @@ const AdminPage = () => {
             <div  className='adminka__tab' onClick={() => setTab('gallery')}>Gallery</div>
           </div>
           <div className='adminka__content'>
-            {(tab === 'tours') && renderTours()}
+            {(tab === 'tours') && renderToursContainer()}
             {(tab === 'gallery') && renderGallery()}
           </div>
         </div>) : (

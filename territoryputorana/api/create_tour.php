@@ -164,9 +164,6 @@ if (online()) {
 
 
 
-
-
-
         
 
     }
@@ -178,42 +175,10 @@ if (online()) {
 
 
 
-    
-
-    // $sqlStr = 'UPDATE days_descriptions SET 
-    //                 title = :title,
-                    
-    //             WHERE id = :id;';
-
-    // $stmt = $pdo->prepare($sqlStr);
-    // $state = $stmt->execute($main);
-
-
-    // if($state)
-    // {
-    //     $answer['main tour data'] = 'updated successfully';
-    // } else $answer['main tour data'] = 'update failed';
-
-    // $descriptionsSqlStr = 'INSERT days_descriptions(tour_id, id, day_id, paragraph) VALUES(:tourId, :id, :dayId, :paragraph);';
-
-    // $descStmp = $pdo-> prepare($descriptionsSqlStr);
-    
-    // if(is_array($daysDescriptionsArr)){
-    //     foreach($daysDescriptionsArr as $dayIndex => $dayArr){
-    //         foreach($dayArr as $index => $p)
-    //         {
-    //             $descState = $descStmp->execute(array('tour_id' => '1', 'id' => $index, 'dayId' => $dayIndex, 'paragraph' => $p));
-    //         }
-    //     }    
-    // }
-    
-
-    // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 
     echo json_encode($answer);
     
 }
 
 
-// else echo json_encode(array('login' => 'failed'));
+else echo json_encode(array('login' => 'failed'));

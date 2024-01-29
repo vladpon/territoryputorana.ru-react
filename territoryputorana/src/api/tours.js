@@ -1,3 +1,25 @@
+
+export async function getToursIds () {
+
+    const url = process.env.REACT_APP_API_URL + '/get_toursids.php'
+    const options = {
+        method: 'GET'
+    }
+
+
+    let res = await fetch(url, options);
+
+    if (res.ok) {
+        let resJSON = await res.json()
+        return resJSON
+    } else {
+        console.error('can not fetch tours ids' + res.status)
+        return
+    }
+}
+
+
+
 export async function getTourByTourId (tourId) {
 
     const url = process.env.REACT_APP_API_URL + '/tours_api.php?gettourbytourid&tour_id=' + tourId
