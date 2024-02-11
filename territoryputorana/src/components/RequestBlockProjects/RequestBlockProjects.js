@@ -83,6 +83,7 @@ const RequestBlockProjects = (props) => {
             </select>
             <textarea name="text" placeholder="Дополнительная информация и вопросы" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
             <button onClick={(e) => handleSubmit(e)}>Отправить</button>
+            <label>Нажимая кнопку "Отправить", вы соглашаетесь с <a href = 'https://territoryputorana.ru/privacy'>обработкой персональных данных</a></label>
         </form>
         <style>{styleString}</style>
     </div>

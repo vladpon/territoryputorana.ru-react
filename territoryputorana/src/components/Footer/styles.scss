@@ -21,6 +21,18 @@
 }
 
 .footer {
+
+    &__privacy {
+        @include font-size-adaptive(15px);
+        color: white;
+
+        & a {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+
+
     width: 100%;
     @include footerPadding;
     background-color: $main-blue;
@@ -88,6 +100,8 @@
         flex-direction: row;
         justify-content: space-between;        
     }
+
+   
 
     #{&}__icon {
         width: 35px;

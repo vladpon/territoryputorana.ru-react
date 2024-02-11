@@ -99,6 +99,16 @@
                 left: 2px;
             }
         }
+
+        
+        label {
+            color: white;
+
+            & a {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
     }
 }
 

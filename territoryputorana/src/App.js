@@ -30,6 +30,7 @@ import Island from './pages/Island/Island';
 import Locations from './pages/Locations/Locations';
 import FeedBackPage from './pages/FeedBackPage/FeedBackPage';
 import LostWaterfalls from './pages/LostWaterfalls/LostWaterfalls';
+import Privacy from './pages/Privacy/Privacy';
 
 
 
@@ -96,6 +97,7 @@ function App() {
           <Route path = '/zaton' Component={Zaton} />
           <Route path = '/expedition' Component={Expedition} />
           <Route path = '/thankyou' Component={ThankYou} />
+          <Route path = '/privacy' Component={Privacy} />
 
           <Route path = '/test' Component= {Test3d} />
 

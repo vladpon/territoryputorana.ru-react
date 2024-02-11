@@ -145,16 +145,11 @@ const RequestBlock = (props) => {
                   <option key={index} value = {item}>{item}</option>
                 )
               })}
-              {/* <option value="Затерянный мир плато Путорана">Затерянный мир плато Путорана</option>
-              <option value="Палаточный кемпинг на озере Лама">Палаточный кемпинг на озере Лама</option>
-              <option value="Ски-тур">Ски-тур</option>
-              <option value="Трейлраннинг кемп">Трейлраннинг кемп</option>
-              <option value="Вертолетная экскурсия">Вертолетная экскурсия</option>
-              <option value="Усадьба Жар. Птица">Усадьба Жар. Птица</option> */}
             </select>
             <input type="text" required  name="count" placeholder="Количество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
             <textarea name="text" placeholder="Дополнительная информация (желательные даты)" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
             <button  className = 'main-button' onClick={(e) => handleSubmit(e)}>Отправить</button>
+            <label>Нажимая кнопку "Отправить", вы соглашаетесь с <a href = 'https://territoryputorana.ru/privacy'>обработкой персональных данных</a></label>
         </form>
         <style>{styleString}</style>
     </div>
