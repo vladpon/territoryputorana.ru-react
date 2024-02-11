@@ -25,7 +25,7 @@ if(isset($_GET['gettourbyid']))
     if(isset($_GET['id']) && $_GET['id'] != NULL)
     {
         $tourId = $_GET['id'];
-        $sqlStr = 'SELECT * FROM tours WHERE id = :id;';
+        $sqlStr = 'SELECT * FROM tours WHERE tour_id = :id;';
 
 
         try {
