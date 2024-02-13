@@ -12,6 +12,8 @@ global $USERSDBPASS;
 
 global $answer;
 
+phpinfo();
+
 function arrCB($item) {
     return !is_array($item);
 }
