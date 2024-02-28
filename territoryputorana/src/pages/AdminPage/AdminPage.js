@@ -8,6 +8,8 @@ import './styles.scss'
 
 
 const AdminPage = () => {
+
+  console.log(process.env)
     const [ toursIds, setToursIds ] = useState(null);
 
     const [tours, setTours] = useState();
