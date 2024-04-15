@@ -38,9 +38,6 @@ global $answer;
             else $answer['dbFetch'] = 'FAILED';
 
             echo json_encode($res, JSON_UNESCAPED_UNICODE);
-
-
-
         }
 
 
