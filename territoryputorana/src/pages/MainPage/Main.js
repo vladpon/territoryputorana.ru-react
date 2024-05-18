@@ -13,6 +13,7 @@ import tours from '../../data/tours.json'
 import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet'
+// import NewsBlock from './components/NewsBlock'
 
 
 const textWord = {
@@ -72,6 +73,7 @@ const Main = () => {
         <meta name="description" content="Плато Путорана Туры - Цена – Туристические маршруты на Плато Путорана смотрите на сайте или узнавайте по телефону 8 (903) 929-93-83. Плато Путорана туры и цены на 2023 – 2024 год вылет на Плато из Красноярска или Москвы. Бронируйте туры на Плато Путорана онлайн на сайте."/>
       </Helmet>
       <Cover />
+      {/* <NewsBlock /> */}
       <TextWord text = {textWord.text} word = {textWord.word} />
       <CardsBlock tours = {tours}/>
       <TextOneImage textOneImage = {textOneImage}/>
