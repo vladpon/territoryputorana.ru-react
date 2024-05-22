@@ -1,4 +1,4 @@
-{
+[{
     "id": "rd",
     "title": "Russia Discovery",
     "season": "",
@@ -19,4 +19,26 @@
     "files" : [],
     "href": "",
     "section": "Туры и походы"
-}
+},
+{
+    "id": "horizon",
+    "title": "Горизонт",
+    "season": "",
+    "time": "",
+    "price": "",
+    "bigImg": "",
+    "smallImg": "./img/horizon_logo02.png",
+    "optImg": "",
+    "description": [
+        "Уникальный загородный комплекс, аналога которому нет на территории Большого Норильска. Расположен вблизи района Оганер. Современные гостевые домики вместимостью до 8-10 человек. Банный комплекс. В зимнее время прокат снегоходов, сноутьюбинг."
+        ],
+    "tourPhoto": [],
+    "contacts": {
+        "tel": "33-15-14",
+        "email": "gorizont-norilsk@yandex.ru",
+        "site": "https://gorizont-norilsk.ru/"
+    },
+    "href": "",
+    "section": "Гостиницы"
+}  
+]
