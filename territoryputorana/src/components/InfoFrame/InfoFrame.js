@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.scss';
 
 const InfoFrame = (props) => {
-    const {price, title, reference, description, included} = props
+    const {price, title, reference, description, included, clothes} = props
   return (
             
         <div className = "infoframe">
@@ -18,6 +18,10 @@ const InfoFrame = (props) => {
                             <div className = 'modal__text' dangerouslySetInnerHTML={{__html: included}}></div>
                         </div>
                     </div>}
+                {clothes && <details>
+                                <summary className = 'infoframe__note infoframe__note_included'><span>*Рекомендации по одежде и снаряжению</span></summary>
+                                <div className = 'modal__text' dangerouslySetInnerHTML={{__html: clothes}}></div>
+                            </details>}
                     
         </div>
   )

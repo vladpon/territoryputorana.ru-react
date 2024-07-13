@@ -9,7 +9,7 @@ import './styles.scss'
 
 const AdminPage = () => {
 
-  console.log(process.env)
+  // console.log(process.env)
     const [ toursIds, setToursIds ] = useState(null);
 
     const [tours, setTours] = useState();
@@ -276,7 +276,7 @@ const AdminPage = () => {
       return (
         <div className='adminka__tours-container'>
           { toursIds && (
-            <select>
+            <select onChange={ (e) => console.log(e.target.value)}>
               {toursIds.map( (tourId, index) => <option key = {index}>{tourId.tourId}</option>)}
             </select>
           )}
