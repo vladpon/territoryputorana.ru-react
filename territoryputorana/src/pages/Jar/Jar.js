@@ -63,7 +63,7 @@ const TourPage = () => {
                   {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
               </div>
               <div className='tp-about__hit-container'>
-                  <InfoFrame price = {tour.price} title = {tour.detailsTitle} reference = {tour.reference} refSpan = {tour.refSpan} description = {tour.details} included = {tour.included}/>
+                  <InfoFrame price = {tour.price} title = {tour.detailsTitle} reference = {tour.reference} refSpan = {tour.refSpan} description = {tour.details} included = {tour.included} clothes = {tour.clothes}/>
                   
               </div>
             </div>

@@ -11,8 +11,7 @@ const NotFound = () => {
     //   window.YandexRotorSettings.isLoaded = true
     // }, [])
 
-
-
+  console.log(location)
   return (
     <main className='notfound-page'>
       <Helmet>
@@ -21,7 +20,7 @@ const NotFound = () => {
         <link rel = 'canonical' href='https://territoryputorana.ru/NotFound' />
       </Helmet>
         <img src='https://territoryputorana.ru/img/warn.jpg' />
-        <h1>Запрашиваемая Вами страница не существует или находится в разработке</h1>
+        <h1>Запрашиваемая Вами страница {location.pathname} не существует или находится в разработке</h1>
         <h2><Link to = '/'>На главную</Link></h2>
         <MainLogo />
     </main>
