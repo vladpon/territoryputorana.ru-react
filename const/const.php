@@ -1,9 +1,9 @@
 <?php
 
 $DBNAME = 'lysovanton_tours';
-$DBPASS = 'pjoe6qU&';
+$DBPASS = '1yAzBo8&';
 $DBHOST = 'lysovanton.beget.tech';
 
-$USERSDBPASS = 'eyVin0%%';
+$USERSDBPASS = '3g%YPc6V';
 
 $EMAILPASS = 'bcquaowopyftzabw';
