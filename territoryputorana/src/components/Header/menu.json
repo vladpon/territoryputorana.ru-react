@@ -5,20 +5,10 @@
         "title": "туры",
         "items": [
             {
-                "id": "heliski",
-                "href": "/heliski",
-                "title": "Хели-ски"
-            },
-            {
                 "id": "lostput",
                 "href": "/lostput",
                 "title": "Затерянный мир Плато Путорана"
-            },
-            {
-                "id": "skitour",
-                "href": "/skitour",
-                "title": "Ски-тур"
-            },
+            },            
             {
                 "id": "trailrunning",
                 "href": "/trailrunning",
@@ -43,6 +33,16 @@
                 "id": "expedition",
                 "href": "/expedition",
                 "title": "Экспедиция выходного дня"
+            },
+            {
+                "id": "heliski",
+                "href": "/heliski",
+                "title": "Хели-ски"
+            },
+            {
+                "id": "skitour",
+                "href": "/skitour",
+                "title": "Ски-тур"
             }
         ]
     },
