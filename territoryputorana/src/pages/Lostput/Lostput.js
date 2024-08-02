@@ -79,6 +79,7 @@ const Lostput = () => {
               <div className='tp-about__hit-container'>
                   {/* <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan}/> */}
                   <InfoFrame price = {tour.varPrice} title = {tour.varAboutH3} reference = {tour.varReference} description = {tour.varDetails} clothes = {tour.clothes}/>
+                  <InfoFrame title = {tour.aboutH3} description = {tour.details}/>
               </div>
           </div>
         </div>

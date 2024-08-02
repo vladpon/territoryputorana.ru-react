@@ -81,6 +81,7 @@ const LostWaterfalls = () => {
               </div>
               <div className='tp-about__hit-container'>
                   <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} refSpan = {tour.refSpan} description = {tour.details} included = {tour.included} clothes = {tour.clothes}/>
+                  <InfoFrame title = {tour.varAboutH3} description = {tour.varDetails} />
               </div>
             </div>
         </div>

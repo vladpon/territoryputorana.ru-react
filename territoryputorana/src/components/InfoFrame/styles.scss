@@ -30,6 +30,11 @@
             background-color: #e4e3e3;
             box-shadow: 2px 2px 2px #d6d6d6;
         }
+
+        & a {
+            text-decoration: underline;
+            font-style: italic;
+        }
        
     &__price {
         @include font-size-adaptive(35px);
