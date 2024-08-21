@@ -161,9 +161,6 @@ if (online()) {
          if($state) $answer['dbProgramTableCreate'] = 'success';
 
 
-
-
-
         
 
     }

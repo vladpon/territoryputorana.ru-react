@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { getTours, updateTour } from '../../api/tours'
-import { getToursIds } from '../../api/tours'
+import { getTours, updateTour, getToursIds, getTourById} from '../../api/tours'
 import { logIn, checkOnline } from '../../api/auth'
 import { getGallery, getGalleryCategories } from '../../api/gallery'
+
+import blankTour from '../../data/blanktour.json'
+
 
 import './styles.scss'
 
 
 const AdminPage = () => {
 
-  // console.log(process.env)
     const [ toursIds, setToursIds ] = useState(null);
 
     const [tours, setTours] = useState();
     const [gallery, setGallery] = useState();
     const [galleryCat, setGalleryCat] = useState();
+
+    const [showTours, setShowTours] = useState(false);
+    const [tab, setTab] = useState("");
+
+    const [selectedTour, setSelectedTour] = useState(0);
+    const [currentTour, setCurrentTour] = useState(blankTour);
+
+    const [online, setOnline] = useState(false);
 
     function setToursField(e) { 
       setTours(tours.map((tour,index) => (index == selectedTour) ? {...tour, [e.target.name]:e.target.value} : tour))
@@ -87,29 +96,22 @@ const AdminPage = () => {
     }
 
 
-
-
-    const [showTours, setShowTours] = useState(false);
-    const [tab, setTab] = useState("");
-
-    const [selectedTour, setSelectedTour] = useState(0);
-
-    const [online, setOnline] = useState(false);
-
    
     useEffect( () => {
       getToursIds().then((toursIdsArr) => {
         setToursIds(toursIdsArr)
+        setSelectedTour(toursIdsArr[0].tourId)
       })
     }, [])
 
 
-    useEffect( () => {
-        getTours().then((tours) => {
-                      setTours(tours)
-                      console.log(tours)
-        })
-    }, [])
+    // useEffect( () => {
+    //     getTours().then((tours) => {
+    //                   setTours(tours)
+    //                   console.log(tours)
+    //     })
+    // }, [])
+
     useEffect( () => {
       getGallery().then( (gallery) => {
                       setGallery(gallery)
@@ -130,6 +132,9 @@ const AdminPage = () => {
         })
     }, [])
 
+    useEffect( () => {
+      selectedTour ? getTourById(selectedTour).then( tour => setCurrentTour(tour)) : console.log(selectedTour)
+    }, [selectedTour])
 
     const renderTours = () => {
       return (
@@ -256,6 +261,8 @@ const AdminPage = () => {
       setGalleryCat(galleryCat.map((cat) => (cat.id == id) ? {...gallery, [e.target.name]:e.target.value} : cat))
     }
 
+
+
     const renderGallery = () => {
       return (
         <>
@@ -271,18 +278,94 @@ const AdminPage = () => {
       )
     }
 
+    
+
 
     const renderToursContainer = () => {
       return (
         <div className='adminka__tours-container'>
           { toursIds && (
-            <select onChange={ (e) => console.log(e.target.value)}>
+            <select onChange={ (e) => setSelectedTour(e.target.value)}>
               {toursIds.map( (tourId, index) => <option key = {index}>{tourId.tourId}</option>)}
             </select>
           )}
+          { (renderTour()) }
         </div>
       )
     }
+
+    const renderTour = () => {
+      return (
+        <div className='tfs'>
+          <div className='tfs__main'>
+            <h4>main</h4>
+            <textarea className='tfs__field' placeholder="tour title"  value={currentTour.title} onChange={e => setCurrentTour({...currentTour, ['title']:e.target.value})} />
+            {currentTour.price ? (<textarea className='tfs__field' placeholder="tour price"  value={currentTour.price} onChange={e => setCurrentTour({...currentTour, ['price']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour price"  value={""} onChange={e => setCurrentTour({...currentTour, ['price']:e.target.value})} />))}
+            {currentTour.varPrice ? (<textarea className='tfs__field' placeholder="tour varPrice"  value={currentTour.varPrice} onChange={e => setCurrentTour({...currentTour, ['varPrice']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varPrice"  value={""} onChange={e => setCurrentTour({...currentTour, ['varPrice']:e.target.value})} />))}
+            {currentTour.season ? (<textarea className='tfs__field' placeholder="tour season"  value={currentTour.season} onChange={e => setCurrentTour({...currentTour, ['season']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour season"  value={""} onChange={e => setCurrentTour({...currentTour, ['season']:e.target.value})} />))}
+            {currentTour.time ? (<textarea className='tfs__field' placeholder="tour time"  value={currentTour.time} onChange={e => setCurrentTour({...currentTour, ['time']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour time"  value={""} onChange={e => setCurrentTour({...currentTour, ['time']:e.target.value})} />))}
+            {currentTour.reference ? (<textarea className='tfs__field' placeholder="tour reference"  value={currentTour.reference} onChange={e => setCurrentTour({...currentTour, ['reference']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour reference"  value={""} onChange={e => setCurrentTour({...currentTour, ['reference']:e.target.value})} />))}
+            {currentTour.varReference ? (<textarea className='tfs__field' placeholder="tour varReference"  value={currentTour.varReference} onChange={e => setCurrentTour({...currentTour, ['varReference']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varReference"  value={""} onChange={e => setCurrentTour({...currentTour, ['varReference']:e.target.value})} />))}
+            {currentTour.included ? (<textarea className='tfs__field' placeholder="tour included"  value={currentTour.included} onChange={e => setCurrentTour({...currentTour, ['included']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour included"  value={""} onChange={e => setCurrentTour({...currentTour, ['included']:e.target.value})} />))}
+            {currentTour.varIncluded ? (<textarea className='tfs__field' placeholder="tour varIncluded"  value={currentTour.varIncluded} onChange={e => setCurrentTour({...currentTour, ['varIncluded']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varIncluded"  value={""} onChange={e => setCurrentTour({...currentTour, ['varIncluded']:e.target.value})} />))}
+            {currentTour.bigImg ? (<textarea className='tfs__field' placeholder="tour bigImg"  value={currentTour.bigImg} onChange={e => setCurrentTour({...currentTour, ['bigImg']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour bigImg"  value={""} onChange={e => setCurrentTour({...currentTour, ['bigImg']:e.target.value})} />))}
+            {currentTour.smallImg ? (<textarea className='tfs__field' placeholder="tour smallImg"  value={currentTour.smallImg} onChange={e => setCurrentTour({...currentTour, ['smallImg']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour smallImg"  value={""} onChange={e => setCurrentTour({...currentTour, ['smallImg']:e.target.value})} />))}
+            {currentTour.href ? (<textarea className='tfs__field' placeholder="tour href"  value={currentTour.href} onChange={e => setCurrentTour({...currentTour, ['href']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour href"  value={""} onChange={e => setCurrentTour({...currentTour, ['href']:e.target.value})} />))}
+            {currentTour.details ? (<textarea className='tfs__field' placeholder="tour details"  value={currentTour.details} onChange={e => setCurrentTour({...currentTour, ['details']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour details"  value={""} onChange={e => setCurrentTour({...currentTour, ['details']:e.target.value})} />))}
+            {currentTour.varDetails ? (<textarea className='tfs__field' placeholder="tour varDetails"  value={currentTour.varDetails} onChange={e => setCurrentTour({...currentTour, ['varDetails']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varDetails"  value={""} onChange={e => setCurrentTour({...currentTour, ['varDetails']:e.target.value})} />))}
+            {currentTour.deyailsTitle ? (<textarea className='tfs__field' placeholder="tour detailsTitle"  value={currentTour.detailsTitle} onChange={e => setCurrentTour({...currentTour, ['detailsTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour deyailsTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['deyailsTitle']:e.target.value})} />))}
+            {currentTour.varDetailsTitle ? (<textarea className='tfs__field' placeholder="tour varDetailsTitle"  value={currentTour.varDetailsTitle} onChange={e => setCurrentTour({...currentTour, ['varDetailsTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varDetailsTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['varDetailsTitle']:e.target.value})} />))}
+            {currentTour.aboutTitle ? (<textarea className='tfs__field' placeholder="tour aboutTitle"  value={currentTour.aboutTitle} onChange={e => setCurrentTour({...currentTour, ['aboutTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour aboutTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['aboutTitle']:e.target.value})} />))}
+            {currentTour.programTitle ? (<textarea className='tfs__field' placeholder="tour programTitle"  value={currentTour.programTitle} onChange={e => setCurrentTour({...currentTour, ['programTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['programTitle']:e.target.value})} />))}
+            {currentTour.programSubtitle ? (<textarea className='tfs__field' placeholder="tour programSubtitle"  value={currentTour.programSubtitle} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programSubtitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />))}
+            {currentTour.programPreface ? (<textarea className='tfs__field' placeholder="tour programPreface"  value={currentTour.programPreface} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programPreface"  value={""} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />))}
+          </div>
+          <div className='tfs__descriptions'>
+            <h4>desriptions</h4>
+            {currentTour.description ? (
+              currentTour.description.map( (desc, index) => {
+                return (
+                  <div className='tfs__desc' key = {index}>
+                    <textarea className='tfs__field' placeholder="tour decs"  value={desc} onChange={e => {
+                      let el = currentTour.description
+                      el[index] = e.target.value
+                      setCurrentTour({...currentTour, ['description']:el})
+                      }
+                    } />
+                    <button onClick={() => 
+                      {
+                        if(currentTour.description.length > 1)
+                          {
+                            console.log(currentTour.description.length)
+                            let newDescArr = currentTour['description']
+                            newDescArr.splice(index, 1)
+                            setCurrentTour({...currentTour, ['description']:newDescArr})
+                          }
+                        else 
+                          {
+                            let newCurrentTour = {...currentTour}
+                            delete newCurrentTour['description']
+                            setCurrentTour(newCurrentTour)
+                          }
+                      }
+                    }>-</button>
+                  </div>)
+              }
+              )) : (<span>no desc</span>)
+            }
+            <button onClick={() => {
+                let newDescArr = currentTour.description ? currentTour.description : []
+                newDescArr[newDescArr.length] = ""
+                setCurrentTour({...currentTour, ['description']:newDescArr})
+                }
+              }>add</button>
+          </div>
+        </div>
+      )
+    }
+
+
+
 
   return (
     <main className='admin-page'>

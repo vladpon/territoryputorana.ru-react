@@ -35,9 +35,6 @@
 
     &__tour {
         height: 100%;
-
-        input {
-        }
     }
 
     &__adminka {
@@ -86,6 +83,10 @@
         width: 100%;
         height: 100%;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         & select {
             width: 100%;
 
@@ -94,6 +95,11 @@
                 text-align: center;
             }
         }
+    }
+
+    &__tour-title {
+        width: 100%;
+        color: #464646;
     }
 }
 
@@ -176,5 +182,59 @@
         font-size: 12px;
         font-weight: 400;
         border-bottom-right-radius: 10px;
+    }
+}
+
+.tfs {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    gap: 4px;
+
+    & h4 {
+        color: #ccc;
+        text-align: center;
+    }
+
+    &__field {
+        width: 100%;
+        border: 2px solid #444;
+        padding: 2px;
+        background-color: #ddd;
+        font-weight: 500;
+        height: auto;
+        overflow: hidden;
+        resize: none;
+        outline: none;
+    }
+
+    &__main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+
+    &__descriptions {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    &__desc {
+        display: flex;
+        flex-direction: row;
+
+        & button {
+            width: 50px;
+        }
     }
 }
