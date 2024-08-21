@@ -316,16 +316,14 @@ const AdminPage = () => {
             {currentTour.deyailsTitle ? (<textarea className='tfs__field' placeholder="tour detailsTitle"  value={currentTour.detailsTitle} onChange={e => setCurrentTour({...currentTour, ['detailsTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour deyailsTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['deyailsTitle']:e.target.value})} />))}
             {currentTour.varDetailsTitle ? (<textarea className='tfs__field' placeholder="tour varDetailsTitle"  value={currentTour.varDetailsTitle} onChange={e => setCurrentTour({...currentTour, ['varDetailsTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varDetailsTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['varDetailsTitle']:e.target.value})} />))}
             {currentTour.aboutTitle ? (<textarea className='tfs__field' placeholder="tour aboutTitle"  value={currentTour.aboutTitle} onChange={e => setCurrentTour({...currentTour, ['aboutTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour aboutTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['aboutTitle']:e.target.value})} />))}
-            {currentTour.programTitle ? (<textarea className='tfs__field' placeholder="tour programTitle"  value={currentTour.programTitle} onChange={e => setCurrentTour({...currentTour, ['programTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['programTitle']:e.target.value})} />))}
-            {currentTour.programSubtitle ? (<textarea className='tfs__field' placeholder="tour programSubtitle"  value={currentTour.programSubtitle} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programSubtitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />))}
-            {currentTour.programPreface ? (<textarea className='tfs__field' placeholder="tour programPreface"  value={currentTour.programPreface} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programPreface"  value={""} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />))}
+            
           </div>
-          <div className='tfs__descriptions'>
+          <div className='tfs__other'>
             <h4>desriptions</h4>
             {currentTour.description ? (
               currentTour.description.map( (desc, index) => {
                 return (
-                  <div className='tfs__desc' key = {index}>
+                  <div className='tfs__row' key = {index}>
                     <textarea className='tfs__field' placeholder="tour decs"  value={desc} onChange={e => {
                       let el = currentTour.description
                       el[index] = e.target.value
@@ -336,7 +334,6 @@ const AdminPage = () => {
                       {
                         if(currentTour.description.length > 1)
                           {
-                            console.log(currentTour.description.length)
                             let newDescArr = currentTour['description']
                             newDescArr.splice(index, 1)
                             setCurrentTour({...currentTour, ['description']:newDescArr})
@@ -359,6 +356,150 @@ const AdminPage = () => {
                 setCurrentTour({...currentTour, ['description']:newDescArr})
                 }
               }>add</button>
+          </div>
+
+
+          <div className='tfs__other'>
+            <h4>abouts</h4>
+            {currentTour.about ? (
+              currentTour.about.map( (about, index) => {
+                return (
+                  <div className='tfs__row' key={index}>
+                    <textarea className='tfs__field' placeholder="tour about"  value={about} onChange={e => {
+                      let el = currentTour.about
+                      el[index] = e.target.value
+                      setCurrentTour({...currentTour, ['about']:el})
+                      }
+                    } />
+                    <button onClick={() => 
+                      {
+                        if(currentTour.about.length > 1)
+                          {
+                            let newDescArr = currentTour['about']
+                            newDescArr.splice(index, 1)
+                            setCurrentTour({...currentTour, ['about']:newDescArr})
+                          }
+                        else 
+                          {
+                            let newCurrentTour = {...currentTour}
+                            delete newCurrentTour['about']
+                            setCurrentTour(newCurrentTour)
+                          }
+                      }
+                    }>-</button>
+                  </div>
+                )
+              } )
+            ) : (<span>no about</span>)
+          }
+          <button onClick={() => {
+              let newDescArr = currentTour.about ? currentTour.about : []
+              newDescArr[newDescArr.length] = ""
+              setCurrentTour({...currentTour, ['about']:newDescArr})
+              }
+            }>add</button> 
+          </div>
+
+          <div className='tfs__other'>
+            <h4>tour program</h4>
+            {currentTour.tourProgram.programTitle ? (<textarea className='tfs__field' placeholder="tour programTitle"  value={currentTour.tourProgram.programTitle} onChange={e => {
+                            let newTourProgram = currentTour.tourProgram
+                            newTourProgram.programTitle = e.target.value
+                            setCurrentTour({...currentTour, ['tourProgram']:e.newTourProgram})
+                          }
+                         } />) : (<textarea className='tfs__field' placeholder="tour programTitle"  value={""} onChange={e => {
+                          let newTourProgram = currentTour.tourProgram
+                          newTourProgram.programTitle = e.target.value
+                          setCurrentTour({...currentTour, ['tourProgram']:e.newTourProgram})
+                        }
+                       } />)}
+            {currentTour.programSubtitle ? (<textarea className='tfs__field' placeholder="tour programSubtitle"  value={currentTour.programSubtitle} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programSubtitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />))}
+            {currentTour.programPreface ? (<textarea className='tfs__field' placeholder="tour programPreface"  value={currentTour.programPreface} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programPreface"  value={""} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />))}
+            {currentTour.tourProgram.days ? (
+              currentTour.tourProgram.days.map( (day, index) => {
+                return (
+                  <div className='tfs__column' key={index}>
+                    <h5>{day.dayTitle}</h5>
+                    <button onClick={() => 
+                        {
+                          if(currentTour.tourProgram.days.length > 1)
+                            {
+                              let newProgram = currentTour.tourProgram;
+                              newProgram.days.splice(index, 1)
+                              setCurrentTour({...currentTour, ['tourProgram']:newProgram})
+                            }
+                          else 
+                            {
+                              let newCurrentTour = {...currentTour}
+                              delete newCurrentTour.tourProgram.days
+                              setCurrentTour(newCurrentTour)
+                            }
+                        }
+                      }>delete day</button>
+                      <textarea className='tfs__field' placeholder="day title"  value={day.dayTitle} onChange={e => {
+                        let el = currentTour.tourProgram
+                        el.days[index].dayTitle = e.target.value
+                        setCurrentTour({...currentTour, ['tourProgram']:el})
+                        }
+                      } />
+                      <textarea className='tfs__field' placeholder="day img"  value={day.dayImg} onChange={e => {
+                        let el = currentTour.tourProgram
+                        el.days[index].dayImg = e.target.value
+                        setCurrentTour({...currentTour, ['tourProgram']:el})
+                        }
+                      } />
+                      {day.dayDesc ? (
+                        day.dayDesc.map( (desc, i) => {
+                          return (
+                              <div key = {i} className='tfs__row tfs__row_add'>
+                                <textarea className='tfs__field' placeholder='day desc' value={desc} onChange = {e => {
+                                  let newTourProgram = currentTour.tourProgram
+                                  newTourProgram.days[index].dayDesc[i] = e.target.value
+                                  setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                                }}/>
+                                <button onClick={() => 
+                                  {
+                                    if(currentTour.tourProgram.days[index].dayDesc.length > 1)
+                                      {
+                                        let newTourProgram = currentTour['tourProgram']
+                                        newTourProgram.days[index].dayDesc.splice(i, 1)
+                                        setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                                      }
+                                    else 
+                                      {
+                                        let newTourProgram = currentTour['tourProgram']
+                                        delete newTourProgram.days[index]['dayDesc']
+                                        setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                                      }
+                                  }
+                                }>-</button>
+                              </div>
+                          )
+                        })
+                      ) : console.log('no dayDesc')}
+                      <button onClick={() => 
+                          {
+                            let newDayDescArr = currentTour.tourProgram.days[index].dayDesc ? currentTour.tourProgram.days[index].dayDesc : []
+                            newDayDescArr[newDayDescArr.length] = ""
+                            let newTourProgram = currentTour.tourProgram
+                            newTourProgram.days[index].dayDesc = newDayDescArr
+                            setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                          }
+                        }>add description</button>
+                      
+                  </div>
+                )
+              } )
+            ) : (<span>no program</span>)
+          }
+          <button onClick={() => {
+              let newDaysArr = currentTour.tourProgram.days ? currentTour.tourProgram.days : []
+              newDaysArr[newDaysArr.length] = {}
+              let newProgram = currentTour.tourProgram
+              newProgram.days = newDaysArr
+              setCurrentTour({...currentTour, ['tourProgram']:newProgram})
+              }
+            }>add day</button> 
           </div>
         </div>
       )
