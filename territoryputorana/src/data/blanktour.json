@@ -22,7 +22,10 @@
 
         "description": [],
         "about" : [],
-        "tourPhoto": [],
+        "tourPhoto": [{
+            "path": "",
+            "alt": ""
+        }],
         
         
 
@@ -31,6 +34,12 @@
             "programSubtitle": null,
             "programPreface" : null,
 
-            "days" : []
+            "days" : [
+                {
+                    "dayImg": "",
+                    "dayTitle": "",
+                    "dayDesc": []
+                }
+            ]
         }
 }

@@ -219,7 +219,7 @@
 
     &__main {
         width: 100%;
-        height: 100%;
+        // height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -228,7 +228,7 @@
 
     &__other {
         width: 100%;
-        height: 100%;
+        // height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -264,4 +264,5 @@
         background-color: #504545;
         color:#ccc;
     }
+
 }

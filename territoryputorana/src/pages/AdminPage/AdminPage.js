@@ -294,9 +294,52 @@ const AdminPage = () => {
       )
     }
 
+
+
+
+
+    //////       LOAD TOUR JSON      ////////////
+    const readFile = async (file, cbFnc) => {
+      
+        let reader = new FileReader();
+        
+        reader.onload = function() {
+            cbFnc(JSON.parse(reader.result))
+
+        }; 
+        reader.onerror = function() {
+                  console.log(reader.error);
+                };
+
+        reader.readAsText(file) 
+    }
+
+    const cbFnc = (tour) => {
+      setCurrentTour(tour)
+    }
+  ////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
     const renderTour = () => {
       return (
         <div className='tfs'>
+          {/* <form onSubmit={ (e) => {
+              e.preventDefault();              
+              readFile(e.target['tour-load-input'].files[0], cbFnc)
+              }
+            }>
+            <label for='tour-load-input' className = 'tfs__filelabel'>load tour.json</label>
+              <input type='file' id='tour-load-input'></input>
+            <input type='submit' value={'load'}></input>
+          </form> */}
           <div className='tfs__main'>
             <h4>main</h4>
             <textarea className='tfs__field' placeholder="tour title"  value={currentTour.title} onChange={e => setCurrentTour({...currentTour, ['title']:e.target.value})} />
@@ -315,6 +358,7 @@ const AdminPage = () => {
             {currentTour.varDetails ? (<textarea className='tfs__field' placeholder="tour varDetails"  value={currentTour.varDetails} onChange={e => setCurrentTour({...currentTour, ['varDetails']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varDetails"  value={""} onChange={e => setCurrentTour({...currentTour, ['varDetails']:e.target.value})} />))}
             {currentTour.deyailsTitle ? (<textarea className='tfs__field' placeholder="tour detailsTitle"  value={currentTour.detailsTitle} onChange={e => setCurrentTour({...currentTour, ['detailsTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour deyailsTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['deyailsTitle']:e.target.value})} />))}
             {currentTour.varDetailsTitle ? (<textarea className='tfs__field' placeholder="tour varDetailsTitle"  value={currentTour.varDetailsTitle} onChange={e => setCurrentTour({...currentTour, ['varDetailsTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varDetailsTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['varDetailsTitle']:e.target.value})} />))}
+            {currentTour.clothes ? (<textarea className='tfs__field' placeholder="tour clothes"  value={currentTour.clothes} onChange={e => setCurrentTour({...currentTour, ['clothes']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour clothes"  value={""} onChange={e => setCurrentTour({...currentTour, ['clothes']:e.target.value})} />))}
             {currentTour.aboutTitle ? (<textarea className='tfs__field' placeholder="tour aboutTitle"  value={currentTour.aboutTitle} onChange={e => setCurrentTour({...currentTour, ['aboutTitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour aboutTitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['aboutTitle']:e.target.value})} />))}
             
           </div>
@@ -575,9 +619,6 @@ const AdminPage = () => {
                           }>add photo</button>
             </div>
         
-
-
-
         </div>
       )
     }
