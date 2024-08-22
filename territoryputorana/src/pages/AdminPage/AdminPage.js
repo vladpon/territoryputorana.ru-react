@@ -405,16 +405,36 @@ const AdminPage = () => {
             {currentTour.tourProgram.programTitle ? (<textarea className='tfs__field' placeholder="tour programTitle"  value={currentTour.tourProgram.programTitle} onChange={e => {
                             let newTourProgram = currentTour.tourProgram
                             newTourProgram.programTitle = e.target.value
-                            setCurrentTour({...currentTour, ['tourProgram']:e.newTourProgram})
+                            setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
                           }
                          } />) : (<textarea className='tfs__field' placeholder="tour programTitle"  value={""} onChange={e => {
                           let newTourProgram = currentTour.tourProgram
                           newTourProgram.programTitle = e.target.value
-                          setCurrentTour({...currentTour, ['tourProgram']:e.newTourProgram})
+                          setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
                         }
                        } />)}
-            {currentTour.programSubtitle ? (<textarea className='tfs__field' placeholder="tour programSubtitle"  value={currentTour.programSubtitle} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programSubtitle"  value={""} onChange={e => setCurrentTour({...currentTour, ['programSubtitle']:e.target.value})} />))}
-            {currentTour.programPreface ? (<textarea className='tfs__field' placeholder="tour programPreface"  value={currentTour.programPreface} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour programPreface"  value={""} onChange={e => setCurrentTour({...currentTour, ['programPreface']:e.target.value})} />))}
+            {currentTour.tourProgram.programSubtitle ? (<textarea className='tfs__field' placeholder="tour programSubtitle"  value={currentTour.tourProgram.programSubtitle} onChange={e => {
+                            let newTourProgram = currentTour.tourProgram
+                            newTourProgram.programSubtitle = e.target.value
+                            setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                          }
+                         } />) : (<textarea className='tfs__field' placeholder="tour programSubtitle"  value={""} onChange={e => {
+                          let newTourProgram = currentTour.tourProgram
+                          newTourProgram.programSubtitle = e.target.value
+                          setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                        }
+                       } />)}
+            {currentTour.tourProgram.programPreface ? (<textarea className='tfs__field' placeholder="tour programPreface"  value={currentTour.tourProgram.programPreface} onChange={e => {
+                            let newTourProgram = currentTour.tourProgram
+                            newTourProgram.programPreface = e.target.value
+                            setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                          }
+                         } />) : (<textarea className='tfs__field' placeholder="tour programPreface"  value={""} onChange={e => {
+                          let newTourProgram = currentTour.tourProgram
+                          newTourProgram.programPreface = e.target.value
+                          setCurrentTour({...currentTour, ['tourProgram']:newTourProgram})
+                        }
+                       } />)}
             {currentTour.tourProgram.days ? (
               currentTour.tourProgram.days.map( (day, index) => {
                 return (
@@ -501,6 +521,63 @@ const AdminPage = () => {
               }
             }>add day</button> 
           </div>
+
+
+
+
+          {/*           TOUR PHOTOS                 */}
+          <div className='tfs__other'>
+            <h4>Photos</h4>
+            {(currentTour.tourPhoto && currentTour.tourPhoto.length) ? (
+                currentTour.tourPhoto.map( (photo, index) => {
+                  return (
+                    <div className='tfs__column' key={index}>
+                      <h5>{index+1}</h5>
+                      <button onClick={() => 
+                          {
+                            if(currentTour.tourPhoto.length > 1)
+                              {
+                                let newTourPhotoArr = currentTour.tourPhoto;
+                                newTourPhotoArr.splice(index, 1)
+                                setCurrentTour({...currentTour, ['tourPhoto']:newTourPhotoArr})
+                              }
+                            else 
+                              {
+                                let newCurrentTour = {...currentTour}
+                                delete newCurrentTour.tourPhoto
+                                setCurrentTour(newCurrentTour)
+                              }
+                          }
+                        }>delete photo</button>
+                        <textarea className='tfs__field' placeholder="source"  value={photo.path} onChange={e => {
+                          let el = currentTour.tourPhoto
+                          el[index].path = e.target.value
+                          setCurrentTour({...currentTour, ['tourPhoto']:el})
+                          }
+                        } />
+                        <textarea className='tfs__field' placeholder="alt"  value={photo.alt} onChange={e => {
+                          let el = currentTour.tourPhoto
+                          el[index].alt = e.target.value
+                          setCurrentTour({...currentTour, ['tourPhoto']:el})
+                          }
+                        } />
+                                                
+                    </div>
+                  )
+                }
+              )) : (<span>no photos</span>) }
+              <button onClick={() => 
+                            {
+                              let newPhotoArr = currentTour.tourPhoto ? currentTour.tourPhoto : []
+                              newPhotoArr[newPhotoArr.length] = {"path":"", "alt":""}
+                              setCurrentTour({...currentTour, ['tourPhoto']:newPhotoArr})
+                            }
+                          }>add photo</button>
+            </div>
+        
+
+
+
         </div>
       )
     }
