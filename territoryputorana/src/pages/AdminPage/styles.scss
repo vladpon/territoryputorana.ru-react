@@ -101,6 +101,13 @@
         width: 100%;
         color: #464646;
     }
+
+    & .loader {
+        position: absolute;
+        left: 50%;
+        top: 40vh;
+        z-index: 25;
+    }
 }
 
 .tours__select {

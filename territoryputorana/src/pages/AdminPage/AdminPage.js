@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getTours, updateTour, getToursIds, getTourById} from '../../api/tours'
 import { logIn, checkOnline } from '../../api/auth'
 import { getGallery, getGalleryCategories } from '../../api/gallery'
+import { OrbitProgress } from 'react-loading-indicators'
 
 import blankTour from '../../data/blanktour.json'
 
@@ -10,6 +11,11 @@ import './styles.scss'
 
 
 const AdminPage = () => {
+
+    const [isLoading, setIsLoading] = useState(false)
+    useEffect( () => {
+      isLoading ? console.log('loading...') : console.log('lodaded')
+    }, [isLoading])
 
     const [ toursIds, setToursIds ] = useState(null);
 
@@ -132,8 +138,16 @@ const AdminPage = () => {
         })
     }, [])
 
+    const getTour  = async (tourId) => {
+      setIsLoading(true)
+      return getTourById(tourId)
+    }
+
     useEffect( () => {
-      selectedTour ? getTourById(selectedTour).then( tour => setCurrentTour(tour)) : console.log(selectedTour)
+      selectedTour ? getTour(selectedTour).then( tour => {
+        setCurrentTour(tour)
+        setIsLoading(false)
+       }) : console.log(selectedTour)
     }, [selectedTour])
 
     const renderTours = () => {
@@ -632,6 +646,7 @@ const AdminPage = () => {
       <div className='admin-page__wrapper'>
         {online ? 
         (<div className='admin-page__adminka adminka'>
+          {isLoading && <div className='loader'><OrbitProgress variant="dotted" color="#c42aa4" size="large" text="" textColor="#9f6464" /></div>}
           <div className='adminka__tabs'>
             <div  className='adminka__tab' onClick={() => setTab('tours')}>Tours</div>
             <div  className='adminka__tab' onClick={() => setTab('gallery')}>Gallery</div>
