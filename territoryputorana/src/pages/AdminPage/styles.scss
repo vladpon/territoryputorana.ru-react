@@ -267,9 +267,18 @@
         }
     }
 
+
+    &__save-btn {
+        width: 100%;
+        font-weight: 800;
+        font-size: 14px;
+    }
+
     & button {
         background-color: #504545;
         color:#ccc;
     }
+
+    
 
 }
