@@ -1,8 +1,9 @@
 export async function logIn (req) {
 
     const url = process.env.REACT_APP_API_URL + '/auth.php'
-    const options = {
+    const options = {        
         method: 'POST',
+        mode: "no-cors",
         credentials: "include",
         headers: {
             'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -11,7 +12,8 @@ export async function logIn (req) {
     }
 
 
-    let res = await fetch(url, options);
+    let res = await fetch(url, options).then( (res) => console.log(res));
+
 
     if (res.ok) {
         let resJSON = await res.json() 
@@ -28,6 +30,7 @@ export async function checkOnline () {
     const url = process.env.REACT_APP_API_URL + '/auth.php'
     const options = {
         method: 'POST',
+        mode: "no-cors",
         credentials: "include",
         headers: {
             'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
