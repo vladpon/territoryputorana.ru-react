@@ -33,30 +33,56 @@ if (online()) {
 
     $data = json_decode(file_get_contents("php://input"), true);
 
-    $toursArr = array_filter($data, "firstLevelNesting");
-    $descriptionsArr = $data["description"];
+    // $toursArr = array_filter($data, "firstLevelNesting");
+    // var_dump($toursArr);
+    // $descriptionsArr = $data["description"];
+
+    $tour_id = $data['tourId'];
+
+    $main = [];
+    $main['tour_id'] = $data['tourId'];
+    $main['title'] = $data['title'];
+    $main['price'] = $data['price'];
+    $main['var_price'] = $data['varPrice'];
+    $main['season'] = $data['season'];
+    $main['time'] = $data['time'];
+    $main['reference'] = $data['reference'];
+    $main['var_reference'] = $data['varReference'];
+    $main['included'] = $data['included'];
+    $main['var_included'] = $data['varIncluded'];
+    $main['big_img'] = $data['bigImg'];
+    $main['small_img'] = $data['smallImg'];
+    $main['href'] = $data['href'];
+    $main['details'] = $data['details'];
+    $main['var_details'] = $data['varDetails'];
+    $main['details_title'] = $data['detailsTitle'];
+    $main['var_detailstitle'] = $data['varDetailsTitle'];
+    $main['about_title'] = $data['aboutTitle'];
+    $main['clothes'] = $data['clothes'];
+    $main['program_title'] = $data['tourProgram']['programTitle'];
+    $main['program_subtitle'] = $data['tourProgram']['programSubtitle'];
+    $main['program_preface'] = $data['tourProgram']['programPreface'];
+
+    
+
+    $descriptions = $data['description'];
+
+    $abouts = $data['about'];
+
+    $toursPhotos = $data['tourPhoto'];
+
+    $programDays = [];
+    $daysDescriptions = [];
+    foreach($data['tourProgram']['days'] as $index => $day){
+        $programDays[$index]['day_title'] = $day['dayTitle'];
+        $programDays[$index]['day_img'] = $day['dayImg'];
+
+        $daysDescriptions[$index] = $day['dayDesc'];
+    }
 
 
-    $main = array(
-        'title' => $data['title'],
-        'season' => $data['season'],
-        'yearTime' => $data['yearTime'],
-        'time' => $data['time'],
-        'groupSize' => $data['groupSize'],
-        'accmdtnShort' => $data['accmdtnShort'],
-        'difficultyLevel' => $data['difficultyLevel'],
-        'price' => $data['price'],
-        'bigImg' => $data['bigImg'],
-        'smallImg' => $data['smallImg'],
-        'optImg' => $data['optImg'],
-        'href' => $data['href'],
-        'aboutH3' => $data['aboutH3'],
-        'tourId' => $data['tourId'],
-        'reference' => $data['reference'],
-        'id' => $data['id']
-    );
 
-    $descriptions = $data['descriptions'];
+
 
 
 
@@ -66,30 +92,61 @@ if (online()) {
         $DBPASS
     );
 
-    $sqlStr = 'UPDATE tours SET 
+
+    //////////SQL STRINGS///////////
+    $sqlMainStr = 'UPDATE tours SET 
                     title = :title,
-                    season = :season,
-                    year_time = :yearTime,
-                    time = :time,
-                    group_size = :groupSize, 
-                    accmdtn_short = :accmdtnShort, 
-                    difficulty_level = :difficultyLevel,
                     price = :price,
-                    big_img = :bigImg,
-                    small_img = :smallImg,
-                    opt_img = :optImg,
+                    var_price = :var_price,
+                    season = :season,
+                    time = :time,
+                    reference = :reference,
+                    var_reference = :var_reference,
+                    included = :included,
+                    var_included = :var_included,
+                    big_img = :big_img,
+                    small_img = :small_img,
                     href = :href,
-                    about_h3 = :aboutH3,
-                    tour_id = :tourId,
-                    reference = :reference 
-                WHERE id = :id;';
+                    details = :details,
+                    var_details = :var_details,
+                    details_title = :details_title,
+                    var_detailstitle = :var_detailstitle,
+                    about_title = :about_title,
+                    clothes = :clothes,
+                    program_title = :program_title,
+                    program_subtitle = :program_subtitle,
+                    program_preface = :program_preface
+                WHERE tour_id = :tour_id;';
 
-    $stmt = $pdo->prepare($sqlStr);
-    $state = $stmt->execute($main);
 
 
-    // var_dump($descriptions);
 
+
+    $sqlDescriptionStr = 'UPDATE descriptions SET
+                            paragraph = ?
+                            WHERE tour_id = ? AND id = ?;';
+
+    $stmt = $pdo->prepare($sqlDescriptionStr);
+
+    foreach($descriptions as $id => $p){
+        $state = $stmt->execute(array($p, $tour_id, $id));
+    }
+        
+
+
+
+
+    // $stmt = $pdo->prepare($sqlMainStr);
+    // $state = $stmt->execute($main);
+
+
+
+
+
+
+
+
+/*
     if($state)
     {
         $answer['main tour data'] = 'updated successfully';
@@ -113,6 +170,8 @@ if (online()) {
 
 
     echo json_encode($answer);
+
+*/
     
 }
 

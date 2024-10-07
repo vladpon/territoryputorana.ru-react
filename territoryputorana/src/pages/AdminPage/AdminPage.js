@@ -619,7 +619,7 @@ const AdminPage = () => {
                           setCurrentTour({...currentTour, ['tourPhoto']:el})
                           }
                         } />
-                                                
+                          
                     </div>
                   )
                 }
@@ -633,7 +633,7 @@ const AdminPage = () => {
                           }>add photo</button>
             </div>
 
-            <button className = 'tfs__save-btn' onClick={() => console.log('btn clckd')}>save</button>
+            <button className = 'tfs__save-btn' onClick={() => console.log('btn clckd')}>update tour</button>
         
         </div>
       )
