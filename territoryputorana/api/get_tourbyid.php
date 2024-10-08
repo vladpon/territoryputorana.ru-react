@@ -32,6 +32,7 @@ if(isset($_GET['tour_id']) && $_GET['tour_id'] != NULL)
         $tour = [];
 
         $sqlMain =          'SELECT 
+                                tour_id AS tourId,
                                 title AS title,
                                 price AS price,
                                 var_price AS varPrice,
@@ -48,7 +49,8 @@ if(isset($_GET['tour_id']) && $_GET['tour_id'] != NULL)
                                 var_details AS varDetails,
                                 details_title AS detailsTitle,
                                 var_detailstitle AS varDetailsTitle,
-                                about_title AS aboutTitle
+                                about_title AS aboutTitle,
+                                clothes AS clothes
                                 FROM tours WHERE tour_id = :id;';
 
         $sqlProgramTitles = 'SELECT                                

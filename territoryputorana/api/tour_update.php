@@ -71,14 +71,15 @@ if (online()) {
 
     $toursPhotos = $data['tourPhoto'];
 
-    $programDays = [];
-    $daysDescriptions = [];
-    foreach($data['tourProgram']['days'] as $index => $day){
-        $programDays[$index]['day_title'] = $day['dayTitle'];
-        $programDays[$index]['day_img'] = $day['dayImg'];
+    
 
-        $daysDescriptions[$index] = $day['dayDesc'];
-    }
+    // $daysDescriptions = [];
+    // foreach($data['tourProgram']['days'] as $index => $day){
+    //     $programDays[$index]['day_title'] = $day['dayTitle'];
+    //     $programDays[$index]['day_img'] = $day['dayImg'];
+
+    //     $daysDescriptions[$index] = $day['dayDesc'];
+    // }
 
 
 
@@ -197,25 +198,45 @@ if (online()) {
 
 
 
-    //////////PROGRAMS_DAYS TABLE UPDATE//////////
-
-
-
-/*
-
-    if(is_array($descriptions)){
-        foreach($descriptions as $index => $desc){
-            $descState = $descStmp->execute(array('p' => $desc, 'tourId' => $data['id'], 'index' => $index + 1));
-            if($descState)
-                {
-                    $answer['description ' . $index] = 'updated successfully';
-                } else $answer['description ' . $index] = 'update failed';
-        }    
-    }
+    //////////PROGRAMS_DAYS  DAYS_DESCRIPTIONS TABLES UPDATE//////////
     
-
-    // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-*/
+    if(isset($data['tourProgram']['days']))
+    {
+        $programDays = $data['tourProgram']['days'];
+        $sqlProgramStr = 'INSERT INTO programs_days(tour_id, id, day_title, day_img) VALUES (:tour_id, :id, :dayTitle, :dayImg)';
+        $sqlDayDescStr = 'INSERT INTO days_descriptions(tour_id, day_id, id, paragraph) VALUES (:tour_id, :day_id, :id, :p)';
+        
+        $stmt = $pdo->prepare('DELETE FROM days_descriptions WHERE tour_id = ?');
+        $stmt->execute(array($tour_id));
+        if($state) {
+            $answer['dbDaysDescriptionsTableDelete'] = 'success';
+            $stmt = $pdo->prepare('DELETE FROM programs_days WHERE tour_id = ?');
+            $stmt->execute(array($tour_id));
+            if($state) {
+                $answer['dbProgramTableDelete'] = 'success';
+                $stmt = $pdo->prepare($sqlProgramStr);
+                foreach($programDays as $day => $program){
+                    $state = $stmt->execute(array('tour_id' => $tour_id,
+                                                    'id' => $day,
+                                                    'dayTitle' => $program['dayTitle'],
+                                                    'dayImg' => $program['dayImg']));
+                    foreach($program['dayDesc'] as $id => $desc){
+                        $dstmt = $pdo->prepare($sqlDayDescStr);
+                        $dstate = $dstmt->execute(array('tour_id' => $tour_id,
+                                                            'day_id' => $day,
+                                                            'id' => $id,
+                                                            'p' => $desc));
+                    }
+                }
+                if($state) {
+                    $answer['dbProgramTableCreate'] = 'success';
+                }
+                else $answer['dbProgramTableCreate'] = 'FAILED';
+            } 
+            else $answer['dbProgramTableCreate'] = 'FAILED';
+        }
+        else $answer['dbDaysDescriptionsTableDelete'] = 'FAILED';
+    }
 
     echo json_encode($answer);
 

@@ -86,8 +86,8 @@ const AdminPage = () => {
 
     const saveTour = (e) => {
       e.preventDefault();
-      const data = tours[selectedTour];
-      updateTour(data).then( (res) => {
+      // const data = tours[selectedTour];
+      updateTour(currentTour).then( (res) => {
         console.log(res)
       })      
     }
@@ -633,7 +633,7 @@ const AdminPage = () => {
                           }>add photo</button>
             </div>
 
-            <button className = 'tfs__save-btn' onClick={() => console.log('btn clckd')}>update tour</button>
+            <button className = 'tfs__save-btn' onClick={(e) => saveTour(e)}>update tour</button>
         
         </div>
       )
