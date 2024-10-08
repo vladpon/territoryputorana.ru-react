@@ -122,14 +122,14 @@ if (online()) {
 
 
 
-    $sqlDescriptionStr = 'UPDATE descriptions SET
-                            paragraph = ?
-                            WHERE tour_id = ? AND id = ?;';
+    $sqlDescriptionStr = 'INSERT INTO descriptions(tour_id, id, paragraph) VALUES (:tour_id, :id, :p) ON DUPLICATE KEY UPDATE paragraph = :p;';
 
     $stmt = $pdo->prepare($sqlDescriptionStr);
 
     foreach($descriptions as $id => $p){
-        $state = $stmt->execute(array($p, $tour_id, $id));
+        $state = $stmt->execute(array('tour_id' => $tour_id,
+                                        'id' => $id,
+                                        'p' => $p));
     }
         
 
