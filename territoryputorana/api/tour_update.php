@@ -93,7 +93,7 @@ if (online()) {
     );
 
 
-    //////////SQL STRINGS///////////
+    ///////////MAIN SQL STRING///////////
     $sqlMainStr = 'UPDATE tours SET 
                     title = :title,
                     price = :price,
@@ -118,42 +118,90 @@ if (online()) {
                     program_preface = :program_preface
                 WHERE tour_id = :tour_id;';
 
-
-
-
-
-    $sqlDescriptionStr = 'INSERT INTO descriptions(tour_id, id, paragraph) VALUES (:tour_id, :id, :p) ON DUPLICATE KEY UPDATE paragraph = :p;';
-
-    $stmt = $pdo->prepare($sqlDescriptionStr);
-
-    foreach($descriptions as $id => $p){
-        $state = $stmt->execute(array('tour_id' => $tour_id,
-                                        'id' => $id,
-                                        'p' => $p));
+    ////////MAIN TABLE PUSH//////////
+    $stmt = $pdo->prepare($sqlMainStr);
+    $state = $stmt->execute($main);
+    if($state) {
+        $answer['dbMainTableUpdate'] = 'success';
     }
-        
+    else $answer['dbMainTableUpdate'] = 'FAILED';
+
+
+
+    ////////DESCRIPTION TABLE UPDATE///////////
+    $sqlDescriptionStr = 'INSERT INTO descriptions(tour_id, id, paragraph) VALUES (:tour_id, :id, :p) ON DUPLICATE KEY UPDATE paragraph = :p;';
+    
+    $stmt = $pdo->prepare('DELETE FROM descriptions WHERE tour_id = ?');
+    $stmt->execute(array($tour_id));
+    if($state) {
+        $answer['dbDescriptionsTableDelete'] = 'success';
+        $stmt = $pdo->prepare($sqlDescriptionStr);
+        foreach($descriptions as $id => $p){
+            $state = $stmt->execute(array('tour_id' => $tour_id,
+                                            'id' => $id,
+                                            'p' => $p));
+        }
+        if($state) {
+            $answer['dbDescriptionTableCreate'] = 'success';
+        }
+        else $answer['dbDescriptionTableCreate'] = 'FAILED';
+    }
+    else $answer['dbDescriptionsTableDelete'] = 'FAILED';
+
+    
+    //////////////ABOUTS TABLE UPDATE//////////////
+    $sqlAboutStr = 'INSERT INTO abouts(tour_id, id, paragraph) VALUES (:tour_id, :id, :p) ON DUPLICATE KEY UPDATE paragraph = :p;';
+    
+    $stmt = $pdo->prepare('DELETE FROM abouts WHERE tour_id = ?');
+    $stmt->execute(array($tour_id));
+    if($state) {
+        $answer['dbAboutsTableDelete'] = 'success';
+        $stmt = $pdo->prepare($sqlAboutStr);
+        foreach($abouts as $id => $p){
+            $state = $stmt->execute(array('tour_id' => $tour_id,
+                                            'id' => $id,
+                                            'p' => $p));
+        }
+        if($state) {
+            $answer['dbAboutTableCreate'] = 'success';
+        }
+        else $answer['dbAboutTableCreate'] = 'FAILED';
+    }
+    else $answer['dbAboutTableDelete'] = 'FAILED';
+
+
+
+    ///////////TOURS_PHOTOS TABLE UPDATE////////////
+    $sqlPhotoStr = 'INSERT INTO tours_photos(tour_id, id, path, alt) VALUES (:tour_id, :id, :path, :alt)';
+    
+    $stmt = $pdo->prepare('DELETE FROM tours_photos WHERE tour_id = ?');
+    $stmt->execute(array($tour_id));
+    if($state) {
+        $answer['dbPhotoTableDelete'] = 'success';
+        $stmt = $pdo->prepare($sqlPhotoStr);
+        foreach($toursPhotos as $id => $photo){
+            $state = $stmt->execute(array('tour_id' => $tour_id,
+                                            'id' => $id,
+                                            'path' => $photo['path'],
+                                            'alt' => $photo['alt']));
+        }
+        if($state) {
+            $answer['dbPhotoTableCreate'] = 'success';
+        }
+        else $answer['dbPhotoTableCreate'] = 'FAILED';
+    }
+    else $answer['dbPhotoTableDelete'] = 'FAILED';
 
 
 
 
-    // $stmt = $pdo->prepare($sqlMainStr);
-    // $state = $stmt->execute($main);
 
 
-
-
-
+    //////////PROGRAMS_DAYS TABLE UPDATE//////////
 
 
 
 /*
-    if($state)
-    {
-        $answer['main tour data'] = 'updated successfully';
-    } else $answer['main tour data'] = 'update failed';
-
-    $descriptionsSqlStr = 'UPDATE descriptions SET paragraph = :p WHERE tour_id = :tourId AND id = :index;';
-    $descStmp = $pdo-> prepare($descriptionsSqlStr);
 
     if(is_array($descriptions)){
         foreach($descriptions as $index => $desc){
@@ -167,11 +215,11 @@ if (online()) {
     
 
     // $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+*/
 
     echo json_encode($answer);
 
-*/
+
     
 }
 
