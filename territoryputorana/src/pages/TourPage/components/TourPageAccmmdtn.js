@@ -1,8 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-const TourPageAccmmdtn = (props) => {
-  const {} = props.tour
+const TourPageAccmmdtn = () => {
   return (
     <div className = "tp-accmmdtn">
             <h2 className = "tp-accmmdtn__title">Проживание</h2>

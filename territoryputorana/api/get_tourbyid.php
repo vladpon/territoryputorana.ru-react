@@ -48,7 +48,7 @@ if(isset($_GET['tour_id']) && $_GET['tour_id'] != NULL)
                                 details AS details,
                                 var_details AS varDetails,
                                 details_title AS detailsTitle,
-                                var_detailstitle AS varDetailsTitle,
+                                var_detailstitle AS varDetailstitle,
                                 about_title AS aboutTitle,
                                 clothes AS clothes
                                 FROM tours WHERE tour_id = :id;';
