@@ -15,9 +15,13 @@ import TextTitle from '../MainPage/components/TextTitle'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
 import TourPageProgram from '../TourPage/components/TourPageProgram'
+import { getTourById } from '../../api/tours'
 
 import './styles.scss'
 
+
+import blankTour from '../../data/blanktour.json' 
+import TourPageAbout from '../TourPage/components/TourPageAbout'
 
 const txtTitle = {
     title: "Транспорт",
@@ -26,28 +30,38 @@ const txtTitle = {
     ]
 }
 
-const photos = [
-    { src: "./img/photo1699212158.jpeg" },
-    { src: "./img/photo1699212158 (1).jpeg" },
-    { src: "./img/photo1699212158 (2).jpeg" },
-    { src: "./img/photo1699212158 (3).jpeg" },
-    { src: "./img/1335f6f2-1e10-48b6-8d1c-d5c7d6620fd6.jpg" },
-    { src: "./img/photo1699212266.jpeg" }
-]
+// const photos = [
+//     { src: "./img/photo1699212158.jpeg" },
+//     { src: "./img/photo1699212158 (1).jpeg" },
+//     { src: "./img/photo1699212158 (2).jpeg" },
+//     { src: "./img/photo1699212158 (3).jpeg" },
+//     { src: "./img/1335f6f2-1e10-48b6-8d1c-d5c7d6620fd6.jpg" },
+//     { src: "./img/photo1699212266.jpeg" }
+// ]
 
-const Expedition = (props) => {
+const Expedition = () => {
 
-    const {tour} = props
+
 
     const location = useLocation()
     const pathname = location.pathname
 
-    const [tourData, setTourData] = useState(tour)
+    // const [tourData, setTourData] = useState(tour)
+    const [tour, setTour] = useState(blankTour);
+
+    // useEffect( () => {
+    //     setTourData(tours.find(tour => tour.id === 'expedition'))
+    // }, [])
+
+
 
     useEffect( () => {
-        setTourData(tours.find(tour => tour.id === 'expedition'))
+        const getNewTour = async () => {
+          const newTour = await getTourById('expedition')
+          setTour(newTour)
+        }
+        getNewTour()
     }, [])
-
 
     return (
     <main className='tour-page'>
@@ -57,8 +71,8 @@ const Expedition = (props) => {
         <meta name = 'description' content = '' />
         </Helmet>
         <MainLogo />
-        <TourPageCover tour = {tourData}/>
-        <div className = "tp-about__container">
+        <TourPageCover tour = {tour}/>
+        {/* <div className = "tp-about__container">
           <div className='tp-about'>
               <div className = "tp-about__main">
                   <h2>О туре</h2>
@@ -68,7 +82,9 @@ const Expedition = (props) => {
                   <InfoFrame price = {tourData.price} title = {tourData.detailsTitle} reference = {tourData.reference} refSpan = {tourData.refSpan} description = {tourData.details} included = {tourData.included}/>
               </div>
             </div>
-        </div>
+        </div> */}
+
+        <TourPageAbout tour = {tour} varInfoframe = {false} />
         <TextTitle txtTitle = {txtTitle} />
         <div className = 'tp-aux__container'>
           <div className = "tp-aux">
@@ -91,33 +107,15 @@ const Expedition = (props) => {
             </div>
         </div> */}
 
-        <TourPageProgram tour = {tourData}/>
-        <PhotoBlock photos = {photos}/>
+        <TourPageProgram tour = {tour}/>
+        <PhotoBlock photos = {tour.tourPhoto}/>
         <RequestBlock bgImage = {'/img/photo1699212266.jpeg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
     )
     }
 
     Expedition.defaultProps = {
-    tour: {
-        id: "",
-        href : "",
-        title: "",
-        time: "",
-        season: "",
-        detailsTitle: "",
-        details: "",
-        included: "",
-        price: "",
-        description: [],
-        bigImg: "",
-        smallImg: "",
-        about : [],
-        tourProgram: {
-            begin: "",
-            days: [{}]
-        }
-    }
+    varInfoframe: false
 }
 
 export default Expedition

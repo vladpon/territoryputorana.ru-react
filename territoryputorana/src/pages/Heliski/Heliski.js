@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../TourPage/styles.scss'
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -16,8 +16,13 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
 import BigCards from '../ToursPage/components/BigCards'
 import { useLocation } from 'react-router-dom'
+import { getTourById } from '../../api/tours'
 
-const tour = tours.find(tour => tour.id === 'heliski')
+
+import blankTour from '../../data/blanktour.json' 
+
+
+// const tour = tours.find(tour => tour.id === 'heliski')
 
 const severgrandHotel = [
   {
@@ -43,14 +48,14 @@ const severgrandHotel = [
   }
 ]
 
-const photos = [
-  { src: "./img/tr_ph01.jpg"},
-  { src: "./img/tr_ph02.jpg"},
-  { src: "./img/tr_ph03.jpg"},
-  { src: "./img/tr_ph04.jpg"},
-  { src: "./img/tr_ph05.jpg"},
-  { src: "./img/tr_ph06.jpg"}
-]
+// const photos = [
+//   { src: "./img/tr_ph01.jpg"},
+//   { src: "./img/tr_ph02.jpg"},
+//   { src: "./img/tr_ph03.jpg"},
+//   { src: "./img/tr_ph04.jpg"},
+//   { src: "./img/tr_ph05.jpg"},
+//   { src: "./img/tr_ph06.jpg"}
+// ]
 
 const txtTitle = {
   title: "Транспорт",
@@ -63,8 +68,18 @@ const txtTitle = {
 
 const TourPage = () => {
 
+  const [tour, setTour] = useState(blankTour);
+
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    const getNewTour = async () => {
+      const newTour = await getTourById('heliski')
+      setTour(newTour)
+    }
+    getNewTour()
+}, [])
 
   // useEffect( () => {
   //   window.YandexRotorSettings.isLoaded = true
@@ -79,7 +94,7 @@ const TourPage = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <div className = "tp-about__container">
+        {/* <div className = "tp-about__container">
           <div className='tp-about'>
               <div className = "tp-about__main">
                   <h2>О туре</h2>
@@ -89,7 +104,8 @@ const TourPage = () => {
                   <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan} included = {tour.included}/>
               </div>
           </div>
-        </div>
+        </div> */}
+        <TourPageAbout tour = {tour} varInfoframe = {false} />
         <div className = 'tp-aux__container'>
           <div className = "tp-aux">
                   {/* <h2>Дополнительно</h2> */}
