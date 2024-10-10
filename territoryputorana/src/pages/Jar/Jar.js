@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../TourPage/styles.scss'
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -16,17 +16,10 @@ import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
 import InfoFrame from '../../components/InfoFrame/InfoFrame'
+import { getTourById } from '../../api/tours'
 
-const tour = tours.find(tour => tour.id === 'jar')
-
-const photos = [
-  { src: "./img/tr_ph01.jpg"},
-  { src: "./img/tr_ph02.jpg"},
-  { src: "./img/tr_ph03.jpg"},
-  { src: "./img/tr_ph04.jpg"},
-  { src: "./img/tr_ph05.jpg"},
-  { src: "./img/tr_ph06.jpg"}
-]
+// const tour = tours.find(tour => tour.id === 'jar')
+import blankTour from '../../data/blanktour.json' 
 
 const txtTitle = {
   title: "Транспорт",
@@ -38,9 +31,19 @@ const txtTitle = {
 
 const TourPage = () => {
 
+  const [tour, setTour] = useState(blankTour);
+
   // useEffect( () => {
   //   window.YandexRotorSettings.isLoaded = true
   // }, [])
+
+  useEffect( () => {
+    const getNewTour = async () => {
+      const newTour = await getTourById('lostput')
+      setTour(newTour)
+    }
+    getNewTour()
+}, [])
 
   const location = useLocation()
   const pathname = location.pathname
@@ -54,9 +57,9 @@ const TourPage = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        {/* <TourPageAbout tour = {tour}/> */}
+        <TourPageAbout tour = {tour} varInfoframe = {false}/>
 
-        <div className = "tp-about__container">
+        {/* <div className = "tp-about__container">
           <div className='tp-about'>
               <div className = "tp-about__main">
                   <h2>О туре</h2>
@@ -67,7 +70,7 @@ const TourPage = () => {
                   
               </div>
             </div>
-        </div>
+        </div> */}
 
 
         <div className = 'tp-aux__container'>
@@ -82,7 +85,7 @@ const TourPage = () => {
                 </ul>
             </div>
         </div>
-        <PhotoBlock photos = {photos}/>
+        <PhotoBlock photos = {tour.tourPhoto}/>
         <TextTitle txtTitle = {txtTitle} />
         <RequestBlock bgImage = {'./img/jar_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>

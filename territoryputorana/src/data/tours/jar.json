@@ -45,5 +45,12 @@
         "days": []
     },
     
-    "tourPhoto": []
+    "tourPhoto": [
+        { "path": "./img/tr_ph01.jpg", "alt": ""},
+        { "path": "./img/tr_ph02.jpg", "alt": ""},
+        { "path": "./img/tr_ph03.jpg", "alt": ""},
+        { "path": "./img/tr_ph04.jpg", "alt": ""},
+        { "path": "./img/tr_ph05.jpg", "alt": ""},
+        { "path": "./img/tr_ph06.jpg", "alt": ""}
+    ]
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../TourPage/styles.scss'
 import './styles.scss'
@@ -18,12 +18,13 @@ import MainLogo from '../../components/MainLogo/MainLogo'
 import '../TourPage/components/styles.scss'
 import '../MainPage/components/styles.scss'
 import { Helmet } from 'react-helmet'
-import InfoFrame from '../../components/InfoFrame/InfoFrame'
 import { useLocation } from 'react-router-dom'
+import { getTourById } from '../../api/tours'
 
-const tour = tours.find(tour => tour.id === 'helitour')
+// const tour = tours.find(tour => tour.id === 'helitour')
 
 
+import blankTour from '../../data/blanktour.json' 
 
 const txtTitle = {
   title: "Транспорт",
@@ -32,22 +33,12 @@ const txtTitle = {
   ]
 }
 
-const photos = [
-    { src: "./img/Od99fMw5ojM.jpg"},
-    { src: "./img/oYi5YOvlld4.jpg"},
-    { src: "./img/lLX24UXsvfA.jpg"},
-    { src: "./img/ivhpw7jJTqE.jpg"},
-    { src: "./img/bl91DKY32eM.jpg"},
-    { src: "./img/VMWR0zV93xI.jpg"},
-    { src: "./img/3ea0783b-8d9f-4b23-a045-755e9790eef7.jpg"},
-    { src: "./img/4dcab409-5afb-4833-981f-549c9e63a85b (1).jpg"},
-    { src: "./img/22013fa1-f1bc-4196-a78f-c703fc45d508.jpg"}
-  ]
 
 
 const HeliTour = () => {
 
 
+  const [tour, setTour] = useState(blankTour);
 
   const location = useLocation()
   const pathname = location.pathname
@@ -55,6 +46,14 @@ const HeliTour = () => {
   // useEffect( () => {
   //   window.YandexRotorSettings.isLoaded = true
   // }, [])
+
+  useEffect( () => {
+    const getNewTour = async () => {
+      const newTour = await getTourById('helitour')
+      setTour(newTour)
+    }
+    getNewTour()
+}, [])
 
 
   return (
@@ -68,17 +67,7 @@ const HeliTour = () => {
         <TourPageCover tour = {tour}/>
 
 
-        <div className = "tp-about__container">
-          <div className='tp-about'>
-              <div className = "tp-about__main">
-                  <h2>О туре</h2>
-                  {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
-              </div>
-              <div className='tp-about__hit-container'>
-                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan} clothes = {tour.clothes}/>
-              </div>
-            </div>
-        </div>
+        <TourPageAbout tour = {tour} varInfoframe = {false}/>
 
 
         <TourPageProgram tour = {tour}/>
@@ -92,7 +81,7 @@ const HeliTour = () => {
           <img src='./img/helimap.jpg'></img>
         </div>
 
-        <PhotoBlock photos = {photos}/>
+        <PhotoBlock photos = {tour.tourPhoto}/>
 
         <RequestBlock bgImage = {'./img/helire.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
