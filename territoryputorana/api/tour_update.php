@@ -69,7 +69,7 @@ if (online()) {
 
     $abouts = $data['about'];
 
-    $toursPhotos = $data['tourPhoto'];
+    $toursPhotos = (isset($data['tourPhoto'])) ? ($data['tourPhoto']) : ([]);
 
     
 
@@ -220,12 +220,15 @@ if (online()) {
                                                     'id' => $day,
                                                     'dayTitle' => $program['dayTitle'],
                                                     'dayImg' => $program['dayImg']));
-                    foreach($program['dayDesc'] as $id => $desc){
-                        $dstmt = $pdo->prepare($sqlDayDescStr);
-                        $dstate = $dstmt->execute(array('tour_id' => $tour_id,
-                                                            'day_id' => $day,
-                                                            'id' => $id,
-                                                            'p' => $desc));
+                    if(isset($program['dayDesc']))
+                    {
+                        foreach($program['dayDesc'] as $id => $desc){
+                            $dstmt = $pdo->prepare($sqlDayDescStr);
+                            $dstate = $dstmt->execute(array('tour_id' => $tour_id,
+                                                                'day_id' => $day,
+                                                                'id' => $id,
+                                                                'p' => $desc));
+                        }
                     }
                 }
                 if($state) {

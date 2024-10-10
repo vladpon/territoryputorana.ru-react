@@ -12,6 +12,7 @@ import RequestBlock from '../../components/RequestBlock/RequestBlock'
 import { ScrollRestoration, useLocation } from 'react-router-dom'
 
 import { getTourByTourId } from '../../api/tours'
+import { getTourById } from '../../api/tours'
 
 import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'

@@ -583,7 +583,7 @@ const AdminPage = () => {
 
 
 
-          {/*           TOUR PHOTOS                 */}
+          {/*             TOUR PHOTOS                 */}
           <div className='tfs__other'>
             <h4>Photos</h4>
             {(currentTour.tourPhoto && currentTour.tourPhoto.length) ? (
