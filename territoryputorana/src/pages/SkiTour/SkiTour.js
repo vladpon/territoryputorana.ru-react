@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -19,11 +19,14 @@ import '../TourPage/styles.scss'
 import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 import InfoFrame from '../../components/InfoFrame/InfoFrame'
+import { getTourById } from '../../api/tours'
 
-const tour = tours.find(tour => tour.id === 'skitour')
-const tourPhotos = tour.tourPhotos.map( (photo) => {
-        return {src: photo}
-    })
+import blankTour from '../../data/blanktour.json' 
+
+// const tour = tours.find(tour => tour.id === 'skitour')
+// const tourPhotos = tour.tourPhotos.map( (photo) => {
+//         return {src: photo}
+//     })
 
 
 const txtTitle = {
@@ -38,9 +41,19 @@ const txtTitle = {
 
 const TourPage = () => {
 
+  const [tour, setTour] = useState(blankTour);
+
   // useEffect( () => {
   //   window.YandexRotorSettings.isLoaded = true
   // }, [])
+
+  useEffect( () => {
+      const getNewTour = async () => {
+        const newTour = await getTourById('skitour')
+        setTour(newTour)
+      }
+      getNewTour()
+  }, [])
 
   
 
@@ -56,18 +69,19 @@ const TourPage = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <div className = "tp-about__container">
+        {/* <div className = "tp-about__container">
           <div className='tp-about'>
               <div className = "tp-about__main">
                   <h2>О туре</h2>
                   {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
               </div>
               <div className='tp-about__hit-container'>
-                  {/* <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan} included = {tour.included}/>    */}
+                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan} included = {tour.included}/>   
                   <InfoFrame price = {tour.varPrice} title = {tour.varAboutH3} reference = {tour.varReference} description = {tour.varDetails} included = {tour.varIncluded}/>             
               </div>
           </div>
-        </div>
+        </div> */}
+        <TourPageAbout tour = {tour} varInfoframe = {false} />
         <div className = 'tp-aux__container'>
           <div className = "tp-aux">
                   <p>Маршруты ски-тура построены таким образом, чтобы показать вам самые впечатляющие зимние пейзажи плато Путорана. В пути гармонично выстроены подъемы, спуски и переходы по снежным просторам.</p>
@@ -81,7 +95,7 @@ const TourPage = () => {
             <p style={{textAlign: "center"}}>Для перевозки участников ски-тура к месту расположения базового лагеря мы используем вездеходы СеверТрак или Ратрак. Гости размещаются в Хижине с необходимыми для комфортного размещения условиями. Приготовление еды осуществляется участниками ски-тура самостоятельно. Хозяйственный работник обеспечивает постоянный порядок и уют в базовом лагере. Для обеспечения безопасности и экстренной эвакуации в лагере находится дежурный снегоход.</p>
         </div>
  
-        <PhotoBlock photos = {tourPhotos} />
+        <PhotoBlock photos = {tour.tourPhoto} />
         
         <RequestBlock bgImage = {'./img/ski01.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>

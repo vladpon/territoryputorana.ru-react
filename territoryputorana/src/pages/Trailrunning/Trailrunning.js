@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../TourPage/styles.scss'
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -9,23 +9,16 @@ import TourPageAccmmdtn from '../TourPage/components/TourPageAccmmdtn'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
 import TextTitle from '../MainPage/components/TextTitle'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
-import { ScrollRestoration, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { getTourById } from '../../api/tours'
 
-import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
-import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
-const tour = tours.find(tour => tour.id === 'trailrunning')
 
-const photos = [
-  { src: "./img/tr_ph01.jpg"},
-  { src: "./img/tr_ph02.jpg"},
-  { src: "./img/tr_ph03.jpg"},
-  { src: "./img/tr_ph04.jpg"},
-  { src: "./img/tr_ph05.jpg"},
-  { src: "./img/tr_ph06.jpg"}
-]
+import blankTour from '../../data/blanktour.json' 
+
+
 
 const txtTitle = {
   title: "Транспорт",
@@ -37,11 +30,21 @@ const txtTitle = {
 }
 
 
-const TourPage = () => {
+const Trailrunning = () => {
 
   // useEffect( () => {
   //   window.YandexRotorSettings.isLoaded = true
   // }, [])
+
+  const [tour, setTour] = useState(blankTour);
+
+  useEffect( () => {
+    const getNewTour = async () => {
+      const newTour = await getTourById('trailrunning')
+      setTour(newTour)
+    }
+    getNewTour()
+}, [])
 
 
 
@@ -58,28 +61,17 @@ const TourPage = () => {
         <MainLogo />
         <TourPageCover tour = {tour}/>
 
-        {/* <TourPageAbout tour = {tour}/> */}
-        <div className = "tp-about__container">
-          <div className='tp-about'>
-              <div className = "tp-about__main">
-                  <h2>О туре</h2>
-                  {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
-              </div>
-              <div className='tp-about__hit-container'>
-                  <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan} included = {tour.included} clothes = {tour.clothes}/>                
-              </div>
-          </div>
-        </div>
+        <TourPageAbout tour = {tour} varInfoframe = {false}/>
 
 
         <TourPageAux/>
         <TourPageProgram tour = {tour}/>
-        <TourPageAccmmdtn tour = {tour}/>
-        <PhotoBlock photos = {photos}/>
+        <TourPageAccmmdtn />
+        <PhotoBlock photos = {tour.tourPhoto}/>
         <TextTitle txtTitle = {txtTitle} />
         <RequestBlock bgImage = {'./img/trail_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>
   )
 }
 
-export default TourPage
+export default Trailrunning

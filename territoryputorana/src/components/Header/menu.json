@@ -50,7 +50,19 @@
     {
         "id": "about",
         "href": "/about",
-        "title": "о нас"
+        "title": "о нас",
+        "items" : [
+            {
+                "id": "onas",
+                "href": "/about",
+                "title": "О компании"
+            },
+            {
+                "id": "fb",
+                "href": "/fb",
+                "title": "Отзывы"
+            }
+        ]
     },
 
     {
@@ -67,24 +79,11 @@
                 "id": "lamaproj",
                 "href": "/lamaproj",
                 "title": "Экологический проект"
-            }
-        ]
-    },
-
-    {
-        "id": "expeditions",
-        "href": "/arcticexpeditions",
-        "title": "Экспедиции",
-        "items": [
-            {
-                "id": "tolstorog",
-                "href": "/tolstorog",
-                "title": "По следам толсторога"
             },
             {
-                "id": "zaton",
-                "href": "/zaton",
-                "title": "Затон-Через"
+                "id": "expeditions",
+                "href": "arcticexpeditions",
+                "title": "Экспедиции"
             }
         ]
     },
@@ -101,11 +100,6 @@
         "title": "фотогалерея"
     },
 
-    {
-        "id": "fb",
-        "href": "/fb",
-        "title": "отзывы"
-    },
 
     {
         "id": "3dtours",

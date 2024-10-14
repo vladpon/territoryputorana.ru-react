@@ -2,13 +2,12 @@ import React from 'react'
 
 const TourPageProgram = (props) => {
     const {tourProgram} = props.tour
-    console.log(tourProgram)
   return (
     <div className = 'tp-program__container'>
         <div className = "tp-program">
-            <h2>Программа тура</h2>
-            {tourProgram.textH4 && <h4>{tourProgram.textH4}</h4>}
-            {tourProgram.begin && <p>{tourProgram.begin}</p>}
+            <h2>{tourProgram.programTitle}</h2>
+            {tourProgram.programSubtitle && <h4>{tourProgram.programSubtitle}</h4>}
+            {tourProgram.programPreface && <p>{tourProgram.programPreface}</p>}
             {tourProgram.days && tourProgram.days.map( (day) => {
                 return <div className = "tp-program__day" key = {day.dayTitle}>
                             <div className = "tp-program__text">

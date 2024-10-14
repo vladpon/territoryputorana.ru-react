@@ -64,9 +64,14 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     }
 
     &__home {
-        display: none;
+        // display: none;
+        order: -1;
 
-        @media (max-width: map-get($breakpoints, sm)) {display: block;}
+        @media (max-width: map-get($breakpoints, sm)) {
+            display: block;
+            order: 0;
+        }
+
         width: 35px;
         & img {
             width: 100%;
@@ -102,15 +107,20 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         height: 75px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         @media (max-width: map-get($breakpoints, md)) {
             width: 200px;
         }
 
         & a {
-            @include font-size-adaptive(20px);
+            @include font-size-adaptive(19px);
             font-weight: 600;
+
+            &:first-child{
+                font-family: 'arial';
+                font-style: italic;
+            }
         }
 
         &.main-page {

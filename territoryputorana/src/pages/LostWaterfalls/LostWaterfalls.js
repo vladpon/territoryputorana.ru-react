@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../TourPage/styles.scss'
 import TourPageCover from '../TourPage/components/TourPageCover'
@@ -18,8 +18,11 @@ import '../MainPage/components/styles.scss'
 import { Helmet } from 'react-helmet'
 import InfoFrame from '../../components/InfoFrame/InfoFrame'
 import { Link, useLocation } from 'react-router-dom'
+import { getTourById } from '../../api/tours'
 
-const tour = tours.find(tour => tour.id === 'lostwaterfalls')
+
+import blankTour from '../../data/blanktour.json' 
+// const tour = tours.find(tour => tour.id === 'lostwaterfalls')
 
 
 
@@ -33,29 +36,22 @@ const txtTitle = {
   ]
 }
 
-// const photos = [
-//     { src: "./img/heli_ph01.jpg"},
-//     { src: "./img/heli_ph02.jpg"},
-//     { src: "./img/heli_ph03.jpg"},
-//     { src: "./img/heli_ph04.jpg"},
-//     { src: "./img/heli_ph05.jpg"},
-//     { src: "./img/heli_ph06.jpg"}
-//   ]
-
-const photos = [
-  { src: "./img/tr_ph01.jpg"},
-  { src: "./img/tr_ph02.jpg"},
-  { src: "./img/tr_ph03.jpg"},
-  { src: "./img/tr_ph04.jpg"},
-  { src: "./img/tr_ph05.jpg"},
-  { src: "./img/tr_ph06.jpg"}
-]
 
 
 const LostWaterfalls = () => {
 
+  const [tour, setTour] = useState(blankTour);
+
   const location = useLocation()
   const pathname = location.pathname
+
+  useEffect( () => {
+    const getNewTour = async () => {
+      const newTour = await getTourById('lostwaterfalls')
+      setTour(newTour)
+    }
+    getNewTour()
+}, [])
 
   // useEffect( () => {
   //   window.YandexRotorSettings.isLoaded = true
@@ -70,10 +66,9 @@ const LostWaterfalls = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
+        <TourPageAbout tour = {tour} varInfoframe = {true} />
 
-
-
-        <div className = "tp-about__container">
+        {/* <div className = "tp-about__container">
           <div className='tp-about'>
               <div className = "tp-about__main">
                   <h2>О туре</h2>
@@ -84,7 +79,7 @@ const LostWaterfalls = () => {
                   <InfoFrame title = {tour.varAboutH3} description = {tour.varDetails} />
               </div>
             </div>
-        </div>
+        </div> */}
 
 
         <TourPageProgram tour = {tour}/>
@@ -101,8 +96,7 @@ const LostWaterfalls = () => {
             </ul>
         </div>
 
-        {/* <PhotoBlock photos = {photos}/>      */}
-        <PhotoBlock photos = {photos}/>
+        <PhotoBlock photos = {tour.tourPhoto}/>
         <div className = 'txt-title light-back'>
             <h2>{txtTitle.title}</h2>
             {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}

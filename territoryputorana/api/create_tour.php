@@ -57,7 +57,7 @@ if (online()) {
 
     ///CREATE SQL STRINGS
     $sqlMain = 'INSERT tours(tour_id, title, price, var_price, season, time, reference, var_reference, included, var_included, big_img, small_img, href, details, var_details, details_title, var_detailstitle, about_title, program_title, program_subtitle, program_preface, clothes)
-    VALUES(:tourId, :title, :price, :varPrice, :season, :time, :reference, :varReference, :included, :varIncluded, :bigImg, :smallImg, :href, :details, :varDetails, :detailsTitle, :varDetailsTitle, :aboutTitle, :programTitle, :programSubtitle, :programPreface, :clothes);';
+    VALUES(:tourId, :title, :price, :varPrice, :season, :time, :reference, :varReference, :included, :varIncluded, :bigImg, :smallImg, :href, :details, :varDetails, :detailsTitle, :varDetailstitle, :aboutTitle, :programTitle, :programSubtitle, :programPreface, :clothes);';
 
 
     $sqlDescription = 'INSERT descriptions(tour_id, id, paragraph) VALUES(:tourId, :id, :paragraph);';

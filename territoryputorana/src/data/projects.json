@@ -40,5 +40,26 @@
         },
         "files" : [],
         "href" : "/lamaproj"
+    },
+    {
+        "id": "003",
+        "title": "Экспедиции Арктики",
+        "season": "",
+        "time": "",
+        "price": "",
+        "bigImg": "",
+        "smallImg": "./img/ae.jpg",
+        "optImg": "",
+        "description": [
+            "Исследовательский проект, целью которого является разработка маршрутов экологического, краеведческого и познавательного туризма на  плато Путорана."
+            ],
+        "tourPhoto": [],
+        "contacts": {
+            "tel": "",
+            "email": "",
+            "site": ""
+        },
+        "files" : [],
+        "href" : "/arcticexpeditions"
     }
 ]

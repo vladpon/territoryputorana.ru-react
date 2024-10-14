@@ -356,7 +356,7 @@ const AdminPage = () => {
           </form> */}
           <div className='tfs__main'>
             <h4>main</h4>
-            <textarea className='tfs__field' placeholder="tour title"  value={currentTour.title} onChange={e => setCurrentTour({...currentTour, ['title']:e.target.value})} />
+            <textarea className='tfs__field' placeholder="tour title"  value={currentTour.title} onChange={e => setCurrentTour({...currentTour, 'title':e.target.value})} />
             {currentTour.price ? (<textarea className='tfs__field' placeholder="tour price"  value={currentTour.price} onChange={e => setCurrentTour({...currentTour, ['price']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour price"  value={""} onChange={e => setCurrentTour({...currentTour, ['price']:e.target.value})} />))}
             {currentTour.varPrice ? (<textarea className='tfs__field' placeholder="tour varPrice"  value={currentTour.varPrice} onChange={e => setCurrentTour({...currentTour, ['varPrice']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour varPrice"  value={""} onChange={e => setCurrentTour({...currentTour, ['varPrice']:e.target.value})} />))}
             {currentTour.season ? (<textarea className='tfs__field' placeholder="tour season"  value={currentTour.season} onChange={e => setCurrentTour({...currentTour, ['season']:e.target.value})} />) : ((<textarea className='tfs__field' placeholder="tour season"  value={""} onChange={e => setCurrentTour({...currentTour, ['season']:e.target.value})} />))}

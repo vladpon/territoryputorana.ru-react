@@ -14,24 +14,12 @@ import { ScrollRestoration, useLocation } from 'react-router-dom'
 import { getTourByTourId } from '../../api/tours'
 import { getTourById } from '../../api/tours'
 
-import tours from '../../data/tours.json'
 import MainLogo from '../../components/MainLogo/MainLogo'
 import { Helmet } from 'react-helmet'
-import InfoFrame from '../../components/InfoFrame/InfoFrame'
 
-import blanktour from '../../data/blanktour.json' 
-
-const blankTour = tours.find(tour => tour.id === 'lostput')
+import blankTour from '../../data/blanktour.json' 
 
 
-const photos = [
-  { src: "./img/tr_ph01.jpg"},
-  { src: "./img/tr_ph02.jpg"},
-  { src: "./img/tr_ph03.jpg"},
-  { src: "./img/tr_ph04.jpg"},
-  { src: "./img/tr_ph05.jpg"},
-  { src: "./img/tr_ph06.jpg"}
-]
 
 const txtTitle = {
   title: "Транспорт",
@@ -54,13 +42,13 @@ const Lostput = () => {
   const location = useLocation()
   const pathname = location.pathname
 
-  // useEffect( () => {
-  //     const getNewTour = async () => {
-  //       const newTour = await getTourByTourId('lostput')
-  //       setTour(newTour)
-  //     }
-  //     getNewTour()
-  // }, [])
+  useEffect( () => {
+      const getNewTour = async () => {
+        const newTour = await getTourById('lostput')
+        setTour(newTour)
+      }
+      getNewTour()
+  }, [])
 
   return (
     <main className='tour-page'>
@@ -71,23 +59,11 @@ const Lostput = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <div className = "tp-about__container">
-          <div className='tp-about'>
-              <div className = "tp-about__main">
-                  <h2>О туре</h2>
-                  {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
-              </div>
-              <div className='tp-about__hit-container'>
-                  {/* <InfoFrame price = {tour.price} title = {tour.aboutH3} reference = {tour.reference} description = {tour.details} refSpan = {tour.refSpan}/> */}
-                  <InfoFrame price = {tour.varPrice} title = {tour.varAboutH3} reference = {tour.varReference} description = {tour.varDetails} clothes = {tour.clothes}/>
-                  <InfoFrame title = {tour.aboutH3} description = {tour.details}/>
-              </div>
-          </div>
-        </div>
+        <TourPageAbout tour = {tour} varInfoframe = {true}/>\
         <TourPageAux/>
         <TourPageProgram tour = {tour}/>
-        <TourPageAccmmdtn tour = {tour}/>
-        <PhotoBlock photos = {photos}/>
+        <TourPageAccmmdtn />
+        <PhotoBlock photos = {tour.tourPhoto}/>
         <TextTitle txtTitle = {txtTitle} />
         <RequestBlock bgImage = {'./img/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
     </main>

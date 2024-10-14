@@ -43,5 +43,17 @@
             ]
             }
         ]
-    }
+    },
+
+    "tourPhoto" : [
+        { "path": "./img/Od99fMw5ojM.jpg", "alt": ""},
+        { "path": "./img/oYi5YOvlld4.jpg", "alt": ""},
+        { "path": "./img/lLX24UXsvfA.jpg", "alt": ""},
+        { "path": "./img/ivhpw7jJTqE.jpg", "alt": ""},
+        { "path": "./img/bl91DKY32eM.jpg", "alt": ""},
+        { "path": "./img/VMWR0zV93xI.jpg", "alt": ""},
+        { "path": "./img/3ea0783b-8d9f-4b23-a045-755e9790eef7.jpg", "alt": ""},
+        { "path": "./img/4dcab409-5afb-4833-981f-549c9e63a85b (1).jpg", "alt": ""},
+        { "path": "./img/22013fa1-f1bc-4196-a78f-c703fc45d508.jpg", "alt": ""}
+    ]
   }

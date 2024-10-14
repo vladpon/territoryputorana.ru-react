@@ -49,5 +49,15 @@
             ]
             }
         ]
-    }
+    },
+    
+    "tourPhoto" : [
+            { "path": "./img/photo1699212158.jpeg", "alt": "" },
+            { "path": "./img/photo1699212158 (1).jpeg", "alt": ""  },
+            { "path": "./img/photo1699212158 (2).jpeg", "alt": ""  },
+            { "path": "./img/photo1699212158 (3).jpeg", "alt": ""  },
+            { "path": "./img/1335f6f2-1e10-48b6-8d1c-d5c7d6620fd6.jpg", "alt": ""  },
+            { "path": "./img/photo1699212266.jpeg", "alt": ""  }
+        
+    ]
 }
