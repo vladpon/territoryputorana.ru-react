@@ -56,7 +56,7 @@ if (online()) {
     $main['details'] = $data['details'];
     $main['var_details'] = $data['varDetails'];
     $main['details_title'] = $data['detailsTitle'];
-    $main['var_detailstitle'] = $data['varDetailsTitle'];
+    $main['var_detailstitle'] = $data['varDetailstitle'];
     $main['about_title'] = $data['aboutTitle'];
     $main['clothes'] = $data['clothes'];
     $main['program_title'] = $data['tourProgram']['programTitle'];
