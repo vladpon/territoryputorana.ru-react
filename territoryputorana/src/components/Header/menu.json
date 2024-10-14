@@ -67,24 +67,11 @@
                 "id": "lamaproj",
                 "href": "/lamaproj",
                 "title": "Экологический проект"
-            }
-        ]
-    },
-
-    {
-        "id": "expeditions",
-        "href": "/arcticexpeditions",
-        "title": "Экспедиции",
-        "items": [
-            {
-                "id": "tolstorog",
-                "href": "/tolstorog",
-                "title": "По следам толсторога"
             },
             {
-                "id": "zaton",
-                "href": "/zaton",
-                "title": "Затон-Через"
+                "id": "expeditions",
+                "href": "arcticexpeditions",
+                "title": "Экспедиции"
             }
         ]
     },
