@@ -50,7 +50,19 @@
     {
         "id": "about",
         "href": "/about",
-        "title": "о нас"
+        "title": "о нас",
+        "items" : [
+            {
+                "id": "onas",
+                "href": "/about",
+                "title": "О компании"
+            },
+            {
+                "id": "fb",
+                "href": "/fb",
+                "title": "Отзывы"
+            }
+        ]
     },
 
     {
@@ -88,11 +100,6 @@
         "title": "фотогалерея"
     },
 
-    {
-        "id": "fb",
-        "href": "/fb",
-        "title": "отзывы"
-    },
 
     {
         "id": "3dtours",
