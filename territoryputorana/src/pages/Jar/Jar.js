@@ -39,7 +39,7 @@ const TourPage = () => {
 
   useEffect( () => {
     const getNewTour = async () => {
-      const newTour = await getTourById('lostput')
+      const newTour = await getTourById('jar')
       setTour(newTour)
     }
     getNewTour()
