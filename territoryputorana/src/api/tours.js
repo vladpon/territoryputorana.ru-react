@@ -64,7 +64,7 @@ export async function getTourByTourId (tourId) {
 
 export async function getTours () {
     let tours = []
-    await getToursIds().then( (ids) => {
+    getToursIds().then( (ids) => {
         ids.map( (id) => {
             getTourById(id.tourId).then((tour)=>tours.push(tour))
             }
