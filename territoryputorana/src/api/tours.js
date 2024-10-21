@@ -60,23 +60,23 @@ export async function getTourByTourId (tourId) {
 }
 
 
+
+
 export async function getTours () {
-    const url = process.env.REACT_APP_API_URL + '/tours_api.php?gettours'
-    const options = {
-        method: 'GET'
-    }
-
-
-    let res = await fetch(url, options);
-
-    if (res.ok) {
-        let resJSON = await res.json()
-        return resJSON
-    } else {
-        console.error('can not fetch tours' + res.status)
-        return
-    }
+    let tours = []
+    await getToursIds().then( (ids) => {
+        ids.map( (id) => {
+            getTourById(id.tourId).then((tour)=>tours.push(tour))
+            }
+        )
+    })
+    return tours
 }
+
+
+
+
+
 
 export async function updateTour (tour) {
     const url = process.env.REACT_APP_API_URL + '/tour_update.php'

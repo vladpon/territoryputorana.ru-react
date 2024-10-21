@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="footer__icons">
                 <a href="https://vk.cc/cmIUok"><img className="footer__icon" src="https://territoryputorana.ru/img/vk_ico.png"></img></a>
                 <a href="https://wa.me/79039299383"><img className="footer__icon" src="https://territoryputorana.ru/img/wa_ico.png"></img></a>
-                <a href="https://t.me/lysov_anton"><img className="footer__icon" src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
+                <a href="https://t.me/territoryputorana"><img className="footer__icon" src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
             </div>
             <div className='footer__privacy'><a href = 'https://territoryputorana.ru/privacy'>Политика конфиденциальности</a></div>
         </div>
