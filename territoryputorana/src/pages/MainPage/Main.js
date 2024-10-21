@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles.scss'
 import Cover from './components/Cover'
 import TextWord from './components/TextWord'
@@ -9,10 +9,11 @@ import TextOneImage2 from './components/TextOneImage2'
 import RequestBlock from '../../components/RequestBlock/RequestBlock'
 import VideoClip from './components/VideoClip'
 
-import tours from '../../data/tours.json'
+import blankTours from '../../data/tours.json'
 import { Link, useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet'
+import { getTours } from '../../api/tours'
 // import NewsBlock from './components/NewsBlock'
 
 
@@ -55,14 +56,15 @@ const textFewImages = {
 
 const Main = () => {
 
-  // useEffect( () => {
-  //   window.YandexRotorSettings.isLoaded = true
-  // }, [])
+  const [tours, setTours] = useState(blankTours)
 
   const navigate = useNavigate();
   const location = useLocation()
   const pathname = location.pathname
   
+  useEffect( ()=> {
+    getTours().then( (data) => console.log(data))
+  }, [])
 
   return (
     <main className='main-page'>      
