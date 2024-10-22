@@ -112,11 +112,6 @@
                 "title": "Усадьба Жар. Птица"
             },
             {
-                "id": "island",
-                "href": "/island",
-                "title": "Палаточный кемпинг"
-            },
-            {
                 "id": "locations",
                 "href": "/locations",
                 "title": "Наши локации"

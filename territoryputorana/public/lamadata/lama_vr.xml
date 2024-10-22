@@ -355,7 +355,7 @@
 
 
 
-  <hotspot name="spotpoint241"
+  <!-- <hotspot name="spotpoint241"
            ath="97.085152" atv="1.245961"
            style="IconDefaultPointSpotStyle"
            tag="point"
@@ -373,7 +373,7 @@
         mainloadscene(pano11);
 
 
-  </action>
+  </action> -->
 
 
 
@@ -405,7 +405,7 @@
 
 
 
-    set(hotspot[spotpoint241].visible, false);
+    <!-- set(hotspot[spotpoint241].visible, false); -->
   </action>
   <action name="showpanopointspots">
 
@@ -442,7 +442,7 @@
 
 
   
-  set(hotspot[spotpoint241].visible, true);
+  <!-- set(hotspot[spotpoint241].visible, true); -->
   </action>
   <events name="pano102stopanimatedspots" onremovepano="" />
 
@@ -475,7 +475,7 @@
 
         set(hotspot[spotpoint239].zorder2, %1);
 
-        set(hotspot[spotpoint241].zorder2, %1);
+        <!-- set(hotspot[spotpoint241].zorder2, %1); -->
 
       );
     );

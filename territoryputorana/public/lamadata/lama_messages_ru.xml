@@ -16,7 +16,7 @@
   <data name="ru_spotpoint237_tooltip"><![CDATA[чум]]></data>
   <data name="ru_spotpoint238_tooltip"><![CDATA[дом 1 и 2]]></data>
   <data name="ru_spotpoint239_tooltip"><![CDATA[баня]]></data>
-  <data name="ru_spotpoint241_tooltip"><![CDATA[Палаточный лагерь]]></data>
+  <!-- <data name="ru_spotpoint241_tooltip"><![CDATA[Палаточный лагерь]]></data> -->
 
   <data name="ru_panogroup18_title"><![CDATA[Group 18]]></data>
 
@@ -225,7 +225,7 @@
 
 
 
-  <data name="ru_spotpoint241_description"><![CDATA[123]]></data>
+  <!-- <data name="ru_spotpoint241_description"><![CDATA[123]]></data> -->
 
 
 

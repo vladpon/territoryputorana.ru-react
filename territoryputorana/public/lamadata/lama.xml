@@ -326,7 +326,7 @@
 
 
 
-  <hotspot name="spotpoint241"
+  <!-- <hotspot name="spotpoint241"
            ath="97.085152" atv="1.245961"
            style="IconDefaultPointSpotStyle"
            tag="point"
@@ -342,7 +342,7 @@
         mainloadscene(pano11);lookat(23.464157, 30.272516, 111.144917);
 
 
-  </action>
+  </action> -->
 
 
 
