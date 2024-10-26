@@ -87,11 +87,11 @@ const Main = () => {
             <div className="cards-block__card-container">
                 <div className="card-container__card" onClick={() => navigate('/partners#weekend')}>
                     <div className="card-container__bg">
-                        <img src='./img/mp_weekend.jpg'></img>
+                        <img src='./img/gorybezvershin.jpg'></img>
                     </div>
                     <div className="card-container__text-container" >
                         <div className="card-container__top-text">
-                            <div className="card-container__title">Тур выходного дня на озеро Лама</div>
+                            <div className="card-container__title">Горы без вершин</div>
                         </div>
                         <div className="card-container__bottom-text">
                             <div className="card-container__days">Пт-пн</div>
