@@ -34,7 +34,7 @@ const textOneImage = {
     'Антон Лысов',
     'Основатель и руководитель компании «Территория Путорана»'
   ],
-  img: "./img/lysov.jpg"
+  img: "./img/anton.jpg"
 }
 
 const textFewImages = {
@@ -94,7 +94,7 @@ const Main = () => {
                             <div className="card-container__title">Горы без вершин</div>
                         </div>
                         <div className="card-container__bottom-text">
-                            <div className="card-container__days">Пт-пн</div>
+                            {/* <div className="card-container__days">Пт-пн</div> */}
                         </div>
                     </div>
                 </div>
