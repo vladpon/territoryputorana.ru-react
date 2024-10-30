@@ -34,7 +34,7 @@ const AboutPage = () => {
       </Helmet>
         <MainLogo />
         <div className = "about-page__cover">        
-            <img className = "about-page__bg" src='./img/anton002.jpg' />
+            <img className = "about-page__bg" src='./img/team.jpg' />
             <div className = "about-page__text">
                 <h1>О компании</h1>
             </div>

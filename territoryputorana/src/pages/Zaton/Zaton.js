@@ -7,10 +7,11 @@ import { Helmet } from 'react-helmet'
 import { useLocation } from 'react-router-dom'
 import TextTitle from '../MainPage/components/TextTitle'
 import PhotoBlock from '../TourPage/components/PhotoBlock'
+import RequestBlockProjects from '../../components/RequestBlockProjects/RequestBlockProjects'
 
 const zaton = {
     title: 'Краеведческая экспедиция «Затон-Через»',
-    bigImg: './img/_BVI1285 (1).jpg'
+    bigImg: './img/zaton_cover.jpg'
 }
 
 const txtTitle = {
@@ -23,12 +24,12 @@ const txtTitle = {
   }
 
   const photos = [
-    { src: "./img/zaton1.jpg"},
-    { src: "./img/zaton2.jpg"},
-    { src: "./img/zaton3.jpg"},
-    { src: "./img/zaton4.jpg"},
-    { src: "./img/zaton5.jpg"},
-    { src: "./img/zaton7.jpg"}
+    { path: "./img/zaton1.jpg", alt: ""},
+    { path: "./img/zaton2.jpg", alt: ""},
+    { path: "./img/zaton3.jpg", alt: ""},
+    { path: "./img/zaton4.jpg", alt: ""},
+    { path: "./img/zaton5.jpg", alt: ""},
+    { path: "./img/zaton7.jpg", alt: ""}
   ]
 
 const Zaton = () => {
@@ -64,6 +65,7 @@ const Zaton = () => {
         {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
       </div>
       <PhotoBlock photos = {photos}/>
+      {/* <RequestBlockProjects bgImage = {'./img/zaton_footer.jpg'} h2Text = {"Стать волонтером или партнером"} h3Text = {"Оставьте заявку и мы обязательно Вам ответим!"}/> */}
     </main>
   )
 }
