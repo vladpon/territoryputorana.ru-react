@@ -57,7 +57,7 @@ const PutoranaTrails = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour} varInfoframe = {false}/>\
+        <TourPageAbout tour = {tour} varInfoframe = {true}/>\
         <TourPageAux title = 'Дополнительно' content = {<p>За дополнительную плату вы можете заказать <Link to = '/helitour'>вертолетную экскурсию</Link>, чтобы облететь наиболее живописные и недоступные уголки плато Путорана. Вы увидите высочайшие в России водопады, над которыми часто образуется радуга, и каньоны — такие глубокие, что на дне запросто можно спрятать Эйфелеву башню.</p>}/>
         <TourPageProgram tour = {tour}/>
         <TourPageAccmmdtn />
