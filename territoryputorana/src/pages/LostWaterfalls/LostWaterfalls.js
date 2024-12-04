@@ -125,7 +125,7 @@ const LostWaterfalls = () => {
         </div> */}
 
         
-        <RequestBlock bgImage = {'./img/heli_footer.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
+        <RequestBlock bgImage = {'./img/heli_footer.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

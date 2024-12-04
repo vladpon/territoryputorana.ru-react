@@ -87,7 +87,7 @@ const TourPage = () => {
         </div>
         <PhotoBlock photos = {tour.tourPhoto}/>
         <TextTitle txtTitle = {txtTitle} />
-        <RequestBlock bgImage = {'./img/jar_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
+        <RequestBlock bgImage = {'./img/jar_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

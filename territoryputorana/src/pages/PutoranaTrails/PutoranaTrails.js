@@ -63,7 +63,7 @@ const PutoranaTrails = () => {
         <TourPageAccmmdtn />
         <PhotoBlock photos = {tour.tourPhoto}/>
         <TextTitle txtTitle = {txtTitle} />
-        <RequestBlock bgImage = {'./img/putoranatrails_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Оставьте заявку и мы обязательно Вам ответим"}/>
+        <RequestBlock bgImage = {'./img/putoranatrails_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }
