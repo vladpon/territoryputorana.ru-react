@@ -63,7 +63,7 @@ const Main = () => {
   const pathname = location.pathname
   
   useEffect( ()=> {
-    getTours().then(res => res.json()).then(setTours)
+    getTours().then(res => res.json()).then((setTours))
   }, [])
 
   return (
