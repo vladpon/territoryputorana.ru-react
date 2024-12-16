@@ -43,6 +43,11 @@
                 "id": "skitour",
                 "href": "/skitour",
                 "title": "Ски-тур"
+            },
+            {
+                "id": "skilama",
+                "href": "/skilama",
+                "title": "Скитур долина озера Лама"
             }
         ]
     },

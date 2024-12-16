@@ -48,6 +48,7 @@ import Zaton from './pages/Zaton/Zaton';
 import Expedition from './pages/Expedition/Expedition';
 import ThankYou from './pages/ThankYou/ThankYou';
 import PutoranaTrails from './pages/PutoranaTrails/PutoranaTrails';
+import Skilama from './pages/Skilama/Skilama';
 
 
 
@@ -98,6 +99,7 @@ function App() {
           <Route path = '/zaton' Component={Zaton} />
           <Route path = '/expedition' Component={Expedition} />
           <Route path = '/putoranatrails' Component={PutoranaTrails} />
+          <Route path = '/skilama' Component={Skilama} />
           <Route path = '/thankyou' Component={ThankYou} />
           <Route path = '/privacy' Component={Privacy} />
 

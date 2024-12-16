@@ -110,6 +110,9 @@ const Header = (props) => {
       case '/putoranatrails':
         setPageClass('tour-page-class')
         break;
+      case '/skilama':
+        setPageClass('tour-page-class')
+        break;
       case '/weekend':
         setPageClass('tour-page-class')
         break;
