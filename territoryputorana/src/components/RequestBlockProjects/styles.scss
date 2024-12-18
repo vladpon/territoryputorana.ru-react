@@ -27,14 +27,14 @@
         background-size: cover;
     }    
 
-    &:hover::before {
-        filter: blur(2px);
-    }
+    // &:hover::before {
+    //     filter: blur(2px);
+    // }
 
     &__text {
         width: 60%;
         color: #fff;
-        text-shadow: #444 2px 2px;
+        // text-shadow: #444 2px 2px;
         text-align: center;
 
         @media (max-width: map-get($breakpoints, sm)) {
@@ -44,12 +44,12 @@
         & h2 {
             font-weight: 800;
             text-transform: uppercase;
-            mix-blend-mode: overlay;
+            // mix-blend-mode: overlay;
         }
 
         & h3 {
             margin-block-end: 2em;
-            mix-blend-mode: overlay;
+            // mix-blend-mode: overlay;
         }
     }
 

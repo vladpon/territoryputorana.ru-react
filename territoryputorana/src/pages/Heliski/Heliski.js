@@ -116,7 +116,7 @@ const TourPage = () => {
           </div>
         <TourPageProgram tour = {tour}/>
         <div className = "tp-accmmdtn">
-            <h2 className = "tp-accmmdtn__title">Открыто бронирование: февраль-июнь 2024 </h2>
+            <h2 className = "tp-accmmdtn__title">ОТКРЫТО БРОНИРОВАНИЕ: МАРТ-ИЮНЬ 2025</h2>
             <p style={{textAlign: "center"}}><b>стандартная программа - для групп 4 человека, частная программа - для групп 3 человека. </b> </p>
         </div>
         <div className = 'partners-page__content'>

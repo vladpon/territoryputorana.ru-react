@@ -83,7 +83,7 @@ const HeliTour = () => {
 
         <PhotoBlock photos = {tour.tourPhoto}/>
 
-        <RequestBlock bgImage = {'./img/helire.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
+        <RequestBlock bgImage = {'./img/helitour/helitour_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

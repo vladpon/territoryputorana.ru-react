@@ -66,7 +66,7 @@ const LostWaterfalls = () => {
       </Helmet>
         <MainLogo />
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour} varInfoframe = {true} />
+        <TourPageAbout tour = {tour} varInfoframe = {false} />
 
         {/* <div className = "tp-about__container">
           <div className='tp-about'>
