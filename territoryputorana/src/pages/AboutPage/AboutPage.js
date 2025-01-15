@@ -61,7 +61,7 @@ const AboutPage = () => {
             <img src='./img/about_team.jpg'></img>
             <p>Все в сборе, считая собаку.<br />Искра - компаньон во всех походах. Заслуженный обладатель звания «Лучшая собака плато Путорана»<br /></p>
           </div>
-       </div> 
+       </div>
        <div className='vk-container'>
             <h2>Наши новости</h2>
             <div id="vk_groups"></div>
