@@ -62,28 +62,28 @@
 }
 
 
-.tolstorog {
-    width: 100%;
-    height: 100%;
-    @include blockHPadding;
-    @include blockVPadding;
+// .tolstorog {
+//     width: 100%;
+//     height: 100%;
+//     @include blockHPadding;
+//     @include blockVPadding;
 
-    & h2 {
-        margin-block-end: 1.2em;
-        text-align: center;
-    }
+//     & h2 {
+//         margin-block-end: 1.2em;
+//         text-align: center;
+//     }
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-    }
+//     &__content {
+//         display: flex;
+//         flex-direction: column;
+//     }
 
-    &__img {
-        & img {
-            width: 100%;
-        }
-    }
-    &__text {
-        @include blockInternalMarginTop;
-    }
-}
+//     &__img {
+//         & img {
+//             width: 100%;
+//         }
+//     }
+//     &__text {
+//         @include blockInternalMarginTop;
+//     }
+// }

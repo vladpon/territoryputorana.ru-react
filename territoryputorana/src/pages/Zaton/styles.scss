@@ -1,9 +1,48 @@
-
+@import '../../const';
 
 .txt-title {
     & img {
         width: 100%;
         object-fit: cover;
         margin-bottom: 2em;
+    }
+}  
+
+
+
+.zaton {
+    
+    width: 100%;
+    @include blockHPadding;
+    @include blockVPadding;
+    background-color: $secondary-background-color;
+
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+
+    @media (max-width: map-get($breakpoints, md)) {
+        flex-direction: column;
+    }
+    
+
+    & > img {
+        flex: 1 1 300px;
+        min-width: 30%;
+        object-fit: cover;
+        border-radius: 2em;
+        @media (max-width: map-get($breakpoints, md)) {
+            margin-bottom: 2em;
+        }
+    }
+
+    &__text {
+        flex: 1 1 300px;
+        @media (max-width: map-get($breakpoints, md)) {
+            flex: 1 1 auto;
+        }
+        & > p {
+            @include font-size-adaptive(18px);
+        }
     }
 }

@@ -75,15 +75,32 @@
 
     &__content {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 5%;
+        width: 100%;
+        @media (max-width: map-get($breakpoints, md)){
+            flex-direction: column;
+        }
     }
 
     &__img {
+        flex: 1 1 300px;
         & img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
     &__text {
-        @include blockInternalMarginTop;
+        flex: 1 1 300px;
+        & > p {
+            @include font-size-adaptive(20px);
+        }
+        @media (max-width: map-get($breakpoints, md)){
+            // @include blockInternalMarginTop;
+            margin-top: 1.5em;
+        }
+
+
     }
 }

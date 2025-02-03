@@ -33,6 +33,10 @@
             color: white;
             text-decoration: underline;
         }
+
+        & > span {
+            font-family: "Open Sans";
+        }
     }
 
 
@@ -86,6 +90,10 @@
         @include space-btw(column);
         align-items: flex-end;
         height: 100%;
+
+        & > a span {
+            font-family: "Open Sans";
+        }
 
         & span {
            color: white;

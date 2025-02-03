@@ -4,6 +4,6 @@ $DBNAME = 'lysovanton_tours';
 $DBPASS = 'pjoe6qU&';
 $DBHOST = 'lysovanton.beget.tech';
 
-$USERSDBPASS = '3g%YPc6V';
+$USERSDBPASS = 'eyVin0%%';
 
 $EMAILPASS = 'bcquaowopyftzabw';
