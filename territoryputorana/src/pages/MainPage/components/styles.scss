@@ -338,7 +338,7 @@
 
     &__text-block {
         text-align: right;
-        flex-grow: 2;
+        flex: 1 1 500px
     }
 
     &__title {
@@ -357,6 +357,10 @@
             // color: #fff;
             text-align: justify;
             padding-right: 2em;
+
+            @media (max-width: map-get($breakpoints, sm)) {
+                padding: 0;
+            }
         }
         
         & p:last-child {
@@ -369,7 +373,8 @@
     }
 
     &__img {
-        flex-grow: 1;
+        flex: 1 1 300px;
+        // flex-shrink: 5;
 
         @media (max-width: map-get($breakpoints, sm)) {
             display: none;

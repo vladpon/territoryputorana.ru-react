@@ -98,8 +98,12 @@
         margin: 0.4em;
     }
 
-    & li {
+    & ul > li {
         list-style: circle;
+    }
+
+    & ol > li {
+        list-style: decimal;
     }
 }
 

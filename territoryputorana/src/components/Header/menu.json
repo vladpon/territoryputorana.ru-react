@@ -12,7 +12,7 @@
             {
                 "id": "putoranatrails",
                 "href": "/putoranatrails",
-                "title": "Тропами Путорана"
+                "title": "Тропами Путорана: активный треккинг"
             },
             {
                 "id": "lostwaterfalls",
@@ -30,11 +30,6 @@
                 "title": "Усадьба Жар. Птица"
             },
             {
-                "id": "expedition",
-                "href": "/expedition",
-                "title": "Экспедиция выходного дня"
-            },
-            {
                 "id": "heliski",
                 "href": "/heliski",
                 "title": "Хели-ски"
@@ -42,7 +37,12 @@
             {
                 "id": "skitour",
                 "href": "/skitour",
-                "title": "Ски-тур"
+                "title": "Скитур Хребтовая-Валёк-Аякли"
+            },
+            {
+                "id": "skilama",
+                "href": "/skilama",
+                "title": "Скитур долина озера Лама"
             }
         ]
     },
@@ -83,7 +83,7 @@
             {
                 "id": "expeditions",
                 "href": "arcticexpeditions",
-                "title": "Экспедиции"
+                "title": "Экспедиции Арктики"
             }
         ]
     },

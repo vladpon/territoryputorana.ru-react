@@ -109,7 +109,7 @@ const Expedition = () => {
 
         <TourPageProgram tour = {tour}/>
         <PhotoBlock photos = {tour.tourPhoto}/>
-        <RequestBlock bgImage = {'/img/photo1699212266.jpeg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Напишите свои пожелания, мы обязательно свяжемся с вами!"}/>
+        <RequestBlock bgImage = {'/img/expedition_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
     )
     }

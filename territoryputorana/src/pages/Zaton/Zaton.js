@@ -60,9 +60,11 @@ const Zaton = () => {
               <p>На фото вы можете увидеть, что осталось на месте когда-то процветающего поселка. Информации о нем также практически никакой не осталось. Тем интереснее по крохам искать упоминания Затона «Через» - урочища, посёлка, ремонтной базы судов и воинской части - в различных источниках и восстанавливать историю.</p>
           </div>
       </div>
-      <div className = 'txt-title'>
+      <div className = 'zaton'>
         <img src='./img/zaton8.jpg'></img>
-        {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
+        <div className='zaton__text'>
+          {txtTitle.text && txtTitle.text.map( (p, index) => <p key = {index}>{p}</p>)}
+        </div>
       </div>
       <PhotoBlock photos = {photos}/>
       {/* <RequestBlockProjects bgImage = {'./img/zaton_footer.jpg'} h2Text = {"Стать волонтером или партнером"} h3Text = {"Оставьте заявку и мы обязательно Вам ответим!"}/> */}
